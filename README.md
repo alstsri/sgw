@@ -19,14 +19,18 @@ pip install requests openpyxl
 ## Quick start
 
 ```bash
-git clone https://github.com/yourname/sgw-hunter.git
-cd sgw-hunter
+git clone https://github.com/alstsri/sgw.git
+cd sgw
 pip install requests openpyxl
 # Edit BUYER_PROFILE in hunt.py to match your sizes
 python hunt.py
 ```
 
-Results land in `runs/<timestamp>/`.
+The script creates a `runs/` directory next to `hunt.py` automatically — no setup needed. Each run writes to a new `runs/full_YYYY-MM-DD/` subfolder. You can override the output path:
+
+```bash
+python hunt.py --output /path/to/my/results
+```
 
 ## Buyer profile
 
