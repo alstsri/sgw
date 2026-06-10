@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+virtualenv/
+
+# Per-run outputs (personal shopping data)
+runs/
+
+# macOS
+.DS_Store
