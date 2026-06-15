@@ -147,7 +147,7 @@ QUALITY_BRANDS = {
     # blankets
     "faribault", "woolrich", "avoca", "begg & co", "begg",
     # shoes additions
-    "vass", "sanders", "quoddy",
+    "vass", "sanders", "quoddy", "esquivel",
 }
 
 FABRIC_TERMS = {
@@ -218,6 +218,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Ralph Lauren Crockett Jones 8", "Ralph Lauren Edward Green 8",
             # Additional quality makers
             "Vass 8", "Sanders 8", "Quoddy 8", "Visvim 8",
+            "Esquivel 8", "Esquivel 7.5",
         ],
     },
     "tailoring_outerwear": {
@@ -515,27 +516,28 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
     if category == "tailoring_outerwear":
         # Only hard-reject when we can confirm it's a jacket/coat (not a pants or tie)
         is_jacket = bool(re.search(
-            r'\b(?:blazer|sport\s*coat|suit\s+jacket|overcoat|topcoat|'
+            r'\b(?:blazer|sport\s*coat|suit(?:\s+jacket)?|overcoat|topcoat|'
             r'peacoat|chesterfield|jacket)\b', t
         ))
         is_trouser = bool(re.search(r'\b(?:trousers?|pants?|chinos?|slacks?)\b', t))
         if is_jacket and not is_trouser:
-            it_luxury = any(b in t for b in ITALIAN_LUXURY)
-            it_reject = _jacket_reject_it_above   # from BUYER_PROFILE
-            us_reject = _jacket_reject_us_above   # from BUYER_PROFILE
+            # Strip pants waist×inseam dimensions before jacket size checks
+            # so "42S 34x28" doesn't count "34" as a valid jacket size.
+            tj = re.sub(r'\b\d{2}x\d{2}\b', ' ', t)
+            it_luxury = any(b in tj for b in ITALIAN_LUXURY)
+            it_reject = _jacket_reject_it_above
+            us_reject = _jacket_reject_us_above
             if it_luxury:
-                # Build reject pattern for IT sizes >= it_reject
                 _it_reject_pat = r'\b(?:' + '|'.join(str(n) for n in range(it_reject, 70, 2)) + r')\s*[sr]?\b'
-                if re.search(_it_reject_pat, t):
+                if re.search(_it_reject_pat, tj):
                     return True, f"Italian jacket IT{it_reject}+ — too large"
-                if re.search(r'\b(?:38|40)\s*[sr]?\b', t):
+                if re.search(r'\b(?:38|40)\s*[sr]?\b', tj):
                     return True, "Italian jacket US 38/40 — too large"
             else:
-                # Build accept pattern for US sizes < us_reject
                 _us_accept_sizes = [str(n) for n in range(28, us_reject)]
                 _us_accept_pat = r'\b(?:' + '|'.join(_us_accept_sizes) + r')\s*[sr]?\b'
-                if not re.search(_us_accept_pat, t):
-                    if re.search(r'\b(?:3[5-9]|4[0-9]|5[0-9])\s*[sr]?\b', t):
+                if not re.search(_us_accept_pat, tj):
+                    if re.search(r'\b(?:3[5-9]|4[0-9]|5[0-9])\s*[sr]?\b', tj):
                         return True, f"jacket size {us_reject}+ — too large"
         # Trousers/pants in tailoring search: apply waist rule
         if is_trouser:
@@ -870,10 +872,13 @@ def assess(
     fit = 3
     size_text = " ".join([title, size, measurements]).lower()
     shoe_ok = bool(_shoe_accept_re.search(size_text))
+    # Strip waist×inseam pants dimensions (e.g. "34x28", "34x30") before checking
+    # jacket sizes — otherwise pants dimensions masquerade as jacket size matches.
+    jacket_text = re.sub(r'\b\d{2}x\d{2}\b', ' ', text)
     if category == "shoes" and shoe_ok:
         fit = 8
         reasons.append(f"shoe size in target range ({'/'.join(BUYER_PROFILE['shoe_sizes'])})")
-    elif category in {"tailoring_outerwear", "workwear"} and _jacket_accept_re.search(text):
+    elif category in {"tailoring_outerwear", "workwear"} and _jacket_accept_re.search(jacket_text):
         fit = 8
         reasons.append(
             "tailoring size in target range ("
