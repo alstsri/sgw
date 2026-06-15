@@ -190,34 +190,55 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
         "category_level": 3,
         "strings": [
             # American / Italian makers
-            "Allen Edmonds 8", "Allen Edmonds 8D",
-            "Alden 8", "Alden 8D",
-            "Red Wing 8", "White's boots 8", "Wesco 8", "Viberg 8",
-            "Carmina 8", "Carlos Santos 8", "Meermin 8",
-            "Santoni 8", "Testoni 8", "Bontoni 8", "Magnanni 8",
-            "Tod's 8", "Bally 8", "Ferragamo 8", "Ferragamo 7.5",
-            "Salvatore Ferragamo 8", "Stefano Bemer 8", "Silvano Lattanzi 8",
-            # English makers (US 8 / UK 7 / EU 41)
-            "Crockett Jones 8", "Crockett & Jones 8",
+            "Allen Edmonds 8", "Allen Edmonds 8D", "Allen Edmonds 7.5",
+            "Alden 8", "Alden 8D", "Alden 7.5",
+            "Red Wing 8", "Red Wing 7.5",
+            "White's boots 8", "White's boots 7.5",
+            "Wesco 8", "Wesco 7.5",
+            "Viberg 8", "Viberg 7.5",
+            "Carmina 8", "Carmina 7.5",
+            "Carlos Santos 8", "Carlos Santos 7.5",
+            "Meermin 8", "Meermin 7.5",
+            "Santoni 8", "Santoni 7.5",
+            "Testoni 8", "Testoni 7.5",
+            "Bontoni 8", "Bontoni 7.5",
+            "Magnanni 8", "Magnanni 7.5",
+            "Tod's 8", "Tod's 7.5",
+            "Bally 8", "Bally 7.5",
+            "Ferragamo 8", "Ferragamo 7.5",
+            "Salvatore Ferragamo 8", "Salvatore Ferragamo 7.5",
+            "Stefano Bemer 8", "Stefano Bemer 7.5",
+            "Silvano Lattanzi 8", "Silvano Lattanzi 7.5",
+            # English makers (US 8 / 7.5 / UK 7 / EU 41)
+            "Crockett Jones 8", "Crockett & Jones 8", "Crockett Jones 7.5",
             "Crockett Jones 7", "Crockett & Jones 7",
-            "Tricker's 8", "Trickers 8",
-            "Edward Green 8", "Edward Green 7",
-            "John Lobb 8", "John Lobb 7",
-            "Gaziano Girling 8", "Gaziano & Girling 8",
-            "Church's 8", "Church's 7",
-            "Cheaney 8", "Joseph Cheaney 8",
-            "Grenson 8", "Loake 1880 8",
-            "Alfred Sargent 8", "George Cleverley 8", "Foster & Son 8",
-            # French makers (US 8 / EU 41)
+            "Tricker's 8", "Trickers 8", "Tricker's 7.5",
+            "Edward Green 8", "Edward Green 7.5", "Edward Green 7",
+            "John Lobb 8", "John Lobb 7.5", "John Lobb 7",
+            "Gaziano Girling 8", "Gaziano & Girling 8", "Gaziano Girling 7.5",
+            "Church's 8", "Church's 7.5", "Church's 7",
+            "Cheaney 8", "Joseph Cheaney 8", "Cheaney 7.5",
+            "Grenson 8", "Grenson 7.5",
+            "Loake 1880 8", "Loake 1880 7.5",
+            "Alfred Sargent 8", "Alfred Sargent 7.5",
+            "George Cleverley 8", "George Cleverley 7.5",
+            "Foster & Son 8", "Foster & Son 7.5",
+            # French makers (US 8 / 7.5 / EU 41 / 40.5)
             "JM Weston 8", "J.M. Weston 8", "Weston Paris 8",
-            "Paraboot 8", "Paraboot 41",
-            "Berluti 8", "Berluti 41",
-            "Heschung 8", "Corthay 8", "Aubercy 8",
+            "JM Weston 7.5", "J.M. Weston 7.5",
+            "Paraboot 8", "Paraboot 7.5", "Paraboot 41",
+            "Berluti 8", "Berluti 7.5", "Berluti 41",
+            "Heschung 8", "Heschung 7.5",
+            "Corthay 8", "Corthay 7.5",
+            "Aubercy 8", "Aubercy 7.5",
             "Septieme Largeur 8", "Septième Largeur 8",
-            # Designer collaborations (specific enough to be signal)
+            # Designer collaborations
             "Ralph Lauren Crockett Jones 8", "Ralph Lauren Edward Green 8",
             # Additional quality makers
-            "Vass 8", "Sanders 8", "Quoddy 8", "Visvim 8",
+            "Vass 8", "Vass 7.5",
+            "Sanders 8", "Sanders 7.5",
+            "Quoddy 8", "Quoddy 7.5",
+            "Visvim 8", "Visvim 7.5",
             "Esquivel 8", "Esquivel 7.5",
         ],
     },
@@ -1249,8 +1270,11 @@ def save_evidence(
     ][:limit]
     by_id = {c.item_id: c for c in candidates}
     for c in top:
-        html_text = fetch_item_html(session, c.item_id)
-        (evidence_dir / f"{c.item_id}.html").write_text(html_text, encoding="utf-8")
+        try:
+            html_text = fetch_item_html(session, c.item_id)
+            (evidence_dir / f"{c.item_id}.html").write_text(html_text, encoding="utf-8")
+        except Exception:
+            pass  # item may have ended or returned an error; skip silently
         (evidence_dir / f"{c.item_id}.txt").write_text(
             json.dumps(candidate_row(by_id[c.item_id]), indent=2), encoding="utf-8"
         )
