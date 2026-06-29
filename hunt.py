@@ -97,6 +97,8 @@ QUALITY_BRANDS = {
     "alden", "allen edmonds", "red wing", "white's", "wesco", "viberg",
     "carmina", "carlos santos", "meermin", "santoni", "testoni", "bontoni",
     "magnanni", "tod's", "bally", "ferragamo", "stefano bemer", "silvano lattanzi",
+    "marsell", "marsèll", "guidi", "officine creative",
+    "russell moccasin", "rancourt", "yuketen", "danner",
     # shoes — English
     "crockett", "tricker", "edward green", "john lobb", "gaziano", "church",
     "cheaney", "joseph cheaney", "grenson", "loake", "alfred sargent",
@@ -240,6 +242,14 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Quoddy 8", "Quoddy 7.5",
             "Visvim 8", "Visvim 7.5",
             "Esquivel 8", "Esquivel 7.5",
+            # Italian artisan / American heritage (cross-added from Marissa's makers)
+            "Marsell 8", "Marsell 7.5", "Marsèll 8",
+            "Guidi 8", "Guidi 7.5",
+            "Officine Creative 8", "Officine Creative 7.5",
+            "Russell Moccasin 8", "Russell Moccasin 7.5",
+            "Rancourt 8", "Rancourt 7.5",
+            "Yuketen 8", "Yuketen 7.5",
+            "Danner 8", "Danner 7.5",
         ],
     },
     "tailoring_outerwear": {
