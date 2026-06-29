@@ -426,6 +426,10 @@ def main():
                     continue
                 cur = detail.get("currentPrice")
                 price = cur.get("amount") if isinstance(cur, dict) else cur
+                img_server = detail.get("imageServer") or ""
+                img_paths = (detail.get("imageUrlString") or "").split(";")
+                images = [hunt.normalize_image_url(img_server, p) for p in img_paths
+                          if hunt.normalize_image_url(img_server, p)]
                 candidates.append({
                     "item_id": iid, "category": category, "query": query,
                     "title": detail.get("title", ""),
@@ -433,6 +437,7 @@ def main():
                     "current_price": price,
                     "num_bids": detail.get("numberOfBids", 0),
                     "end_time": (detail.get("endTime") or "")[:19],
+                    "image_urls": images[:3],
                     "recommendation": a["recommendation"],
                     "total_score": a["total_score"],
                     "size_status": a["size_status"],
