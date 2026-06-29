@@ -69,6 +69,9 @@ main {
 .row { display: flex; justify-content: space-between; align-items: baseline; }
 .price { font-size: 15px; font-weight: 700; }
 .bids { font-size: 11px; color: var(--muted); }
-.size { font-size: 11px; color: var(--accent); }
+.size { font-size: 11px; color: var(--accent); font-weight: 600; }
+.size[data-fit="accept"] { color: var(--buy); }
+.size[data-fit="maybe"] { color: var(--watch); }
+.size[data-fit="unknown"] { color: var(--muted); }
 footer { color: var(--muted); font-size: 12px; text-align: center; padding: 16px; }
 .empty { grid-column: 1/-1; text-align: center; color: var(--muted); padding: 40px 20px; }

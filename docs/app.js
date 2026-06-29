@@ -28,6 +28,17 @@ function fmtCountdown(endIso) {
   return { text: text + " left", soon: ms < 86400000, ended: false };
 }
 
+// Marissa's hunter stores a size-match STATUS (accept/maybe/unknown) instead of a
+// literal size. Relabel those for clarity; pass real size strings through as-is.
+function sizeLabel(size) {
+  if (!size || size === "not verified") return "";
+  const s = size.toLowerCase();
+  if (s === "accept") return "✓ fits";
+  if (s === "maybe") return "verify fit";
+  if (s === "unknown") return "size?";
+  return size;
+}
+
 function card(item) {
   const cd = fmtCountdown(item.end_time);
   const a = document.createElement("a");
@@ -36,7 +47,7 @@ function card(item) {
   a.target = "_blank";
   a.rel = "noopener";
   const price = item.price != null ? `$${item.price}` : "—";
-  const size = item.size && item.size !== "not verified" ? item.size : "";
+  const size = sizeLabel(item.size);
   a.innerHTML = `
     <div class="imgwrap">
       <img loading="lazy" src="${item.image}" alt="" onerror="this.parentElement.parentElement.remove()" />
@@ -47,7 +58,7 @@ function card(item) {
     <div class="body">
       <div class="title">${item.title}</div>
       <div class="row"><span class="price">${price}</span><span class="bids">${item.bids || 0} bid${item.bids === 1 ? "" : "s"}</span></div>
-      ${size ? `<div class="size">${size}</div>` : ""}
+      ${size ? `<div class="size" data-fit="${item.size}">${size}</div>` : ""}
     </div>`;
   return a;
 }
