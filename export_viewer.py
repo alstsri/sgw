@@ -54,11 +54,23 @@ def export(person: str, run_dir: str) -> None:
 
     items.sort(key=lambda x: x["score"], reverse=True)
 
-    # Keep all Buy/Watch; cap the noisier "Need measurements" tier to the top by score
-    # so the phone viewer stays light (it's image-heavy).
-    NEED_CAP = 100
+    # Keep all Buy/Watch. Cap the noisier "Need measurements" tier PER TYPE
+    # (Shoes/Clothing/Home) so one type can't crowd another out of the viewer.
+    def type_of(cat):
+        c = (cat or "").lower()
+        return "Shoes" if c == "shoes" else "Home" if c == "blankets" else "Clothing"
+
+    NEED_CAP_PER_TYPE = 60
     strong = [i for i in items if i["rec"] in ("Buy", "Watch")]
-    need = [i for i in items if i["rec"] == "Need measurements"][:NEED_CAP]
+    need_by_type = {}
+    for i in items:
+        if i["rec"] != "Need measurements":
+            continue
+        t = type_of(i["category"])
+        need_by_type.setdefault(t, [])
+        if len(need_by_type[t]) < NEED_CAP_PER_TYPE:
+            need_by_type[t].append(i)
+    need = [i for lst in need_by_type.values() for i in lst]
     items = sorted(strong + need, key=lambda x: x["score"], reverse=True)
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)

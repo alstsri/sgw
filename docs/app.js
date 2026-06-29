@@ -4,8 +4,16 @@ const PEOPLE = [
   { key: "marissa", label: "Marissa" },
 ];
 
-const state = { person: PEOPLE[0].key, rec: "all", data: null };
+const state = { person: PEOPLE[0].key, rec: "all", type: "all", data: null };
 const $ = (s) => document.querySelector(s);
+
+// Map a hunter category to a coarse type for the Shoes/Clothing/Home filter
+function typeOf(category) {
+  const c = (category || "").toLowerCase();
+  if (c === "shoes") return "Shoes";
+  if (c === "blankets") return "Home";
+  return "Clothing";
+}
 
 function fmtCountdown(endIso) {
   if (!endIso) return { text: "", soon: false, ended: true };
@@ -52,6 +60,7 @@ function render() {
   // Hide already-ended listings
   items = items.filter((it) => !fmtCountdown(it.end_time).ended);
   if (state.rec !== "all") items = items.filter((it) => it.rec === state.rec);
+  if (state.type !== "all") items = items.filter((it) => typeOf(it.category) === state.type);
   $("#meta").textContent = `${items.length} live · swept from ${state.data.source_run}`;
   if (!items.length) { grid.innerHTML = '<div class="empty">No live items in this filter.</div>'; return; }
   for (const it of items) grid.appendChild(card(it));
@@ -67,7 +76,28 @@ async function load(person) {
   } catch (e) {
     state.data = { items: [], source_run: "—" };
   }
+  state.type = "all";
+  buildTypes();
   render();
+}
+
+function buildTypes() {
+  const wrap = $("#types");
+  wrap.innerHTML = "";
+  const present = new Set((state.data.items || []).map((it) => typeOf(it.category)));
+  const order = ["Shoes", "Clothing", "Home"].filter((t) => present.has(t));
+  if (order.length < 2) return; // no point showing one button
+  const all = document.createElement("button");
+  all.textContent = "All types";
+  all.dataset.type = "all";
+  all.className = "active";
+  wrap.appendChild(all);
+  order.forEach((t) => {
+    const b = document.createElement("button");
+    b.textContent = t;
+    b.dataset.type = t;
+    wrap.appendChild(b);
+  });
 }
 
 function buildTabs() {
@@ -90,6 +120,14 @@ $("#filters").addEventListener("click", (e) => {
   $("#filters").querySelectorAll("button").forEach((x) => x.classList.remove("active"));
   e.target.classList.add("active");
   state.rec = e.target.dataset.rec;
+  render();
+});
+
+$("#types").addEventListener("click", (e) => {
+  if (e.target.tagName !== "BUTTON") return;
+  $("#types").querySelectorAll("button").forEach((x) => x.classList.remove("active"));
+  e.target.classList.add("active");
+  state.type = e.target.dataset.type;
   render();
 });
 
