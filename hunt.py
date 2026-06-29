@@ -249,7 +249,10 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Russell Moccasin 8", "Russell Moccasin 7.5",
             "Rancourt 8", "Rancourt 7.5",
             "Yuketen 8", "Yuketen 7.5",
-            "Danner 8", "Danner 7.5",
+            # Danner — heritage stitchdown models only (plain "Danner" floods tactical)
+            "Danner Mountain Light 8", "Danner Mountain Light 7.5",
+            "Danner Bull Run 8", "Danner Bull Run 7.5",
+            "Danner Stumptown 8", "Danner Sharptail 8",
         ],
     },
     "tailoring_outerwear": {
