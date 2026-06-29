@@ -1,6 +1,6 @@
 # sgw-hunter
 
-A Python script that searches ShopGoodwill.com for quality men's clothing and home goods using the site's buyer API. No scraping, no browser automation — plain HTTP against the same JSON endpoints the site itself uses.
+A Python script that searches for quality men's clothing and home goods using the site's buyer API. No scraping, no browser automation — plain HTTP against the same JSON endpoints the site itself uses.
 
 ## What it does
 
