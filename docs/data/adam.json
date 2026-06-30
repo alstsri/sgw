@@ -1,7 +1,7 @@
 {
   "person": "adam",
-  "source_run": "full_2026-06-30",
-  "count": 154,
+  "source_run": "ci_adam",
+  "count": 160,
   "items": [
     {
       "id": 268319963,
@@ -349,6 +349,36 @@
       "flags": ""
     },
     {
+      "id": 269058895,
+      "title": "Vintage Pendleton Light Brown Wool 73x54 Inch Wool Blanket",
+      "url": "https://shopgoodwill.com/item/269058895",
+      "image": "https://shopgoodwillimages.azureedge.net/production/171/Items/2026-06-30/f83b838e-3e79-4588-a261-f364c42e1a4ciams_06301.png",
+      "price": 6.99,
+      "bids": 0,
+      "end_time": "2026-07-07T18:14:00",
+      "category": "blankets",
+      "size": "small",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: pendleton | fabric match: wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": ""
+    },
+    {
+      "id": 269061093,
+      "title": "Pendleton Woolen Mills Blanket Green Bay Packers Seat Pad Pure Virgin Wool",
+      "url": "https://shopgoodwill.com/item/269061093",
+      "image": "https://shopgoodwillimages.azureedge.net/production/134/Items/2026-06-30/841fcd2d-cee4-4934-9c03-06735076da02lund_06301.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-07-07T18:42:00",
+      "category": "blankets",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: pendleton | fabric match: wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": ""
+    },
+    {
       "id": 268672673,
       "title": "Striped Faribault Woolen Mill Co 100% Pure Wool Blanket 87x75",
       "url": "https://shopgoodwill.com/item/268672673",
@@ -668,7 +698,7 @@
       "title": "Pendleton Woolen Mills: Wool Blanket: Size 84\"x136\"",
       "url": "https://shopgoodwill.com/item/268313282",
       "image": "https://shopgoodwillimages.azureedge.net/production/59/Item/2026-06-23/0f55f511-c75b-4a50-b9a3-0202530739aeesSm_06231.jpg",
-      "price": 21.0,
+      "price": 27.0,
       "bids": 0,
       "end_time": "2026-06-30T19:15:00",
       "category": "blankets",
@@ -814,6 +844,21 @@
       "flags": "fabric/material not confirmed"
     },
     {
+      "id": 269062458,
+      "title": "Polo Ralph Lauren Men's Pinstripe Plaid Button-Down Blue Size 34/35 Shirt",
+      "url": "https://shopgoodwill.com/item/269062458",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Items/2026-06-30/869e3a4c-5a6c-4964-b39c-149760a137bcwbro_06301.png",
+      "price": 19.99,
+      "bids": 0,
+      "end_time": "2026-07-05T18:12:00",
+      "category": "tailoring_outerwear",
+      "size": "34",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "fabric/material not confirmed"
+    },
+    {
       "id": 268942324,
       "title": "Polo Ralph Lauren Men's Green Shorts - Size 34",
       "url": "https://shopgoodwill.com/item/268942324",
@@ -902,6 +947,21 @@
       "score": 5.57,
       "why": "fabric match: cashmere, wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "condition issue mentioned"
+    },
+    {
+      "id": 269059579,
+      "title": "Red Wing Irish Setter 104 10.5E Leather 8\" Moc Toe Work Boots USA",
+      "url": "https://shopgoodwill.com/item/269059579",
+      "image": "https://shopgoodwillimages.azureedge.net/production/168/Items/2026-06-30/64ba7cf5-9ab8-4397-988b-955d6c0503c0lpra_06301.jpg",
+      "price": 19.99,
+      "bids": 0,
+      "end_time": "2026-07-04T20:04:00",
+      "category": "shoes",
+      "size": "10.5E",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
     },
     {
       "id": 268936437,
@@ -1354,6 +1414,21 @@
       "flags": "size not confirmed in detail text"
     },
     {
+      "id": 269051480,
+      "title": "Burberry London Men's Tan Trench Coat with Removable Wool Lining 40R",
+      "url": "https://shopgoodwill.com/item/269051480",
+      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-06-30/a9be2ca6-284a-482f-b0fe-516d68071652neMc_06301.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-07-07T15:59:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: camel hair, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text"
+    },
+    {
       "id": 268588896,
       "title": "A.P.C. Men's XL Green Wool Cashmere Crew Neck Sweater Jumper",
       "url": "https://shopgoodwill.com/item/268588896",
@@ -1378,6 +1453,21 @@
       "end_time": "2026-07-02T18:43:00",
       "category": "tailoring_outerwear",
       "size": "17",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned"
+    },
+    {
+      "id": 269059694,
+      "title": "Polo Ralph Lauren Mens Gray Long Sleeve Easy Care Dress Shirt 15.5 34/35",
+      "url": "https://shopgoodwill.com/item/269059694",
+      "image": "https://shopgoodwillimages.azureedge.net/production/16/Items/2026-06-30/41c8744f-4e22-457a-8630-ab0e1826255eter1_06301.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-07-03T20:39:00",
+      "category": "tailoring_outerwear",
+      "size": "15.5",
       "rec": "Need measurements",
       "score": 5.29,
       "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
@@ -1417,7 +1507,7 @@
       "id": 269017002,
       "title": "88\" X 71\" Hudson's Bay England Vtg Classic Stripe Design 100% Wool Point Blanket",
       "url": "https://shopgoodwill.com/item/269017002",
-      "image": "https://shopgoodwillimages.azureedge.net/production/106/Items/2026-06-30/fe6f6fef-843d-4432-8667-c54e0f5cd6c8ckcs_06301.jpg",
+      "image": "https://shopgoodwillimages.azureedge.net/production/106/Items/2026-06-30/19985507-ce96-490d-a9d2-a180a486a838ckcs_06301.jpg",
       "price": 9.99,
       "bids": 0,
       "end_time": "2026-07-07T17:49:00",
@@ -1882,7 +1972,7 @@
       "id": 268902412,
       "title": "Alexander Julian Private Reserve Men's Baby Alpaca Fair Isle Sweater Vest XL",
       "url": "https://shopgoodwill.com/item/268902412",
-      "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-06-29/26f5bd9d-9a8b-45a9-8231-05d7910515bcder7_06291.jpg",
+      "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-06-30/9db9e0ab-8370-447b-96c8-ab1f48fe30d2der7_06301.jpg",
       "price": 9.99,
       "bids": 0,
       "end_time": "2026-07-06T18:28:00",
