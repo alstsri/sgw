@@ -1,0 +1,63 @@
+name: Daily SGW Sweep
+
+on:
+  schedule:
+    # 15:00 UTC daily ≈ 7-8am Pacific. Cron is always UTC.
+    - cron: "0 15 * * *"
+  workflow_dispatch: {}   # allow manual "Run workflow" / gh workflow run
+
+permissions:
+  contents: write          # needed to push updated docs/data back to the repo
+
+concurrency:
+  group: daily-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet requests openpyxl
+
+      - name: Sweep — Adam (ShopGoodwill)
+        run: |
+          python hunt.py --output runs/ci_adam \
+            --per-query 10 --pages-per-query 2 --evidence-limit 0 || true
+
+      - name: Sweep — Marissa (ShopGoodwill)
+        run: |
+          python marissa_hunt.py --output runs/ci_marissa \
+            --per-query 10 --pages-per-query 2 || true
+
+      - name: Export viewer data
+        run: |
+          python export_viewer.py adam runs/ci_adam || true
+          python export_viewer.py marissa runs/ci_marissa || true
+
+      - name: Commit & push if data is healthy
+        run: |
+          git config user.name "sgw-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          ADAM=$(python -c "import json;print(json.load(open('docs/data/adam.json'))['count'])" 2>/dev/null || echo 0)
+          MAR=$(python -c "import json;print(json.load(open('docs/data/marissa.json'))['count'])" 2>/dev/null || echo 0)
+          echo "Counts — adam=$ADAM marissa=$MAR"
+          # Guard: don't overwrite a good app with an empty sweep (e.g. if SGW blocks the runner IP)
+          if [ "$ADAM" -lt 10 ] && [ "$MAR" -lt 10 ]; then
+            echo "::error::Both sweeps returned almost nothing — likely blocked. Skipping commit."
+            exit 1
+          fi
+          git add docs/data
+          if git diff --staged --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Daily sweep $(date -u +%F)"
+            git push
+          fi
