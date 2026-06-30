@@ -359,12 +359,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
         "category_id": 28,
         "category_level": 2,
         "strings": [
-            # Ties — specific enough to be signal
-            "Drake's tie", "E. Marinella tie",
-            "Ancient Madder tie", "silk grenadine tie",
-            "Charvet tie", "Brioni tie", "Kiton tie",
-            "Hermès tie", "Hermes tie",
-            # Pocket squares
+            # Pocket squares (ties removed per user request)
             "Drake's pocket square", "Charvet pocket square",
         ],
     },
