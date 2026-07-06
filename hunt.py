@@ -99,6 +99,9 @@ QUALITY_BRANDS = {
     "magnanni", "tod's", "bally", "ferragamo", "stefano bemer", "silvano lattanzi",
     "marsell", "marsèll", "guidi", "officine creative",
     "russell moccasin", "rancourt", "yuketen", "danner",
+    "bruno magli", "fratelli rossetti", "oak street", "grant stone",
+    "nicks boots", "tlb mallorca", "sutor mantellassi", "enzo bonafe",
+    "yanko", "truman boot",
     # shoes — English
     "crockett", "tricker", "edward green", "john lobb", "gaziano", "church",
     "cheaney", "joseph cheaney", "grenson", "loake", "alfred sargent",
@@ -258,6 +261,12 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Danner Mountain Light 8", "Danner Mountain Light 7.5",
             "Danner Bull Run 8", "Danner Bull Run 7.5",
             "Danner Stumptown 8", "Danner Sharptail 8",
+            # Additional quality makers (7.5 only, per request)
+            "Bruno Magli 7.5", "Fratelli Rossetti 7.5",
+            "Oak Street Bootmakers 7.5", "Grant Stone 7.5",
+            "Nicks Boots 7.5", "TLB Mallorca 7.5",
+            "Sutor Mantellassi 7.5", "Enzo Bonafe 7.5",
+            "Yanko 7.5", "Truman Boot 7.5",
         ],
     },
     "tailoring_outerwear": {
