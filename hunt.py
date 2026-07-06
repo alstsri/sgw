@@ -133,6 +133,11 @@ QUALITY_BRANDS = {
     "fray", "lorenzini", "gitman", "individualized", "mercer", "drake",
     "kamakura", "hilditch", "harvie", "new & lingwood", "emma willis",
     "budd", "figaret", "courtot",
+    # loungewear / underwear / base-layer / premium basics
+    "hanro", "zimmerli", "derek rose", "calida", "schiesser", "mey",
+    "falke", "majestic filatures", "cdlp", "hamilton and hare",
+    "luca faloni", "tekla", "dagsmejan", "merz b. schwanen",
+    "lady white co", "the white briefs", "lunya", "james perse",
     # knitwear
     "saint james", "armor lux", "sunspel", "drumohr", "inis meain",
     "william lockie", "johnstons of elgin", "johnstons", "n.peal",
@@ -402,6 +407,22 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "made in USA shirt 15", "made in France shirt 15",
         ],
     },
+    "loungewear_basics": {
+        # Low-frequency premium underwear / loungewear / base-layer / tee makers.
+        # Plain brand searches in Men's Clothing; buyer screens hits manually.
+        "category_id": 28,
+        "category_level": 2,
+        "strings": [
+            "Hanro", "Zimmerli", "Zimmerli of Switzerland",
+            "Sunspel", "Derek Rose", "Derek Rose London",
+            "Calida Switzerland",   # "Calida" alone collides with Spanish "calidad"
+            "Schiesser", "Schiesser Revival", "Mey", "Falke",
+            "Majestic Filatures", "CDLP", "Hamilton and Hare",
+            "Luca Faloni", "Tekla", "Dagsmejan", "Merz b. Schwanen",
+            "Lady White Co", "The White Briefs", "Lunya",
+            "Turnbull & Asser", "James Perse",
+        ],
+    },
     "pants": {
         "category_id": 28,
         "category_level": 2,
@@ -568,7 +589,13 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
                 if not re.search(_us_accept_pat, tj):
                     if re.search(r'\b(?:3[5-9]|4[0-9]|5[0-9])\s*[sr]?\b', tj):
                         return True, f"jacket size {us_reject}+ — too large"
-        # Trousers/pants in tailoring search: apply waist rule
+        # Dress shirts pulled in by Italian brand searches (e.g. "Zegna 42"):
+        # "42" here is a EUROPEAN COLLAR size (42cm ≈ neck 16.5"), not a jacket.
+        # Buyer wears neck 15 (≈38cm); reject collar 41cm+ unless neck 15/15.5 present.
+        is_shirt = bool(re.search(r'\b(?:dress\s*shirt|button[\s-]?up|button[\s-]?down|sport\s*shirt|shirt)\b', t)) and not is_jacket
+        if is_shirt:
+            if re.search(r'\b(?:4[1-9]|5[0-2])\b', t) and not re.search(r'\b(?:15|15\.5|38|39|40)\b', t):
+                return True, "dress shirt EU collar 41cm+ — neck too large"
         if is_trouser:
             if re.search(r'\b(?:3[0-9]|4[0-9])x\d{2}\b', t):
                 return True, "trouser waist too large (30+)"
