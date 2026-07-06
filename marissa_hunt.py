@@ -34,7 +34,7 @@ BUYER_PROFILE = {
 
 # Oversized-silhouette signals that make M/L acceptable for jackets
 OVERSIZE_SIGNALS = {
-    "oversized", "oversize", "boxy", "kimono", "lagenlook", "artwear",
+    "oversized", "oversize", "boxy", "kimono", "haori", "lagenlook", "artwear",
     "art to wear", "art-to-wear", "drapey", "draped", "cocoon", "tent",
     "relaxed", "swing", "duster", "caftan", "kaftan", "tunic", "structured",
 }
@@ -105,6 +105,7 @@ MINIMALIST_SIGNALS = {
     "clean-line", "structured", "tunic", "drapey", "draped", "cocoon",
     "boiled wool", "merino", "cashmere", "raw silk", "japanese cotton",
     "wool gauze", "cupro", "solid", "monochrome", "lagenlook", "oversized",
+    "kimono", "haori", "boro", "sashiko", "indigo", "made in japan",
 }
 ORIGIN_TERMS = {
     "made in japan", "made in italy", "made in france", "made in england",
@@ -229,6 +230,19 @@ TEXTILE_BASICS = [
     "oversized brocade jacket", "oversized embroidered jacket",
     "boxy wool jacket", "boxy silk jacket",
 ]
+# Modern kimono / haori — structured Japanese-textile open-front jackets.
+# Quality-signal terms only (silk/velvet/embroidered/haori) to avoid the
+# boho-rayon "kimono cardigan" flood.
+KIMONO = [
+    "haori jacket", "haori", "vintage haori", "silk haori",
+    "silk kimono jacket", "silk kimono robe", "modern kimono jacket",
+    "embroidered kimono jacket", "velvet kimono jacket",
+    "quilted kimono jacket", "wool kimono jacket", "kimono duster coat",
+    "kimono wrap coat", "tapestry kimono jacket", "brocade kimono",
+    "jacquard kimono jacket", "kimono style blazer",
+    "vintage kimono jacket", "boro jacket", "sashiko jacket",
+    "indigo kimono jacket", "made in Japan kimono jacket",
+]
 
 # Minimalist / quiet-luxury makers — common enough on SGW to be worth searching
 MINIMALIST_BRANDS = [
@@ -267,6 +281,7 @@ SEARCH_GROUPS = {
     "american_indie": {"cat": WOMENS_CLOTHING, "strings": AMERICAN_INDIE},
     "vintage_artwear": {"cat": WOMENS_CLOTHING, "strings": VINTAGE_ARTWEAR},
     "minimalist": {"cat": WOMENS_CLOTHING, "strings": MINIMALIST_BRANDS + MINIMALIST_FABRIC},
+    "kimono": {"cat": WOMENS_CLOTHING, "strings": KIMONO},
     "high_signal": {"cat": WOMENS_CLOTHING, "strings": HIGH_SIGNAL + TEXTILE_BASICS},
 }
 
