@@ -1,7 +1,7 @@
 {
   "person": "adam",
-  "source_run": "ci_adam",
-  "count": 146,
+  "source_run": "full_2026-07-06",
+  "count": 150,
   "items": [
     {
       "id": 269410373,
@@ -46,6 +46,36 @@
       "rec": "Watch",
       "score": 6.14,
       "why": "maker match: ferragamo | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
+      "id": 269066137,
+      "title": "Bruno Magli Made In Italy Black/Burgundy 583 Loafer Shoes Men's Size 7.5",
+      "url": "https://shopgoodwill.com/item/269066137",
+      "image": "https://shopgoodwillimages.azureedge.net/production/362/Items/2026-06-30/2b3ecec0-4d0c-4a78-a210-4e0a4ecda986ch14_06302.png",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-07-07T19:06:00",
+      "category": "shoes",
+      "size": "7.5 C; 7.5",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: bruno magli | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
+      "id": 269619161,
+      "title": "Bruno Magli Black Leather Oxfords Dress Shoes M 7.5",
+      "url": "https://shopgoodwill.com/item/269619161",
+      "image": "https://shopgoodwillimages.azureedge.net/production/78/Items/2026-06-05/6b5f28bc-1a92-481d-92de-c58274583e8cgwsc_06051.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-07-12T18:16:00",
+      "category": "shoes",
+      "size": "7.5 D; 7 A; 7.5 P; 41 M",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: bruno magli | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": ""
     },
     {
@@ -214,6 +244,21 @@
       "flags": ""
     },
     {
+      "id": 269675064,
+      "title": "Pendleton Multicolored Zion Park Wool Blanket",
+      "url": "https://shopgoodwill.com/item/269675064",
+      "image": "https://shopgoodwillimages.azureedge.net/production/148/Items/2026-07-06/42c46a09-a0ec-496b-9881-4480b7f030e4rton_07061.jpg",
+      "price": 7.99,
+      "bids": 0,
+      "end_time": "2026-07-11T20:32:00",
+      "category": "blankets",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: pendleton | fabric match: wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": ""
+    },
+    {
       "id": 269583408,
       "title": "Pendleton EasyCare Bed Blanket Suede 90x90 Inches 100% Wool",
       "url": "https://shopgoodwill.com/item/269583408",
@@ -308,7 +353,7 @@
       "title": "Andean Collection Brown Alpaca Wool & Sheep Wool Blanket",
       "url": "https://shopgoodwill.com/item/269644498",
       "image": "https://shopgoodwillimages.azureedge.net/production/147/Items/2026-07-06/5d28274a-3f94-4d10-b026-f9a844e53a2auley_07061.jpg",
-      "price": 12.99,
+      "price": 14.0,
       "bids": 0,
       "end_time": "2026-07-13T20:09:00",
       "category": "blankets",
@@ -394,6 +439,21 @@
       "flags": "fabric/material not confirmed"
     },
     {
+      "id": 269676895,
+      "title": "Vintage Witney Point Pure Wool Blanket Tan Black Stripes 92x75 Made England",
+      "url": "https://shopgoodwill.com/item/269676895",
+      "image": "https://shopgoodwillimages.azureedge.net/production/146/Item/2026-07-06/5a05a3ab-1ffc-4d3f-b3bc-762f227864f8oddC_07061.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-07-13T18:59:00",
+      "category": "blankets",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 5.86,
+      "why": "fabric match: made in england, wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": ""
+    },
+    {
       "id": 269445575,
       "title": "Armani Collezioni Men's Black Wool Suit Jacket - Size 42/C",
       "url": "https://shopgoodwill.com/item/269445575",
@@ -407,6 +467,21 @@
       "score": 5.71,
       "why": "fabric match: made in italy, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": ""
+    },
+    {
+      "id": 269677394,
+      "title": "Pringle of Scotland Black Cashmere Short Sleeve Sweater Size 38/97",
+      "url": "https://shopgoodwill.com/item/269677394",
+      "image": "https://shopgoodwillimages.azureedge.net/production/181/Item/2026-07-06/4d86a590-85b6-4054-93c2-a5cfe31374f9rico_07061.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-07-09T18:17:00",
+      "category": "knitwear",
+      "size": "38",
+      "rec": "Need measurements",
+      "score": 5.71,
+      "why": "maker match: pringle | fabric match: cashmere, made in scotland | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned"
     },
     {
       "id": 269347688,
@@ -428,7 +503,7 @@
       "title": "Vintage Pendleton Highland Plaid Queen Blanket 100% Wool w Case And Pillow",
       "url": "https://shopgoodwill.com/item/268948029",
       "image": "https://shopgoodwillimages.azureedge.net/production/198/Item/2026-06-29/0be3bb4d-ecca-4fe4-a3dd-0585a2236760leeJ_06291.jpg",
-      "price": 40.0,
+      "price": 41.0,
       "bids": 0,
       "end_time": "2026-07-06T16:23:00",
       "category": "blankets",
@@ -503,7 +578,7 @@
       "title": "68\" x 60\" Beaver State Pendleton Wool Blanket with Geometric Pattern",
       "url": "https://shopgoodwill.com/item/269219840",
       "image": "https://shopgoodwillimages.azureedge.net/production/19/Items/2026-06-09/206565dd-530a-4cfe-a395-1a34dfe8706death_06091.jpg",
-      "price": 31.0,
+      "price": 40.0,
       "bids": 0,
       "end_time": "2026-07-08T16:08:00",
       "category": "blankets",
@@ -527,21 +602,6 @@
       "score": 5.71,
       "why": "maker match: pendleton | fabric match: wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": ""
-    },
-    {
-      "id": 269068347,
-      "title": "Vintage Wellspring Legend Robes Four Directions Wool Blanket 48x71 Laurie Jacobi",
-      "url": "https://shopgoodwill.com/item/269068347",
-      "image": "https://shopgoodwillimages.azureedge.net/production/89/Items/2026-07-01/cba20451-8456-4756-9f55-aae98fb8bd09labs_07011.jpg",
-      "price": 24.99,
-      "bids": 0,
-      "end_time": "2026-07-07T18:44:00",
-      "category": "blankets",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.71,
-      "why": "maker match: faribault | fabric match: wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
-      "flags": "condition issue mentioned"
     },
     {
       "id": 269082759,
@@ -904,6 +964,21 @@
       "flags": ""
     },
     {
+      "id": 269152292,
+      "title": "Luca Faloni Men's Blue Siena Piquet Shirt Long Sleeve Made in Italy Sz 16",
+      "url": "https://shopgoodwill.com/item/269152292",
+      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-07-01/25ec09cf-7382-4b98-b487-c31b3b7ecb53sens_07011.jpg",
+      "price": 14.0,
+      "bids": 0,
+      "end_time": "2026-07-06T19:46:00",
+      "category": "loungewear_basics",
+      "size": "16 T",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: luca faloni | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
       "id": 269655666,
       "title": "Pendleton Green Plaid Wool Blanket with Fringe - Stained 59\u201dx49\u201d",
       "url": "https://shopgoodwill.com/item/269655666",
@@ -1024,6 +1099,21 @@
       "flags": "fabric/material not confirmed"
     },
     {
+      "id": 269068347,
+      "title": "Vintage Wellspring Legend Robes Four Directions Wool Blanket 48x71 Laurie Jacobi",
+      "url": "https://shopgoodwill.com/item/269068347",
+      "image": "https://shopgoodwillimages.azureedge.net/production/89/Items/2026-07-01/cba20451-8456-4756-9f55-aae98fb8bd09labs_07011.jpg",
+      "price": 32.51,
+      "bids": 0,
+      "end_time": "2026-07-07T18:44:00",
+      "category": "blankets",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: faribault | fabric match: wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": "condition issue mentioned"
+    },
+    {
       "id": 269182310,
       "title": "C is for Christian A to Z Treasury Book by Alistair Begg Hardcover Kids",
       "url": "https://shopgoodwill.com/item/269182310",
@@ -1054,21 +1144,6 @@
       "flags": "fabric/material not confirmed"
     },
     {
-      "id": 269135732,
-      "title": "Black White Titled Paris Cafe Wall Art Framed Photo Print By Artist Connie Begg",
-      "url": "https://shopgoodwill.com/item/269135732",
-      "image": "https://shopgoodwillimages.azureedge.net/production/16/Items/2026-05-29/0cdc5c8b-5e60-4d7a-85ca-669cc70e5d47ter1_05291.jpg",
-      "price": 5.99,
-      "bids": 0,
-      "end_time": "2026-12-28T20:03:00",
-      "category": "blankets",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.43,
-      "why": "maker match: begg | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
-      "flags": "fabric/material not confirmed"
-    },
-    {
       "id": 269477482,
       "title": "Vintage Connie Begg Framed Signed Black White Paris Coffee Photograph Painting",
       "url": "https://shopgoodwill.com/item/269477482",
@@ -1082,6 +1157,21 @@
       "score": 5.43,
       "why": "maker match: begg | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": ""
+    },
+    {
+      "id": 269683918,
+      "title": "Red Wing Shoes 8824 Men's Size 7D US Tan Brown Suede Lace Up Ankle Boots",
+      "url": "https://shopgoodwill.com/item/269683918",
+      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-07-06/b7228c2f-73f0-47eb-9628-6fae7dab8cd9MegM_07061.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-07-13T15:56:00",
+      "category": "shoes",
+      "size": "7D",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: red wing | fabric match: goodyear | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "target shoe size not confirmed"
     },
     {
       "id": 269160943,
@@ -1298,7 +1388,7 @@
       "title": "Ektos Gear | 100% Wool Beige Blanket | Camping/Outdoors | 90.5\"x69.5\"",
       "url": "https://shopgoodwill.com/item/269172249",
       "image": "https://shopgoodwillimages.azureedge.net/production/192/Items/2026-07-01/91488645-00da-4448-91b9-0d7ce00d0b1fhaA1_07015.png",
-      "price": 16.0,
+      "price": 20.0,
       "bids": 0,
       "end_time": "2026-07-06T18:32:00",
       "category": "blankets",
@@ -1418,7 +1508,7 @@
       "title": "Vintage 90s Burberrys' Men's Beige Wool Trench Coat Nova Check Lining Sz M",
       "url": "https://shopgoodwill.com/item/269457307",
       "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-07-03/b209c590-06bc-497d-9e9e-c225de94fe78sens_07031.jpg",
-      "price": 36.0,
+      "price": 42.0,
       "bids": 0,
       "end_time": "2026-07-08T18:16:00",
       "category": "tailoring_outerwear",
@@ -1583,7 +1673,7 @@
       "title": "Brunello Cucinelli Men's Blue Sweater Size 50 Regular",
       "url": "https://shopgoodwill.com/item/269227965",
       "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-01-02/a2ffef07-f67b-415e-8134-c7bfe82042deoler_01021.jpg",
-      "price": 107.0,
+      "price": 136.0,
       "bids": 0,
       "end_time": "2026-07-06T19:24:00",
       "category": "knitwear",
@@ -1909,21 +1999,6 @@
       "flags": ""
     },
     {
-      "id": 268834054,
-      "title": "Armani Collezioni Men's Gray Button Down Shirt Size 42/16.5/L",
-      "url": "https://shopgoodwill.com/item/268834054",
-      "image": "https://shopgoodwillimages.azureedge.net/production/29/Items/2026-06-06/05d39465-fa15-4160-b380-f84c093aa058rson_06061.jpg",
-      "price": 24.99,
-      "bids": 0,
-      "end_time": "2026-12-25T18:13:00",
-      "category": "tailoring_outerwear",
-      "size": "42",
-      "rec": "Need measurements",
-      "score": 4.86,
-      "why": "tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "fabric/material not confirmed"
-    },
-    {
       "id": 269607930,
       "title": "Vintage 80s London Fog Men's Khaki Golf Harrington Jacket Full Zip Sz 42L",
       "url": "https://shopgoodwill.com/item/269607930",
@@ -2119,34 +2194,19 @@
       "flags": "fabric/material not confirmed"
     },
     {
-      "id": 269339610,
-      "title": "Empyre Men's Corduroy Cargo Relax Tobacco Brown Size 28 Skate Pants",
-      "url": "https://shopgoodwill.com/item/269339610",
-      "image": "https://shopgoodwillimages.azureedge.net/production/8/Items/2026-05-08/41c238b8-b9ee-4bcf-9dd2-1f9e7a163ed3wbou_05081.png",
-      "price": 7.99,
-      "bids": 0,
-      "end_time": "2026-07-07T06:12:00",
-      "category": "pants",
-      "size": "28 D; 28 S",
-      "rec": "Need measurements",
-      "score": 4.86,
-      "why": "waist in target range (28\") | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "fabric/material not confirmed"
-    },
-    {
-      "id": 269568204,
-      "title": "Men's CMPURE Light Blue Corduroy Pants Size 28 100% Cotton Straight Leg",
-      "url": "https://shopgoodwill.com/item/269568204",
-      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-07-04/e35948b7-ae6c-47b5-9aeb-7e394c90ac43into_07041.jpg",
+      "id": 268936094,
+      "title": "JAMES PERSE SZ 3 GRAY POLO",
+      "url": "https://shopgoodwill.com/item/268936094",
+      "image": "https://shopgoodwillimages.azureedge.net/production/43/Items/2026-06-30/3ff0e15e-ae5d-4b84-b2b7-cfad8b81c2cewles_06301.jpg",
       "price": 14.99,
       "bids": 0,
-      "end_time": "2026-07-09T21:40:00",
-      "category": "pants",
-      "size": "28",
+      "end_time": "2026-07-06T16:56:00",
+      "category": "loungewear_basics",
+      "size": "not verified",
       "rec": "Need measurements",
       "score": 4.86,
-      "why": "waist in target range (28\") | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": ""
+      "why": "maker match: james perse | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text"
     },
     {
       "id": 269017002,
