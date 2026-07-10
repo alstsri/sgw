@@ -1,9 +1,13 @@
 name: Daily SGW Sweep
 
 on:
-  schedule:
-    # 15:00 UTC daily ≈ 7-8am Pacific. Cron is always UTC.
-    - cron: "0 15 * * *"
+  # Schedule disabled 2026-07-09: ShopGoodwill's API returns 403 to every request
+  # from GitHub-hosted runners (Azure IPs). Identical requests succeed from a home
+  # IP, so this is an IP block, not an API or code change. Until that's solved,
+  # sweeps run locally and docs/data is pushed by hand. Re-enable by uncommenting.
+  # schedule:
+  #   # 15:00 UTC daily ≈ 7-8am Pacific. Cron is always UTC.
+  #   - cron: "0 15 * * *"
   workflow_dispatch: {}   # allow manual "Run workflow" / gh workflow run
 
 permissions:
