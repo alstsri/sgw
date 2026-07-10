@@ -498,6 +498,10 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
         if brand in t:
             return True, f"reject brand: {brand}"
 
+    # ---- BLANKETS -------------------------------------------------------------
+    if category == "blankets" and re.search(r"\bpillow\b", t):
+        return True, "pillow, not a blanket/throw"
+
     # ---- SHOES ---------------------------------------------------------------
     if category == "shoes":
         right = bool(_shoe_accept_re.search(t))
