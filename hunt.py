@@ -862,7 +862,10 @@ def mens_status(
     if re.search(r"\bwomen'?s\b|\bwomens\b|\blad(y|ies)\b|\bgirl\b|\byouth\b", text):
         evidence.append("women's/youth term found")
         likely_women = True
-    if re.search(r"\b(pump|pumps|heel|heels|stiletto|skirt|gown|blouse|petite)\b", text):
+    if re.search(
+        r"\b(pump|pumps|heels|high heel|kitten heel|block heel|chunky heel|"
+        r"wedge heel|stiletto heel|stiletto|skirt|gown|blouse|petite)\b", text
+    ):
         evidence.append("women-coded garment term found")
         likely_women = True
     if category == "shoes" and re.search(r"\b8\s?(aaaa|aaa|aa|b)\b|\bsize 38\b", text):

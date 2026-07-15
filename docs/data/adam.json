@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "latest",
-  "count": 85,
+  "count": 91,
   "items": [
     {
       "id": 270170433,
@@ -196,6 +196,21 @@
       "rec": "Watch",
       "score": 6.14,
       "why": "maker match: bruno magli | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
+      "id": 270456636,
+      "title": "Salvatore Ferragamo Sport Men's Dark Gray Loafers, Size 7.5 B SR7101",
+      "url": "https://shopgoodwill.com/item/270456636",
+      "image": "https://shopgoodwillimages.azureedge.net/production/12/Item/2026-07-13/e37f248d-b398-4d69-9daf-07f28c307041ers1_07131.jpg",
+      "price": 14.95,
+      "bids": 0,
+      "end_time": "2026-07-20T17:15:00",
+      "category": "shoes",
+      "size": "7.5 B",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: ferragamo | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": ""
     },
     {
@@ -604,6 +619,51 @@
       "flags": ""
     },
     {
+      "id": 270071759,
+      "title": "Allen Edmonds Nashua Tassel Kiltie Loafer Men's Size 7.5D",
+      "url": "https://shopgoodwill.com/item/270071759",
+      "image": "https://shopgoodwillimages.azureedge.net/production/196/Items/2026-07-09/689c4ac5-172a-4d82-b7d3-39ca590f8dddress_07091.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-07-16T18:04:00",
+      "category": "shoes",
+      "size": "7.5; 7; 7 B; 7.5D",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
+      "id": 269914171,
+      "title": "Red Wing Heritage Weekender Oxford 3304 Black Abilene Suede Shoes Size 8D",
+      "url": "https://shopgoodwill.com/item/269914171",
+      "image": "https://shopgoodwillimages.azureedge.net/production/117/Items/2026-07-08/b4a74e3d-bf68-4696-8b4b-5db9254ba640dmin_07081.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-07-15T20:02:00",
+      "category": "shoes",
+      "size": "8 D; 8D",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
+      "id": 270212395,
+      "title": "Tod's Grey Leather Wingtip Brogue Derby Dress Shoes Men's Size 7.5",
+      "url": "https://shopgoodwill.com/item/270212395",
+      "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-07-10/11fd4578-6e53-4402-9af1-8de826183057der7_07101.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-07-17T20:28:00",
+      "category": "shoes",
+      "size": "7.5 M; 7.5",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: tod's | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
+    },
+    {
       "id": 270454299,
       "title": "Vintage 90s Canali Men's Navy Blue Blazer Sport Coat Italy",
       "url": "https://shopgoodwill.com/item/270454299",
@@ -827,6 +887,21 @@
       "score": 5.29,
       "why": "maker match: brunello | fabric match: cashmere, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text"
+    },
+    {
+      "id": 269920683,
+      "title": "Allen Edmonds Clifton Cap-Toe Oxfords - Black Leather - Size 8E",
+      "url": "https://shopgoodwill.com/item/269920683",
+      "image": "https://shopgoodwillimages.azureedge.net/production/122/Items/2026-06-29/70620f2a-5aea-4dbd-9a65-1500cac488dbazyl_06291.jpg",
+      "price": 39.98,
+      "bids": 0,
+      "end_time": "2026-07-15T19:09:00",
+      "category": "shoes",
+      "size": "8E",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": ""
     },
     {
       "id": 270065155,
@@ -1277,6 +1352,21 @@
       "score": 4.86,
       "why": "maker match: red wing | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "target shoe size not confirmed"
+    },
+    {
+      "id": 270269234,
+      "title": "Salvatore Ferragamo Men's Black Suede Loafers ST 08175 1B 6 Silver Gancini",
+      "url": "https://shopgoodwill.com/item/270269234",
+      "image": "https://shopgoodwillimages.azureedge.net/production/2/Item/2026-07-11/4f3e7ab5-8171-42b1-9461-bec7bcdabd25eyas_07111.jpg",
+      "price": 9.97,
+      "bids": 0,
+      "end_time": "2026-07-18T00:18:00",
+      "category": "shoes",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 4.86,
+      "why": "maker match: ferragamo | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "target shoe size not confirmed | size not confirmed in detail text"
     }
   ]
 }
