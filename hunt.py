@@ -273,17 +273,20 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
         "category_id": 28,
         "category_level": 2,
         "strings": [
-            # Italian makers — IT42 (≈ US 32R) primary, IT44 (≈ US 34S) secondary
-            "Canali 42", "Canali 44", "Canali 34S",
-            "Canali blazer", "Canali cashmere",
-            "Corneliani 42", "Corneliani 44",
-            "Zegna 42", "Ermenegildo Zegna 42", "Zegna 44",
-            "Giorgio Armani 42", "Armani Collezioni 42",
-            "Loro Piana 42", "Brunello Cucinelli 42",
-            "Brioni 42", "Kiton 42", "Isaia 42",
-            "Belvest 42", "Sartorio 42", "Boglioli 42", "Caruso 42",
-            "Attolini 42", "Cesare Attolini 42", "Cantarelli 42",
-            "Ring Jacket 42",
+            # Italian makers — searched by brand name alone (no size token).
+            # These are low-volume brands on ShopGoodwill; a bare-brand
+            # search catches every current listing regardless of whether
+            # it's tagged with IT or US sizing, and pre_fetch_reject does
+            # the real size filtering from the title.
+            "Canali", "Canali blazer", "Canali cashmere",
+            "Corneliani",
+            "Zegna", "Ermenegildo Zegna",
+            "Giorgio Armani", "Armani Collezioni",
+            "Loro Piana", "Brunello Cucinelli",
+            "Brioni", "Kiton", "Isaia",
+            "Belvest", "Sartorio", "Boglioli", "Caruso",
+            "Attolini", "Cesare Attolini", "Cantarelli",
+            "Ring Jacket",
             # English / London — Savile Row (US 34S / 34R / 32R)
             "Anderson Sheppard 34", "Anderson & Sheppard 34",
             "Henry Poole 34", "Huntsman 34",
@@ -575,13 +578,22 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
         # Only hard-reject when we can confirm it's a jacket/coat (not a pants or tie)
         is_jacket = bool(re.search(
             r'\b(?:blazer|sport\s*coat|suit(?:\s+jacket)?|overcoat|topcoat|'
-            r'peacoat|chesterfield|jacket)\b', t
+            r'peacoat|chesterfield|trench(?:\s*coat)?|jacket)\b', t
         ))
         is_trouser = bool(re.search(r'\b(?:trousers?|pants?|chinos?|slacks?)\b', t))
         if is_jacket and not is_trouser:
             # Strip pants waist×inseam dimensions before jacket size checks
             # so "42S 34x28" doesn't count "34" as a valid jacket size.
             tj = re.sub(r'\b\d{2}x\d{2}\b', ' ', t)
+            if re.search(r'\b(?:2xl|3xl|xx-large|2x-large|xxl)\b', tj):
+                return True, "size 2XL+ — too large"
+            # R/S/L (Regular/Short/Long) suffix signals US drop sizing
+            # regardless of brand — Italian-labeled sizes don't carry this
+            # suffix, so a suffixed size above 36 (e.g. "42R", "44L") is a
+            # genuinely oversized US-sized garment, not an IT-sized one
+            # that happens to share the same bare number.
+            if re.search(r'\b(?:3[7-9]|[4-6][0-9])[srl]\b', tj):
+                return True, "US-labeled jacket size 37+ — too large"
             it_luxury = any(b in tj for b in ITALIAN_LUXURY)
             it_reject = _jacket_reject_it_above
             us_reject = _jacket_reject_us_above
