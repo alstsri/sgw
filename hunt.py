@@ -541,6 +541,13 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
         # Standalone "Size M" (not part of "Size M..." like "Size M 15")
         if re.search(r'\b(?:size\s+|sz\.?\s+)m\b(?!\s*\d)', t):
             return True, "size M — too large"
+        # Bare trailing size letter with no "size"/"sz"/dash prefix at all,
+        # e.g. "...Pullover Mens Sweater L" or "...Cardigan XL" (not
+        # followed by a neck number, same exception as "Size M" above).
+        if re.search(r'\b(?:xl|xxl|large|l)\s*$', t):
+            return True, "trailing size L/XL/Large — too large"
+        if re.search(r'\bm\s*$', t):
+            return True, "trailing size M — too large"
 
     # ---- WORKWEAR ------------------------------------------------------------
     if category == "workwear":
