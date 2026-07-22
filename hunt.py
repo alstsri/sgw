@@ -83,6 +83,14 @@ _jacket_accept_re = re.compile(
 _jacket_reject_us_above = BUYER_PROFILE["jacket_reject_us_above"]
 _jacket_reject_it_above = BUYER_PROFILE["jacket_reject_it_above"]
 
+# Free-standing oversize tokens appearing ANYWHERE in a title, not only after
+# "size"/"sz" or as a trailing token — e.g. "Brooks Brothers Large Oxford",
+# "Ralph Lauren L Pique". (Free-standing XL is already caught per-category by
+# the \bxx?l\b checks.) Bare "L" is guarded against long-sleeve "L/S" and
+# initials like "L.L."; the word boundaries already exclude long/large/ltd.
+_freestanding_large_re = re.compile(r'\b(?:x-large|large)\b')
+_freestanding_l_re = re.compile(r'\bl\b(?![/.])')
+
 _pants_waist = BUYER_PROFILE["pants_waist"]
 _shirt_neck = BUYER_PROFILE["shirt_neck"]
 _shirt_neck_exception = BUYER_PROFILE["shirt_neck_exception"]
@@ -548,6 +556,12 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
             return True, "trailing size L/XL/Large — too large"
         if re.search(r'\bm\s*$', t):
             return True, "trailing size M — too large"
+        # Free-standing "Large"/"L" anywhere in the title (not just "size L"
+        # or trailing), e.g. "Brooks Brothers Large Oxford", "RL L Pique".
+        if _freestanding_large_re.search(t):
+            return True, "free-standing Large — too large"
+        if _freestanding_l_re.search(t):
+            return True, "free-standing L — too large"
 
     # ---- WORKWEAR ------------------------------------------------------------
     if category == "workwear":
@@ -567,6 +581,12 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
             return True, "workwear size L/Large — too large"
         if re.search(r"\bmen'?s\s+(?:size\s+)?(?:large|medium|xl|xxl|l|m)\b(?!ong|arge|\s*\d)", t):
             return True, "workwear Men's L/M/Large/XL — too large"
+        # Free-standing "Large"/"L" anywhere in the title (not just "size L"
+        # or trailing), e.g. "Carhartt Large Duck Jacket", "Dickies L Coverall".
+        if _freestanding_large_re.search(t):
+            return True, "workwear free-standing Large — too large"
+        if _freestanding_l_re.search(t):
+            return True, "workwear free-standing L — too large"
 
     # ---- PANTS ---------------------------------------------------------------
     if category == "pants":
