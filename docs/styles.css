@@ -58,6 +58,13 @@ main {
   font-size: 10px; font-weight: 700; background: rgba(0,0,0,0.6);
   padding: 3px 6px; border-radius: 10px; color: var(--text);
 }
+.new-star {
+  position: absolute; top: 4px; right: 7px; z-index: 2;
+  font-size: 16px; line-height: 1; color: var(--watch);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.85);
+}
+/* Slide the score out of the corner only when this card carries a star. */
+.score:has(+ .new-star) { right: 28px; }
 .countdown {
   position: absolute; bottom: 0; left: 0; right: 0;
   font-size: 11px; font-weight: 600; text-align: center;

@@ -21,6 +21,18 @@ def export(person: str, run_dir: str) -> None:
         src = ROOT / src
     cands = json.loads((src / "candidates.json").read_text())
 
+    # IDs from the snapshot we're about to overwrite. Anything not in here is
+    # "new since the last sweep" and gets starred in the viewer. On the first
+    # ever export (no prior file / empty), nothing is marked new.
+    prior_path = DATA_DIR / f"{person}.json"
+    prior_ids: set = set()
+    if prior_path.exists():
+        try:
+            prior = json.loads(prior_path.read_text())
+            prior_ids = {i.get("id") for i in prior.get("items", [])}
+        except (json.JSONDecodeError, OSError):
+            prior_ids = set()
+
     items = []
     for c in cands:
         if c.get("recommendation") not in ACTIONABLE:
@@ -50,6 +62,7 @@ def export(person: str, run_dir: str) -> None:
             "score": c.get("total_score", 0),
             "why": c.get("match_reasons", ""),
             "flags": c.get("red_flags", ""),
+            "new": bool(prior_ids) and c.get("item_id") not in prior_ids,
         })
 
     items.sort(key=lambda x: x["score"], reverse=True)

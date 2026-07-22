@@ -53,6 +53,7 @@ function card(item) {
       <img loading="lazy" src="${item.image}" alt="" onerror="this.parentElement.parentElement.remove()" />
       <span class="badge ${item.rec}" data-m="${item.rec}">${item.rec === "Need measurements" ? "measure" : item.rec}</span>
       <span class="score">${Number(item.score).toFixed(1)}</span>
+      ${item.new ? `<span class="new-star" title="New since the last sweep">★</span>` : ""}
       <span class="countdown ${cd.soon ? "soon" : ""}">${cd.text}</span>
     </div>
     <div class="body">
