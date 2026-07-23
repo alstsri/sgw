@@ -233,6 +233,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Ferragamo",
             "Stefano Bemer",
             "Silvano Lattanzi",
+            "Caporicci",
             "Crockett Jones",
             "Crockett & Jones",
             "Tricker's",
