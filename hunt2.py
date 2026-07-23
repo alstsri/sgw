@@ -73,6 +73,28 @@ _shoe_accept_re = re.compile(
 )
 _shoe_reject_above = BUYER_PROFILE["shoe_reject_above"]
 
+
+def _eu_shoe_sizes(text: str):
+    """EU shoe sizes found in a title. A men's shoe number in 39–48 can only be
+    EU (US/UK men's sizes stop ~14), so magnitude alone identifies the system.
+    Returns a list of floats, half sizes included ("40,5"/"40.5" -> 40.5)."""
+    return [int(n) + (0.5 if half else 0)
+            for n, half in re.findall(r'\b(3[9]|4[0-8])(?:[.,](5))?\b', text)]
+
+
+def _shoe_size_match(text: str) -> bool:
+    """True if a shoe size in the buyer's range is present, counting US (7.5/8)
+    and EU sizing. EU ≈ US + 33, so US 7.5–8 = EU 40.5–41; accept EU 40–41."""
+    if _shoe_accept_re.search(text):
+        return True
+    return any(40 <= n <= 41 for n in _eu_shoe_sizes(text))
+
+
+def _shoe_size_too_big(text: str) -> bool:
+    """True if an EU shoe size above the buyer's range (EU 41.5+ ≈ US 8.5+) is
+    present. US oversizing is handled separately by the numeric reject list."""
+    return any(n >= 41.5 for n in _eu_shoe_sizes(text))
+
 _jacket_accept_re = re.compile(
     r'\b(?:'
     + '|'.join(re.escape(s) for s in BUYER_PROFILE["jacket_sizes_us"] + BUYER_PROFILE["jacket_sizes_it"])
@@ -588,8 +610,9 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
 
     # ---- SHOES ---------------------------------------------------------------
     if category == "shoes":
-        right = bool(_shoe_accept_re.search(t))
-        # Build a reject pattern: any size >= shoe_reject_above that isn't an accepted size
+        right = _shoe_size_match(t)   # US 7.5/8 or EU 40–41
+        # Build a reject pattern: any US size >= shoe_reject_above that isn't accepted,
+        # plus EU sizes above range (EU 41.5+ ≈ US 8.5+).
         _reject_above = _shoe_reject_above
         wrong = bool(re.search(
             r'\b(?:sz\.?\s*|size\s+)?(?:'
@@ -599,7 +622,7 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
                 if n >= _reject_above
             )
             + r')\s*[dmew]{0,2}\b', t
-        ))
+        )) or _shoe_size_too_big(t)
         if wrong and not right:
             return True, f"shoe size outside target ({'/'.join(BUYER_PROFILE['shoe_sizes'])})"
 
@@ -1053,7 +1076,7 @@ def assess(
     # --- fit ---
     fit = 3
     size_text = " ".join([title, size, measurements]).lower()
-    shoe_ok = bool(_shoe_accept_re.search(size_text))
+    shoe_ok = _shoe_size_match(size_text)
     # Strip waist×inseam pants dimensions (e.g. "34x28", "34x30") before checking
     # jacket sizes — otherwise pants dimensions masquerade as jacket size matches.
     jacket_text = re.sub(r'\b\d{2}x\d{2}\b', ' ', text)
