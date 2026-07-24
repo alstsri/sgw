@@ -514,7 +514,6 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "New Lingwood",
             "Emma Willis",
             "Budd Shirtmakers",
-            "Budd",
             "Thomas Pink shirt 15",
             "TM Lewin shirt 15",
             "Jermyn Street shirt 15",
