@@ -73,6 +73,28 @@ _shoe_accept_re = re.compile(
 )
 _shoe_reject_above = BUYER_PROFILE["shoe_reject_above"]
 
+
+def _eu_shoe_sizes(text: str):
+    """EU shoe sizes found in a title. A men's shoe number in 39–48 can only be
+    EU (US/UK men's sizes stop ~14), so magnitude alone identifies the system.
+    Returns a list of floats, half sizes included ("40,5"/"40.5" -> 40.5)."""
+    return [int(n) + (0.5 if half else 0)
+            for n, half in re.findall(r'\b(3[9]|4[0-8])(?:[.,](5))?\b', text)]
+
+
+def _shoe_size_match(text: str) -> bool:
+    """True if a shoe size in the buyer's range is present, counting US (7.5/8)
+    and EU sizing. EU ≈ US + 33, so US 7.5–8 = EU 40.5–41; accept EU 40–41."""
+    if _shoe_accept_re.search(text):
+        return True
+    return any(40 <= n <= 41 for n in _eu_shoe_sizes(text))
+
+
+def _shoe_size_too_big(text: str) -> bool:
+    """True if an EU shoe size above the buyer's range (EU 41.5+ ≈ US 8.5+) is
+    present. US oversizing is handled separately by the numeric reject list."""
+    return any(n >= 41.5 for n in _eu_shoe_sizes(text))
+
 _jacket_accept_re = re.compile(
     r'\b(?:'
     + '|'.join(re.escape(s) for s in BUYER_PROFILE["jacket_sizes_us"] + BUYER_PROFILE["jacket_sizes_it"])
@@ -207,74 +229,95 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
         "category_id": 161,
         "category_level": 3,
         "strings": [
-            # American / Italian makers
-            "Allen Edmonds 8", "Allen Edmonds 8D", "Allen Edmonds 7.5",
-            "Alden 8", "Alden 8D", "Alden 7.5",
-            "Red Wing 8", "Red Wing 7.5",
-            "White's boots 8", "White's boots 7.5",
-            "Wesco 8", "Wesco 7.5",
-            "Viberg 8", "Viberg 7.5",
-            "Carmina 8", "Carmina 7.5",
-            "Carlos Santos 8", "Carlos Santos 7.5",
-            "Meermin 8", "Meermin 7.5",
-            "Santoni 8", "Santoni 7.5",
-            "Testoni 8", "Testoni 7.5",
-            "Bontoni 8", "Bontoni 7.5",
-            "Magnanni 8", "Magnanni 7.5",
-            "Tod's 8", "Tod's 7.5",
-            "Bally 8", "Bally 7.5",
-            "Ferragamo 8", "Ferragamo 7.5",
-            "Salvatore Ferragamo 8", "Salvatore Ferragamo 7.5",
-            "Stefano Bemer 8", "Stefano Bemer 7.5",
-            "Silvano Lattanzi 8", "Silvano Lattanzi 7.5",
-            # English makers (US 8 / 7.5 / UK 7 / EU 41)
-            "Crockett Jones 8", "Crockett & Jones 8", "Crockett Jones 7.5",
-            "Crockett Jones 7", "Crockett & Jones 7",
-            "Tricker's 8", "Trickers 8", "Tricker's 7.5",
-            "Edward Green 8", "Edward Green 7.5", "Edward Green 7",
-            "John Lobb 8", "John Lobb 7.5", "John Lobb 7",
-            "Gaziano Girling 8", "Gaziano & Girling 8", "Gaziano Girling 7.5",
-            "Church's 8", "Church's 7.5", "Church's 7",
-            "Cheaney 8", "Joseph Cheaney 8", "Cheaney 7.5",
-            "Grenson 8", "Grenson 7.5",
-            "Loake 1880 8", "Loake 1880 7.5",
-            "Alfred Sargent 8", "Alfred Sargent 7.5",
-            "George Cleverley 8", "George Cleverley 7.5",
-            "Foster & Son 8", "Foster & Son 7.5",
-            # French makers (US 8 / 7.5 / EU 41 / 40.5)
-            "JM Weston 8", "J.M. Weston 8", "Weston Paris 8",
-            "JM Weston 7.5", "J.M. Weston 7.5",
-            "Paraboot 8", "Paraboot 7.5", "Paraboot 41",
-            "Berluti 8", "Berluti 7.5", "Berluti 41",
-            "Heschung 8", "Heschung 7.5",
-            "Corthay 8", "Corthay 7.5",
-            "Aubercy 8", "Aubercy 7.5",
-            "Septieme Largeur 8", "Septième Largeur 8",
-            # Designer collaborations
-            "Ralph Lauren Crockett Jones 8", "Ralph Lauren Edward Green 8",
-            # Additional quality makers
-            "Vass 8", "Vass 7.5",
-            "Sanders 8", "Sanders 7.5",
-            "Quoddy 8", "Quoddy 7.5",
-            "Visvim 8", "Visvim 7.5",
-            "Esquivel 8", "Esquivel 7.5",
-            # Italian artisan / American heritage (cross-added from Marissa's makers)
-            "Marsell 8", "Marsell 7.5", "Marsèll 8",
-            "Guidi 8", "Guidi 7.5",
-            "Officine Creative 8", "Officine Creative 7.5",
-            "Russell Moccasin 8", "Russell Moccasin 7.5",
-            "Rancourt 8", "Rancourt 7.5",
-            "Yuketen 8", "Yuketen 7.5",
-            # Danner — heritage stitchdown models only (plain "Danner" floods tactical)
-            "Danner Mountain Light 8", "Danner Mountain Light 7.5",
-            "Danner Bull Run 8", "Danner Bull Run 7.5",
-            "Danner Stumptown 8", "Danner Sharptail 8",
-            # Additional quality makers (7.5 only, per request)
-            "Bruno Magli 7.5", "Fratelli Rossetti 7.5",
-            "Oak Street Bootmakers 7.5", "Grant Stone 7.5",
-            "Nicks Boots 7.5", "TLB Mallorca 7.5",
-            "Sutor Mantellassi 7.5", "Enzo Bonafe 7.5",
-            "Yanko 7.5", "Truman Boot 7.5",
+            "Allen Edmonds 8",
+            "Allen Edmonds 8D",
+            "Allen Edmonds 7.5",
+            "Alden 8",
+            "Alden 8D",
+            "Alden 7.5",
+            "Red Wing 8",
+            "Red Wing 7.5",
+            "White's boots 8",
+            "White's boots 7.5",
+            "Wesco 8",
+            "Wesco 7.5",
+            "Viberg 8",
+            "Viberg 7.5",
+            "Carmina",
+            "Carlos Santos",
+            "Meermin",
+            "Santoni",
+            "Testoni",
+            "Bontoni",
+            "Magnanni",
+            "Tod's",
+            "Bally",
+            "Ferragamo",
+            "Stefano Bemer",
+            "Silvano Lattanzi",
+            "Caporicci",
+            "Stefano Ricci",
+            "Tom Ford",
+            "Brioni",
+            "Crockett Jones",
+            "Crockett & Jones",
+            "Tricker's",
+            "Trickers",
+            "Edward Green",
+            "John Lobb",
+            "Gaziano Girling",
+            "Gaziano & Girling",
+            "Church's",
+            "Cheaney",
+            "Grenson",
+            "Loake 1880",
+            "Alfred Sargent",
+            "George Cleverley",
+            "Foster & Son",
+            "JM Weston",
+            "J.M. Weston",
+            "Weston Paris",
+            "Paraboot",
+            "Berluti",
+            "Heschung",
+            "Corthay",
+            "Aubercy",
+            "Septieme Largeur",
+            "Septième Largeur",
+            "Vass",
+            "Sanders",
+            "Quoddy 8",
+            "Quoddy 7.5",
+            "Visvim 8",
+            "Visvim 7.5",
+            "Esquivel 8",
+            "Esquivel 7.5",
+            "Marsell",
+            "Marsèll",
+            "Guidi",
+            "Officine Creative",
+            "Russell Moccasin 8",
+            "Russell Moccasin 7.5",
+            "Rancourt 8",
+            "Rancourt 7.5",
+            "Yuketen 8",
+            "Yuketen 7.5",
+            "Danner Mountain Light 8",
+            "Danner Mountain Light 7.5",
+            "Danner Bull Run 8",
+            "Danner Bull Run 7.5",
+            "Danner Stumptown 8",
+            "Danner Sharptail 8",
+            "Bruno Magli",
+            "Fratelli Rossetti",
+            "Oak Street Bootmakers 7.5",
+            "Grant Stone 7.5",
+            "Nicks Boots 7.5",
+            "TLB Mallorca",
+            "Sutor Mantellassi",
+            "Enzo Bonafe",
+            "Yanko",
+            "Truman Boot 7.5",
         ],
     },
     "tailoring_outerwear": {
@@ -286,14 +329,17 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             # search catches every current listing regardless of whether
             # it's tagged with IT or US sizing, and pre_fetch_reject does
             # the real size filtering from the title.
-            "Canali", "Canali blazer", "Canali cashmere",
+            # Bare brand only — the search AND-matches every word, so "Canali"
+            # already returns a superset of "Canali blazer"/"Canali cashmere".
+            "Canali",
             "Corneliani",
-            "Zegna", "Ermenegildo Zegna",
+            "Zegna",
             "Giorgio Armani", "Armani Collezioni",
             "Loro Piana", "Brunello Cucinelli",
             "Brioni", "Kiton", "Isaia",
+            "Stefano Ricci", "Tom Ford",
             "Belvest", "Sartorio", "Boglioli", "Caruso",
-            "Attolini", "Cesare Attolini", "Cantarelli",
+            "Attolini", "Cantarelli",
             "Ring Jacket",
             # English / London — Savile Row (US 34S / 34R / 32R)
             "Anderson Sheppard 34", "Anderson & Sheppard 34",
@@ -304,25 +350,24 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Richard James 34", "Timothy Everest 34",
             "Ozwald Boateng 34", "Chittleborough Morgan 34",
             # English heritage RTW
-            "Margaret Howell men", "Hackett 34", "Hackett London",
-            "Cordings", "Cordings Piccadilly",
+            "Margaret Howell", "Hackett 34", "Hackett London",
+            "Cordings",
             "Daks 34", "Aquascutum 34",
             "Burberry vintage 34", "Burberry trench",
-            "Mackintosh men", "Grenfell jacket",
-            "Crombie overcoat 34", "Crombie coat",
+            "Mackintosh", "Grenfell jacket",
+            "Crombie coat",
             "Private White VC", "Belstaff 34",
             "Barbour 34", "Drake's London", "Harris Tweed 34",
             # French
-            "Arnys Paris", "Arnys",
-            "Cifonelli 42", "Cifonelli Paris",
+            "Arnys",
+            "Cifonelli 44", "Cifonelli Paris",
             "Camps de Luca", "Smalto 34", "Francesco Smalto",
             "Husbands Paris", "De Bonne Facture",
-            "Officine Generale 34", "Officine Generale men",
-            "APC men", "A.P.C. men",
-            "Agnes b men", "Agnès b. homme",
-            "Lemaire men", "Le Mont Saint Michel",
-            "Old England Paris", "Hermes men",
-            "Hermes cashmere", "Hermes jacket 34",
+            "Officine Generale",
+            "APC", "A.P.C.",
+            "Agnes b", "Agnès b. homme",
+            "Lemaire", "Le Mont Saint Michel",
+            "Old England Paris", "Hermes",
             # American
             "Oxxford 34", "Hickey Freeman 34",
             "Brooks Brothers Golden Fleece 34",
@@ -332,8 +377,12 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Ralph Lauren Purple Label 34", "Polo Ralph Lauren 34",
             "RRL 34", "Pendleton 34", "Schott 34", "O'Connell's",
             # Outerwear — fabric & silhouette
-            "camel hair 34", "cashmere coat 34", "wool cashmere coat 34",
-            "camel hair sport coat 34", "overcoat 34", "topcoat 34",
+            "cashmere coat 34", "overcoat 34", "topcoat 34",
+            # Luxury materials — no size token (the title filter handles sizing).
+            "cashmere blazer", "cashmere sport coat", "cashmere suit",
+            "cashmere jacket", "cashmere overcoat",
+            "camel hair", "alpaca coat", "mohair suit", "mohair blazer",
+            "vicuna", "vicuña", "guanaco",
             "car coat 34", "polo coat 34", "trench coat 34",
             "shearling jacket 34", "sheepskin jacket 34",
             "B-3 jacket 34", "B3 jacket 34", "aviator jacket 34",
@@ -341,7 +390,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "flannel suit 34", "fresco suit 34", "hopsack blazer 34",
             "Donegal tweed 34", "Shetland sport coat 34",
             # Japanese soft tailoring
-            "Beams Plus 42", "Comoli 42", "Scye 42", "Camoshita 42",
+            "Beams Plus 44", "Comoli 44", "Scye 44", "Camoshita 44",
             # Heritage outerwear
             "Gloverall 34",
             # Small / XS catch-all for unstructured pieces
@@ -355,7 +404,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "French chore jacket", "French workwear",
             "moleskin chore coat", "bleu de travail",
             "French worker jacket", "indigo chore coat", "French work coat",
-            "Vetra", "Vetra chore", "Le Laboureur",
+            "Vetra", "Le Laboureur",
             "Filson Mackinaw", "Filson wool vest 34", "Filson cruiser 34",
             "Pointer Brand chore coat", "Lee 91-J",
             "Big Mac chore jacket", "Pendleton wool shirt",
@@ -378,6 +427,12 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             # Additions
             "John Smedley small", "Ballantyne cashmere",
             "Pringle Scotland", "Malo cashmere", "Inverallan small",
+            # Generic cashmere knits. Category 28 already scopes to Men's
+            # Clothing and the title filter drops L/XL/Large, so no gender or
+            # size token is needed (and a size token like "small" only shrinks
+            # recall — the search AND-matches every word).
+            "cashmere sweater", "cashmere cardigan", "cashmere turtleneck",
+            "alpaca sweater", "mohair sweater", "qiviut",
         ],
     },
     "accessories": {
@@ -392,39 +447,58 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
         "category_id": 28,
         "category_level": 2,
         "strings": [
-            # Italian makers (neck 15)
-            "Brioni shirt 15", "Kiton shirt 15", "Isaia shirt 15",
-            "Zegna shirt 15", "Canali shirt 15", "Corneliani shirt 15",
-            "Barba Napoli shirt 15", "Finamore shirt 15",
-            "Borrelli shirt 15", "Luigi Borrelli shirt 15",
-            "Fray shirt 15", "Lorenzini shirt 15", "Truzzi shirt 15",
-            # French makers (neck 15)
-            "Charvet shirt 15", "Hermes shirt 15",
-            "Figaret Paris shirt 15", "Figaret shirt 15", "Courtot shirt 15",
-            # English / London (neck 15)
-            "Turnbull Asser shirt 15", "Turnbull & Asser shirt 15",
-            "Hilditch Key shirt 15", "Hilditch & Key shirt 15",
-            "Harvie Hudson shirt 15", "Harvie & Hudson shirt 15",
-            "New Lingwood shirt 15", "New & Lingwood shirt 15",
-            "Emma Willis shirt 15", "Budd Shirtmakers 15", "Budd shirt 15",
-            "Thomas Pink shirt 15", "TM Lewin shirt 15",
-            "Jermyn Street shirt 15", "Drake's shirt 15",
-            # American & Japanese (neck 15)
-            "Eton shirt 15", "Gitman shirt 15", "Gitman Vintage shirt 15",
-            "Individualized Shirts 15", "Mercer Sons shirt 15",
-            "Mercer & Sons shirt 15", "Kamakura shirt 15",
-            # Exceptional-maker 15.5 only
-            "Charvet shirt 15.5", "Hermes shirt 15.5",
-            "Turnbull Asser shirt 15.5", "Turnbull & Asser shirt 15.5",
-            "Brioni shirt 15.5", "Kiton shirt 15.5",
-            "Borrelli shirt 15.5", "Finamore shirt 15.5",
-            "Barba shirt 15.5", "Fray shirt 15.5",
-            # Fabric
-            "Sea Island cotton shirt 15", "oxford cloth shirt 15",
-            "OCBD shirt 15", "broadcloth shirt 15", "poplin shirt 15",
-            "pinpoint shirt 15", "linen shirt 15", "flannel shirt 15",
-            "made in England shirt 15", "made in Italy shirt 15",
-            "made in USA shirt 15", "made in France shirt 15",
+            "Brioni shirt 15",
+            "Kiton shirt 15",
+            "Isaia shirt 15",
+            "Stefano Ricci shirt 15",
+            "Tom Ford shirt 15",
+            "Zegna shirt 15",
+            "Canali shirt 15",
+            "Corneliani shirt 15",
+            "Barba Napoli",
+            "Finamore",
+            "Borrelli",
+            "Fray shirt 15",
+            "Lorenzini",
+            "Truzzi",
+            "Charvet",
+            "Hermes shirt 15",
+            "Figaret",
+            "Courtot",
+            "Turnbull Asser",
+            "Turnbull & Asser",
+            "Hilditch Key",
+            "Hilditch & Key",
+            "Harvie Hudson",
+            "Harvie & Hudson",
+            "New Lingwood",
+            "New & Lingwood",
+            "Emma Willis",
+            "Budd Shirtmakers",
+            "Budd",
+            "Thomas Pink shirt 15",
+            "TM Lewin shirt 15",
+            "Jermyn Street shirt 15",
+            "Drake's shirt 15",
+            "Eton shirt 15",
+            "Gitman",
+            "Individualized Shirts",
+            "Mercer Sons",
+            "Mercer & Sons",
+            "Kamakura",
+            "Barba shirt 15",
+            "Sea Island cotton shirt 15",
+            "oxford cloth shirt 15",
+            "OCBD shirt 15",
+            "broadcloth shirt 15",
+            "poplin shirt 15",
+            "pinpoint shirt 15",
+            "linen shirt 15",
+            "flannel shirt 15",
+            "made in England shirt 15",
+            "made in Italy shirt 15",
+            "made in USA shirt 15",
+            "made in France shirt 15",
         ],
     },
     "loungewear_basics": {
@@ -433,10 +507,10 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
         "category_id": 28,
         "category_level": 2,
         "strings": [
-            "Hanro", "Zimmerli", "Zimmerli of Switzerland",
-            "Sunspel", "Derek Rose", "Derek Rose London",
+            "Hanro", "Zimmerli",
+            "Sunspel", "Derek Rose",
             "Calida Switzerland",   # "Calida" alone collides with Spanish "calidad"
-            "Schiesser", "Schiesser Revival", "Mey", "Falke",
+            "Schiesser", "Mey", "Falke",
             "Majestic Filatures", "CDLP", "Hamilton and Hare",
             "Luca Faloni", "Tekla", "Dagsmejan", "Merz b. Schwanen",
             "Lady White Co", "The White Briefs", "Lunya",
@@ -460,7 +534,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Bill's Khakis 28", "Hertling 28", "Epaulet 28",
             "O'Connell's 28", "Southwick 28",
             # Fabric & origin
-            "corduroy 28", "wide wale corduroy 28", "wool trousers 28",
+            "corduroy 28", "wool trousers 28",
             "flannel trousers 28", "pleated trousers 28",
             "made in Italy trousers 28", "made in USA trousers 28",
             "made in England trousers 28", "made in France trousers 28",
@@ -488,6 +562,13 @@ EXCEPTIONAL_MAKERS_15_5 = {
     "borrelli", "finamore", "barba", "fray",
 }
 
+# Brands always sold in EU / Japanese numeric sizing — a bare "44" in the title
+# is a reliable IT/EU 44 (≈ US 34), so the jacket filter reads their numbers as
+# IT even without an explicit "IT"/"EU" marker.
+EU_SIZED_BRANDS = {
+    "beams", "comoli", "scye", "camoshita", "cifonelli",
+}
+
 # Italian luxury brands where "44" in title means IT44 (≈ US 34–36) — acceptable
 ITALIAN_LUXURY = {
     "canali", "corneliani", "zegna", "armani", "brioni", "kiton", "isaia",
@@ -499,6 +580,46 @@ ITALIAN_LUXURY = {
 # ---------------------------------------------------------------------------
 # Pre-fetch title filter — runs before get_detail(), saves API calls
 # ---------------------------------------------------------------------------
+
+def _reject_alpha_size(t: str, prefix: str = ""):
+    """Reject men's tops alpha-sizes above Small (L / XL / XXL / Large / Medium /
+    M) appearing anywhere in a lowercased title. Buyer wears Small, so S / XS /
+    Small / XXS are never rejected. Returns (True, reason) or None.
+
+    Shared by shirts, knitwear, the tailoring dress-shirt branch, and loungewear
+    so every apparel-top category rejects big sizes identically."""
+    if re.search(r'\b(?:size\s+|sz\.?\s+)?(?:xx?l|2xl|3xl|x-large|xx-large|'
+                 r'2x-large|2x\b|3x\b)\b', t):
+        return True, f"{prefix}size XL/XXL — too large"
+    if re.search(r'\b(?:size\s+|sz\.?\s+)(?:large|medium)\b', t):
+        return True, f"{prefix}size Large/Medium — too large"
+    if re.search(r'\b(?:size\s+|sz\.?\s+)l\b(?!ong|arge|t\.?d)', t):
+        return True, f"{prefix}size L — too large"
+    if re.search(r'[-–|]\s*(?:size\s+)?(?:large|l)\s*$', t):
+        return True, f"{prefix}size L/Large — too large"
+    if re.search(r"\bmen'?s\s+(?:size\s+)?(?:l|large|medium|m)\b(?!ong|arge)", t):
+        return True, f"{prefix}Men's size L/Large/M/Medium — too large"
+    if re.search(r'\b(?:size\s+|sz\.?\s+)m\b(?!\s*\d)', t):
+        return True, f"{prefix}size M — too large"
+    if re.search(r'\b(?:xl|xxl|large|l)\s*$', t):
+        return True, f"{prefix}trailing size L/XL/Large — too large"
+    if re.search(r'\bm\s*$', t):
+        return True, f"{prefix}trailing size M — too large"
+    if _freestanding_large_re.search(t):
+        return True, f"{prefix}free-standing Large — too large"
+    if _freestanding_l_re.search(t):
+        return True, f"{prefix}free-standing L — too large"
+    return None
+
+
+def _reject_shirt_neck(t: str, prefix: str = ""):
+    """Reject dress shirts with a US neck of 16 inches or larger. Buyer wears neck
+    15 (15.5 for exceptional makers, resolved later in assess()). A 15 / 15.5
+    anywhere in the title clears the reject. Returns (True, reason) or None."""
+    if re.search(r'\b1[6-8](?:\.5)?\b', t) and not re.search(r'\b15(?:\.5)?\b', t):
+        return True, f'{prefix}dress shirt neck 16"+ — too large'
+    return None
+
 
 def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
     """Return (should_skip, reason) based on title alone before fetching detail."""
@@ -515,8 +636,9 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
 
     # ---- SHOES ---------------------------------------------------------------
     if category == "shoes":
-        right = bool(_shoe_accept_re.search(t))
-        # Build a reject pattern: any size >= shoe_reject_above that isn't an accepted size
+        right = _shoe_size_match(t)   # US 7.5/8 or EU 40–41
+        # Build a reject pattern: any US size >= shoe_reject_above that isn't accepted,
+        # plus EU sizes above range (EU 41.5+ ≈ US 8.5+).
         _reject_above = _shoe_reject_above
         wrong = bool(re.search(
             r'\b(?:sz\.?\s*|size\s+)?(?:'
@@ -526,42 +648,28 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
                 if n >= _reject_above
             )
             + r')\s*[dmew]{0,2}\b', t
-        ))
+        )) or _shoe_size_too_big(t)
         if wrong and not right:
             return True, f"shoe size outside target ({'/'.join(BUYER_PROFILE['shoe_sizes'])})"
 
     # ---- SHIRTS & KNITWEAR ---------------------------------------------------
     if category in ("shirts", "knitwear"):
-        # Reject XL / XXL / Large / Medium (buyer wears Small / neck 15)
-        if re.search(
-            r'\b(?:size\s+|sz\.?\s+)?(?:xx?l|2xl|3xl|x-large|xx-large|2x-large|'
-            r'2x\b|3x\b|x-large\b)\b', t
-        ):
-            return True, "size XL/XXL — too large"
-        if re.search(r'\b(?:size\s+|sz\.?\s+)(?:large|medium)\b', t):
-            return True, "size Large/Medium — too large"
-        if re.search(r'\b(?:size\s+|sz\.?\s+)l\b(?!ong|arge|t\.?d)', t):
-            return True, "size L — too large"
-        if re.search(r'[-–|]\s*(?:size\s+)?(?:large|l)\s*$', t):
-            return True, "size L/Large — too large"
-        if re.search(r"\bmen'?s\s+(?:size\s+)?(?:l|large|medium|m)\b(?!ong|arge)", t):
-            return True, "Men's size L/Large/M/Medium — too large"
-        # Standalone "Size M" (not part of "Size M..." like "Size M 15")
-        if re.search(r'\b(?:size\s+|sz\.?\s+)m\b(?!\s*\d)', t):
-            return True, "size M — too large"
-        # Bare trailing size letter with no "size"/"sz"/dash prefix at all,
-        # e.g. "...Pullover Mens Sweater L" or "...Cardigan XL" (not
-        # followed by a neck number, same exception as "Size M" above).
-        if re.search(r'\b(?:xl|xxl|large|l)\s*$', t):
-            return True, "trailing size L/XL/Large — too large"
-        if re.search(r'\bm\s*$', t):
-            return True, "trailing size M — too large"
-        # Free-standing "Large"/"L" anywhere in the title (not just "size L"
-        # or trailing), e.g. "Brooks Brothers Large Oxford", "RL L Pique".
-        if _freestanding_large_re.search(t):
-            return True, "free-standing Large — too large"
-        if _freestanding_l_re.search(t):
-            return True, "free-standing L — too large"
+        # Reject alpha sizes above Small (L/XL/XXL/Large/Medium/M); S/XS pass.
+        r = _reject_alpha_size(t)
+        if r:
+            return r
+        # Dress shirts also reject US neck 16"+ (knitwear has no neck size).
+        if category == "shirts":
+            r = _reject_shirt_neck(t)
+            if r:
+                return r
+
+    # ---- LOUNGEWEAR / BASICS -------------------------------------------------
+    # Polos, tees, henleys, sweaters, robes, undershirts — alpha-sized tops.
+    if category == "loungewear_basics":
+        r = _reject_alpha_size(t)
+        if r:
+            return r
 
     # ---- WORKWEAR ------------------------------------------------------------
     if category == "workwear":
@@ -612,35 +720,52 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
             # Strip pants waist×inseam dimensions before jacket size checks
             # so "42S 34x28" doesn't count "34" as a valid jacket size.
             tj = re.sub(r'\b\d{2}x\d{2}\b', ' ', t)
+            # Alpha size on a jacket ("Blazer Size L") means Large → too big.
+            # A bare standalone "L" is Long (e.g. "34 L"), so reject only
+            # explicit alpha sizes here, never a lone "L".
             if re.search(r'\b(?:2xl|3xl|xx-large|2x-large|xxl)\b', tj):
-                return True, "size 2XL+ — too large"
-            # R/S/L (Regular/Short/Long) suffix signals US drop sizing
-            # regardless of brand — Italian-labeled sizes don't carry this
-            # suffix, so a suffixed size above 36 (e.g. "42R", "44L") is a
-            # genuinely oversized US-sized garment, not an IT-sized one
-            # that happens to share the same bare number.
-            if re.search(r'\b(?:3[7-9]|[4-6][0-9])[srl]\b', tj):
-                return True, "US-labeled jacket size 37+ — too large"
-            it_luxury = any(b in tj for b in ITALIAN_LUXURY)
-            it_reject = _jacket_reject_it_above
-            us_reject = _jacket_reject_us_above
-            if it_luxury:
-                _it_reject_pat = r'\b(?:' + '|'.join(str(n) for n in range(it_reject, 70, 2)) + r')\s*[sr]?\b'
-                if re.search(_it_reject_pat, tj):
-                    return True, f"Italian jacket IT{it_reject}+ — too large"
-                if re.search(r'\b(?:38|40)\s*[sr]?\b', tj):
-                    return True, "Italian jacket US 38/40 — too large"
+                return True, "jacket size 2XL+ — too large"
+            # Reject only L/XL/XXL/Large. XS / S / M are kept — soft & knit
+            # jackets run S/M/L and a US 34 chest sits in that S–M range.
+            if (re.search(r'\b(?:size\s+|sz\.?\s+)(?:xl|xxl|large|l)\b(?!\s*\d)', tj)
+                    or re.search(r'\b(?:xl|xxl|x-large|large)\b', tj)):
+                return True, "jacket alpha size L/XL/Large — too large"
+            # Numbered sizing. Buyer is US 34 = IT/EU 44 (IT/EU number = US + 10).
+            # Keep US 33-35 and EXPLICITLY IT/EU-marked 43-45; reject the rest.
+            # A bare "42"/"44" with no IT/EU marker is read as US (too big).
+            it_eu = (re.search(r'\b(?:it|ital(?:y|ian)?|eu|euro(?:pean)?)\s*-?\s*(\d{2})\b', tj)
+                     or re.search(r'\b(\d{2})\s*(?:it\b|ital|eu\b|euro)', tj))
+            eu_brand = any(b in tj for b in EU_SIZED_BRANDS)
+            nums = [int(x) for x in re.findall(r'\b(\d{2})(?=[srl]?\b)', tj)]
+            if it_eu:
+                n = int(it_eu.group(1))
+                if not (43 <= n <= 45):
+                    return True, f"IT/EU jacket {n} (buyer IT 44) — wrong size"
+            elif eu_brand:
+                # Always EU/JP-numbered brand: read its number as IT/EU (44 ok).
+                sizes = [n for n in nums if 36 <= n <= 60]
+                if sizes and not any(43 <= n <= 45 for n in sizes):
+                    return True, f"EU-sized brand jacket {sizes[0]} (buyer IT 44) — wrong size"
             else:
-                _us_accept_sizes = [str(n) for n in range(28, us_reject)]
-                _us_accept_pat = r'\b(?:' + '|'.join(_us_accept_sizes) + r')\s*[sr]?\b'
-                if not re.search(_us_accept_pat, tj):
-                    if re.search(r'\b(?:3[5-9]|4[0-9]|5[0-9])\s*[sr]?\b', tj):
-                        return True, f"jacket size {us_reject}+ — too large"
+                # Bare or R/S/L-suffixed numbers, read as US drop sizing.
+                jacket_nums = [n for n in nums if 30 <= n <= 60]
+                if jacket_nums and not any(33 <= n <= 35 for n in jacket_nums):
+                    return True, "jacket size outside US 33-35 (no IT/EU marker) — wrong size"
+        # Any non-jacket, non-trouser top here — dress shirt, polo, or a knit
+        # (e.g. an alpaca/cashmere sweater a seller filed under tailoring) —
+        # gets the tops alpha-size filter: reject L/XL/Large/M, keep S/XS.
+        if not is_jacket and not is_trouser:
+            r = _reject_alpha_size(t)
+            if r:
+                return r
         # Dress shirts pulled in by Italian brand searches (e.g. "Zegna 42"):
         # "42" here is a EUROPEAN COLLAR size (42cm ≈ neck 16.5"), not a jacket.
         # Buyer wears neck 15 (≈38cm); reject collar 41cm+ unless neck 15/15.5 present.
         is_shirt = bool(re.search(r'\b(?:dress\s*shirt|button[\s-]?up|button[\s-]?down|sport\s*shirt|shirt)\b', t)) and not is_jacket
         if is_shirt:
+            r = _reject_shirt_neck(t)
+            if r:
+                return r
             if re.search(r'\b(?:4[1-9]|5[0-2])\b', t) and not re.search(r'\b(?:15|15\.5|38|39|40)\b', t):
                 return True, "dress shirt EU collar 41cm+ — neck too large"
         if is_trouser:
@@ -977,7 +1102,7 @@ def assess(
     # --- fit ---
     fit = 3
     size_text = " ".join([title, size, measurements]).lower()
-    shoe_ok = bool(_shoe_accept_re.search(size_text))
+    shoe_ok = _shoe_size_match(size_text)
     # Strip waist×inseam pants dimensions (e.g. "34x28", "34x30") before checking
     # jacket sizes — otherwise pants dimensions masquerade as jacket size matches.
     jacket_text = re.sub(r'\b\d{2}x\d{2}\b', ' ', text)
