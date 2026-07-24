@@ -373,11 +373,12 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Ralph Lauren Purple Label 34", "Polo Ralph Lauren 34",
             "RRL 34", "Pendleton 34", "Schott 34", "O'Connell's",
             # Outerwear — fabric & silhouette
-            "camel hair 34", "cashmere coat 34", "overcoat 34", "topcoat 34",
-            # Cashmere tailoring & outerwear — no size token (the "34" substring
-            # is noisy and the title filter now handles sizing).
+            "cashmere coat 34", "overcoat 34", "topcoat 34",
+            # Luxury materials — no size token (the title filter handles sizing).
             "cashmere blazer", "cashmere sport coat", "cashmere suit",
             "cashmere jacket", "cashmere overcoat",
+            "camel hair", "alpaca coat", "mohair suit", "mohair blazer",
+            "vicuna", "vicuña", "guanaco",
             "car coat 34", "polo coat 34", "trench coat 34",
             "shearling jacket 34", "sheepskin jacket 34",
             "B-3 jacket 34", "B3 jacket 34", "aviator jacket 34",
@@ -427,6 +428,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             # size token is needed (and a size token like "small" only shrinks
             # recall — the search AND-matches every word).
             "cashmere sweater", "cashmere cardigan", "cashmere turtleneck",
+            "alpaca sweater", "mohair sweater", "qiviut",
         ],
     },
     "accessories": {
