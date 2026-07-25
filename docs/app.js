@@ -71,7 +71,8 @@ function render() {
   let items = state.data.items.slice();
   // Hide already-ended listings
   items = items.filter((it) => !fmtCountdown(it.end_time).ended);
-  if (state.rec !== "all") items = items.filter((it) => it.rec === state.rec);
+  if (state.rec === "new") items = items.filter((it) => it.new);
+  else if (state.rec !== "all") items = items.filter((it) => it.rec === state.rec);
   if (state.type !== "all") items = items.filter((it) => typeOf(it.category) === state.type);
   $("#meta").textContent = `${items.length} live · swept from ${state.data.source_run}`;
   if (!items.length) { grid.innerHTML = '<div class="empty">No live items in this filter.</div>'; return; }
