@@ -728,6 +728,12 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
     # ---- LOUNGEWEAR / BASICS -------------------------------------------------
     # Polos, tees, henleys, sweaters, robes, undershirts — alpha-sized tops.
     if category == "loungewear_basics":
+        # James Perse uses its own numeric sizing 0-5 (0=XS, 1=S, 2=M, 3=L,
+        # 4=XL, 5=XXL). Buyer is a 0, so keep 0/1 and reject an explicit size
+        # 2-5. Require a "size"/"sz" prefix so model numbers like "MKQ3970"
+        # aren't read as a size.
+        if "james perse" in t and re.search(r'\b(?:size\s+|sz\.?\s+)[2-5]\b', t):
+            return True, "James Perse size 2-5 (M/L/XL/XXL) — too large"
         r = _reject_alpha_size(t)
         if r:
             return r
