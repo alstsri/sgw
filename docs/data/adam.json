@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 136,
+  "count": 138,
   "items": [
     {
       "id": 271608893,
@@ -132,6 +132,22 @@
       "new": false
     },
     {
+      "id": 272265754,
+      "title": "Ermenegildo Zegna Men's Black 2 Piece Suit - Size (Refer To Measurements)",
+      "url": "https://shopgoodwill.com/item/272265754",
+      "image": "https://shopgoodwillimages.azureedge.net/production/147/Items/2026-07-29/72486c7e-551a-420f-ba3c-f57eef0744ccelro_07291.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-08-05T19:27:00",
+      "category": "tailoring_outerwear",
+      "size": "42 R",
+      "rec": "Watch",
+      "score": 6.57,
+      "why": "maker match: ermenegildo, zegna | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
       "id": 271631645,
       "title": "Bianco & Blu Men's Orange Merino Wool Cashmere Blend Crew Neck Sweater Size S",
       "url": "https://shopgoodwill.com/item/271631645",
@@ -161,7 +177,7 @@
       "score": 6.43,
       "why": "fabric match: cashmere, merino, silk, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 272097509,
@@ -194,6 +210,22 @@
       "why": "maker match: john smedley, smedley | fabric match: wool | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
       "new": false
+    },
+    {
+      "id": 272264255,
+      "title": "Salvatore Ferragamo Black Leather Square Toe Buckle Loafers Men's Size 7.5 EE",
+      "url": "https://shopgoodwill.com/item/272264255",
+      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-07-17/096540ed-64b7-4d4a-ab6e-068d1d05c39bsens_07171.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-08-05T18:16:00",
+      "category": "shoes",
+      "size": "7.5 E",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: ferragamo | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 271798466,
@@ -232,7 +264,7 @@
       "title": "Vintage Pendleton Mens Green Wool Button-Up Shirt Two Chest Pockets",
       "url": "https://shopgoodwill.com/item/271553080",
       "image": "https://shopgoodwillimages.azureedge.net/production/59/Item/2026-07-22/fa7ab4f3-8250-4d61-ab98-b5da7a022f8dah11_07221.jpg",
-      "price": 7.98,
+      "price": 10.99,
       "bids": 0,
       "end_time": "2026-07-29T19:03:00",
       "category": "workwear",
@@ -532,22 +564,6 @@
       "new": false
     },
     {
-      "id": 271499409,
-      "title": "Pendleton Men's Size Small Blue Plaid Wool Long Sleeve Button-Up Shirt",
-      "url": "https://shopgoodwill.com/item/271499409",
-      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-07-22/decfecd2-04cc-4228-9435-b461a5b00527MegM_07221.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-07-29T15:52:00",
-      "category": "workwear",
-      "size": "size small; small",
-      "rec": "Watch",
-      "score": 5.86,
-      "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
-      "new": false
-    },
-    {
       "id": 271782947,
       "title": "Pendleton Sir Pendleton Mens Small Wool Plaid Button-Up Shirt Blue Brown",
       "url": "https://shopgoodwill.com/item/271782947",
@@ -788,20 +804,20 @@
       "new": false
     },
     {
-      "id": 271469518,
+      "id": 272270608,
       "title": "Vintage JCPenney Mens 15-15.5 Wool Blend Flannel Shirt Plaid Quilted Lined",
-      "url": "https://shopgoodwill.com/item/271469518",
-      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-07-22/3b5dc2cb-4df9-44a6-ae05-ba8ce6e69da1uneB_07221.jpg",
-      "price": 9.99,
+      "url": "https://shopgoodwill.com/item/272270608",
+      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-07-29/5d704135-9246-4a4f-8de3-64440294222auneB_07291.jpg",
+      "price": 8.99,
       "bids": 0,
-      "end_time": "2026-07-29T15:26:00",
+      "end_time": "2026-08-05T15:21:00",
       "category": "shirts",
       "size": "15; 15.5",
       "rec": "Need measurements",
       "score": 5.71,
       "why": "fabric match: flannel, wool | exceptional maker at 15.5 neck \u2014 valid exception | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": false
+      "new": true
     },
     {
       "id": 271916994,
@@ -930,6 +946,22 @@
       "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "fabric/material not confirmed",
       "new": false
+    },
+    {
+      "id": 272259177,
+      "title": "Polo Jeans Company Ralph Lauren Men's Khaki Cotton Shorts Size 34",
+      "url": "https://shopgoodwill.com/item/272259177",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-07-29/3d07dd71-a715-4a4a-a506-fb05c1051884gwny_07291.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-08-03T18:54:00",
+      "category": "tailoring_outerwear",
+      "size": "34; small",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 270889019,
@@ -1154,6 +1186,22 @@
       "why": "maker match: ferragamo | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
+    },
+    {
+      "id": 272262568,
+      "title": "Danner Men's Sharptail 8\" Hunting Boots | Brown | Size 13",
+      "url": "https://shopgoodwill.com/item/272262568",
+      "image": "https://shopgoodwillimages.azureedge.net/production/192/Items/2026-07-29/358fa8b4-8719-4efc-9cea-c7f4c074cdfdxieL_07292.png",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-08-03T18:40:00",
+      "category": "shoes",
+      "size": "13",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: danner | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 271978856,
@@ -1700,6 +1748,38 @@
       "new": false
     },
     {
+      "id": 272270265,
+      "title": "Polo Ralph Lauren Navy Blue Windowpane Plaid Lined Harrington Jacket 2XLT Tall",
+      "url": "https://shopgoodwill.com/item/272270265",
+      "image": "https://shopgoodwillimages.azureedge.net/production/103/Items/2026-07-29/9e0bb96a-c66f-463f-a5bc-74140fbcfb65list_07291.jpg",
+      "price": 15.99,
+      "bids": 0,
+      "end_time": "2026-08-01T17:45:00",
+      "category": "tailoring_outerwear",
+      "size": "SMALL",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned | fabric/material not confirmed",
+      "new": true
+    },
+    {
+      "id": 272270447,
+      "title": "Vintage Polo Ralph Lauren Harrington Jacket Olive Green Plaid Lined Size Medium",
+      "url": "https://shopgoodwill.com/item/272270447",
+      "image": "https://shopgoodwillimages.azureedge.net/production/103/Items/2026-07-29/720c4ed7-70a7-4f81-9608-f42a8d53e7dclist_07291.jpg",
+      "price": 15.99,
+      "bids": 0,
+      "end_time": "2026-08-01T19:37:00",
+      "category": "tailoring_outerwear",
+      "size": "SMALL",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned | fabric/material not confirmed",
+      "new": true
+    },
+    {
       "id": 271601434,
       "title": "Barbour Navy Bedale Cotton Long Sleeve Pockets Snap Front Mens Jacket Size 34",
       "url": "https://shopgoodwill.com/item/271601434",
@@ -1730,54 +1810,6 @@
       "why": "fabric match: alpaca, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
-    },
-    {
-      "id": 271718676,
-      "title": "Authentic Hermes Paris Men's Black Loafers WS2319 - Size EU 44/US 10",
-      "url": "https://shopgoodwill.com/item/271718676",
-      "image": "https://shopgoodwillimages.azureedge.net/production/130/Item/2026-07-24/cbf7fd7e-2345-4293-a687-346b66f917c5lark_07241.jpg",
-      "price": 301.0,
-      "bids": 0,
-      "end_time": "2026-07-31T18:44:00",
-      "category": "tailoring_outerwear",
-      "size": "44; 10; 10 A; EU 44",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "maker match: hermes, herm\u00e8s | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
-      "id": 271909048,
-      "title": "Polo Ralph Lauren Mens Gray Cotton Collared Slim Fit Dress Shirt Size 15.5 34/35",
-      "url": "https://shopgoodwill.com/item/271909048",
-      "image": "https://shopgoodwillimages.azureedge.net/production/16/Items/2026-06-08/37f9bcba-2239-436d-83ed-3b603e0b7653ter1_06081.jpg",
-      "price": 5.0,
-      "bids": 0,
-      "end_time": "2026-08-03T20:19:00",
-      "category": "tailoring_outerwear",
-      "size": "15.5; 15.5 M",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
-      "new": false
-    },
-    {
-      "id": 271793586,
-      "title": "Polo Ralph Lauren Mens Gray Long Sleeve Easy Care Dress Shirt 15.5 34/35",
-      "url": "https://shopgoodwill.com/item/271793586",
-      "image": "https://shopgoodwillimages.azureedge.net/production/16/Items/2026-06-30/41c8744f-4e22-457a-8630-ab0e1826255eter1_06301.jpg",
-      "price": 5.99,
-      "bids": 0,
-      "end_time": "2027-01-21T19:12:00",
-      "category": "tailoring_outerwear",
-      "size": "15.5",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
-      "new": true
     },
     {
       "id": 271956943,
@@ -1857,22 +1889,6 @@
       "score": 5.29,
       "why": "maker match: ferragamo | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
-    },
-    {
-      "id": 271620690,
-      "title": "SFERRA Dorsey Cashmere Throw Blanket 50x70 Chocolate",
-      "url": "https://shopgoodwill.com/item/271620690",
-      "image": "https://shopgoodwillimages.azureedge.net/production/12/Item/2026-07-23/40d63749-4858-4825-b8f7-8bc6c3ef22ddhez9_07231.jpg",
-      "price": 26.0,
-      "bids": 0,
-      "end_time": "2026-08-04T16:47:00",
-      "category": "blankets",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: cashmere | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
-      "flags": "fabric/material not confirmed",
       "new": false
     },
     {
@@ -2020,6 +2036,22 @@
       "new": false
     },
     {
+      "id": 271620690,
+      "title": "SFERRA Dorsey Cashmere Throw Blanket 50x70 Chocolate",
+      "url": "https://shopgoodwill.com/item/271620690",
+      "image": "https://shopgoodwillimages.azureedge.net/production/12/Item/2026-07-23/40d63749-4858-4825-b8f7-8bc6c3ef22ddhez9_07231.jpg",
+      "price": 55.0,
+      "bids": 0,
+      "end_time": "2026-08-04T16:47:00",
+      "category": "blankets",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.0,
+      "why": "fabric match: cashmere | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": "fabric/material not confirmed",
+      "new": false
+    },
+    {
       "id": 271694493,
       "title": "Cupcakes and Cashmere Women's Oversized Hoodie Blanket & Slipper Set",
       "url": "https://shopgoodwill.com/item/271694493",
@@ -2145,7 +2177,7 @@
       "score": 4.86,
       "why": "maker match: bally | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "target shoe size not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 271716524,
