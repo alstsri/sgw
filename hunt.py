@@ -571,6 +571,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Lunya",
             "Turnbull Asser",
             "James Perse",
+            "vintage padres",
         ],
     },
     "pants": {
@@ -803,7 +804,9 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
             it_eu = (re.search(r'\b(?:it|ital(?:y|ian)?|eu|euro(?:pean)?)\s*-?\s*(\d{2})\b', tj)
                      or re.search(r'\b(\d{2})\s*(?:it\b|ital|eu\b|euro)', tj))
             eu_brand = any(b in tj for b in EU_SIZED_BRANDS)
-            nums = [int(x) for x in re.findall(r'\b(\d{2})(?=[srl]?\b)', tj)]
+            # Allow a single trailing cut-code letter so sizes like "50C"
+            # (Italian corto/short) or "42R"/"44L" still parse as the number.
+            nums = [int(x) for x in re.findall(r'\b(\d{2})(?=[a-z]?\b)', tj)]
             if it_eu:
                 n = int(it_eu.group(1))
                 if not (43 <= n <= 45):
