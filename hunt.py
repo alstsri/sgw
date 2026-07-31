@@ -792,8 +792,10 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
         # pulled in by a tailoring query can't have its waist read as a jacket
         # size. "and not is_jacket" keeps genuine jackets (e.g. "jean jacket")
         # on the jacket path.
+        # NB: "shorts" plural only — "shorts?" would match "short" in
+        # "short sleeve shirt" and misroute tops into the trouser branch.
         is_trouser = bool(re.search(
-            r'\b(?:trousers?|pants?|chinos?|slacks?|jeans?|shorts?|joggers?|sweatpants?|cargos?)\b', t
+            r'\b(?:trousers?|pants?|chinos?|slacks?|jeans|shorts|joggers?|sweatpants?|cargos?)\b', t
         )) and not is_jacket
         if is_jacket and not is_trouser:
             # Strip pants waist×inseam dimensions before jacket size checks
