@@ -194,6 +194,17 @@ BROAD SEARCH  →  CLASSIFY (by SGW category)  →  SIZE-FILTER (per type)  → 
   item type** — so "34" is a chest number for a `jacket` and a waist number for a
   `trouser`/`shorts`. This is the crux of priority #2 and is exactly the ad-hoc
   logic currently smeared across `pre_fetch_reject` / `assess`.
+- **Measurements are a distinct, labeled path — never raw number matching.**
+  A jacket's "sleeve 34" / "length 33" must not be read as a size 34/33; a
+  description's "small stain" must not be read as size Small. Parse *labeled*
+  measurements and compare to the buyer's spec. **Buyer jacket spec (≈ size 34):**
+  - pit-to-pit (flat half-chest) **~17"** (accept ~15.75–18.5)
+  - shoulder seam-to-seam **17–17.75"** (accept ~16.25–18.5)
+  - sleeve **~24"** (shoulder seam → cuff) or **~32"** (center-back → cuff)
+  - full length **~30"**
+  Width (pit-to-pit / chest / shoulder) is decisive. A "chest 22" is a *flat*
+  half-measure (= 44" round = too big); "chest 35" is a circumference (in range).
+  Other item types will each need their own measurement spec (TODO).
 - **Three-way size verdict per item:** `in_size` / `out_of_size` /
   `unknown_needs_detail`. Only `unknown_needs_detail` earns a detail GET.
 
@@ -299,7 +310,43 @@ entry point.
 
 ---
 
-## 8. Reference — current code map (`hunt.py`)
+## 8. Prototype results — `overhaulsweep.py` (2026-07-31)
+
+A first working prototype of §4 exists as `overhaulsweep.py` (reuses `hunt.py`'s
+API layer + brand/fabric sets). It implements: broad term search (newest-first,
+adaptive pages) → classify by `catFullName`/title → per-type size verdict
+(in/out/unknown) → detail GET only for `unknown` → confirm via structured **size**
+field, then **jacket measurements**.
+
+**Measured (full run, `--pages-cap 3`, brand+fabric terms):**
+- **272 search + 448 detail = ~720 requests** — ≈ parity with the old ~730, **but
+  over 2,104 unique items (~2× coverage)** and with correct per-item sizing.
+- The detail calls are the remaining cost: **407 items stayed `unknown` even after
+  a detail fetch** (no structured size, no labeled measurements) → those GETs were
+  unproductive.
+
+**Lessons that sharpen the plan:**
+- Classifying type from `catFullName` works well; **the size-leaf (`… > Size 34R`)
+  gives many verdicts with zero detail calls** — lean on it hard.
+- **Never verdict off freeform description or raw measurements.** Confirmed bugs
+  found & fixed in the prototype: "sleeve 34"/"length 33" read as size 34;
+  "small stain" read as Small; bare `42/44` read as IT (valid only with an
+  explicit IT/EU marker). Size must come from the size-leaf, the structured size
+  field, or *labeled* measurements — nothing else.
+- **The two big remaining efficiency levers (not yet built):**
+  1. **Incremental state** — persist seen-ids + last-run time; sort newest-first
+     and stop at the last-run boundary. This is what turns the daily ~720 into
+     *tens*. Highest priority next.
+  2. **Don't spend a detail GET on an item that will stay `unknown`.** Prefer
+     items whose size is decidable from the row; for the rest, either rank-limit
+     how many `unknown`s we confirm, or gate detail on stronger interest signals.
+- Brand-as-query still fans out (~235 terms). Moving brands fully to client-side
+  filters over incremental category sweeps (§4.1/§4.6) is the way to shrink that.
+
+Run it: `python3 overhaulsweep.py --pages-cap 3` (add `--limit-terms N` /
+`--no-detail` for quick trials). Output: `runs/overhaul/{candidates,stats}.json`.
+
+## 9. Reference — current code map (`hunt.py`)
 
 - `SEARCH_GROUPS` (~227) — to be replaced by the sweep spec.
 - `QUALITY_BRANDS` (~125), `FABRIC_TERMS` (~193), `MALL_BRANDS`/`REJECT_BRANDS`
