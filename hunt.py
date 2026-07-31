@@ -152,7 +152,7 @@ QUALITY_BRANDS = {
     # tailoring — French
     "arnys", "cifonelli", "camps de luca", "smalto", "husbands paris",
     "de bonne facture", "officine generale", "lemaire", "le mont saint michel",
-    "hermes", "hermès",
+    "hermes", "hermès", "sandro",
     # tailoring — American
     "oxxford", "hickey freeman", "golden fleece", "j. press", "j press",
     "southwick", "samuelsohn", "jack victor", "paul stuart", "phineas cole",
@@ -482,6 +482,10 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             # recall — the search AND-matches every word).
             "cashmere sweater", "cashmere cardigan", "cashmere turtleneck",
             "alpaca sweater", "mohair sweater", "qiviut",
+            # Brand-level sweep: French label, under-known in the US (good
+            # arbitrage). Category 28 scopes to Men's Clothing; downstream
+            # size/mens/fabric filters cull the rest.
+            "Sandro",
         ],
     },
     "accessories": {
@@ -783,7 +787,14 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
             r'\b(?:blazer|sport\s*coat|suit(?:\s+jacket)?|overcoat|topcoat|'
             r'peacoat|chesterfield|trench(?:\s*coat)?|jacket)\b', t
         ))
-        is_trouser = bool(re.search(r'\b(?:trousers?|pants?|chinos?|slacks?)\b', t))
+        # Bottoms: 34 is the buyer's JACKET (chest) size, never a pants waist
+        # (buyer waist = 28). Include shorts/jeans/joggers/cargos so a bottom
+        # pulled in by a tailoring query can't have its waist read as a jacket
+        # size. "and not is_jacket" keeps genuine jackets (e.g. "jean jacket")
+        # on the jacket path.
+        is_trouser = bool(re.search(
+            r'\b(?:trousers?|pants?|chinos?|slacks?|jeans?|shorts?|joggers?|sweatpants?|cargos?)\b', t
+        )) and not is_jacket
         if is_jacket and not is_trouser:
             # Strip pants waist×inseam dimensions before jacket size checks
             # so "42S 34x28" doesn't count "34" as a valid jacket size.
@@ -839,16 +850,20 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
             if re.search(r'\b(?:4[1-9]|5[0-2])\b', t) and not re.search(r'\b(?:15|15\.5|38|39|40)\b', t):
                 return True, "dress shirt EU collar 41cm+ — neck too large"
         if is_trouser:
-            if re.search(r'\b(?:3[0-9]|4[0-9])x\d{2}\b', t):
+            # Ranges span 30-69 so EU/IT-sized designer trousers (Zegna 52,
+            # Canali 62, Armani 58 …) are rejected too — buyer waist is US 28
+            # (≈ IT 44), so any 30+ waist number is too large regardless of
+            # US-vs-EU sizing convention.
+            if re.search(r'\b(?:[3-6][0-9])x\d{2}\b', t):
                 return True, "trouser waist too large (30+)"
-            # "Size 36", "Size 34", "Size 32" = waist, reject if not 28
-            if re.search(r'\bsize\s+(?:3[0-9]|4[0-9])\b', t) and not re.search(r'\bsize\s+28\b|\b28x\b|\bw28\b', t):
+            # "Size 36", "Size 52", "Size 62" = waist, reject if not 28
+            if re.search(r'\bsize\s+(?:[3-6][0-9])\b', t) and not re.search(r'\bsize\s+28\b|\b28x\b|\bw28\b', t):
                 return True, "trouser waist likely too large (30+)"
-            # "36R", "34R" style US waist/length size code on trouser = reject
-            if re.search(r'\b(?:3[0-9]|4[0-9])[sr]\b', t) and not re.search(r'\b28[sr]?\b', t):
+            # "36R", "58R" style waist/length size code on trouser = reject
+            if re.search(r'\b(?:[3-6][0-9])[sr]\b', t) and not re.search(r'\b28[sr]?\b', t):
                 return True, "trouser waist size code too large (30R+)"
-            # bare number 30-49 anywhere in a trouser title = waist size, reject
-            if re.search(r'(?<!\d)(?:3[02-9]|4[0-9])(?!\d)', t) and not re.search(r'(?<!\d)28(?!\d)', t):
+            # bare number 30-69 anywhere in a trouser title = waist size, reject
+            if re.search(r'(?<!\d)(?:3[02-9]|[4-6][0-9])(?!\d)', t) and not re.search(r'(?<!\d)28(?!\d)', t):
                 return True, "trouser waist too large (30+)"
 
     return False, ""
