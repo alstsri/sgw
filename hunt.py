@@ -74,17 +74,33 @@ _shoe_accept_re = re.compile(
 _shoe_reject_above = BUYER_PROFILE["shoe_reject_above"]
 
 
+# Boot SHAFT HEIGHT, not a size: "8-inch", "8 inch", '8"', "6-in". These must be
+# stripped before any shoe-size read or a size-13 "8-Inch boot" matches as size 8.
+_SHOE_HEIGHT_RE = re.compile(
+    r'\b\d{1,2}(?:\.\d)?\s*-?\s*inch(?:es)?\b'
+    r'|\b\d{1,2}(?:\.\d)?\s*"'
+    r'|\b\d{1,2}(?:\.\d)?\s*-\s*in\b',
+    re.I,
+)
+
+
+def _strip_shoe_noise(text: str) -> str:
+    return _SHOE_HEIGHT_RE.sub(" ", text)
+
+
 def _eu_shoe_sizes(text: str):
     """EU shoe sizes found in a title. A men's shoe number in 39–48 can only be
     EU (US/UK men's sizes stop ~14), so magnitude alone identifies the system.
     Returns a list of floats, half sizes included ("40,5"/"40.5" -> 40.5)."""
     return [int(n) + (0.5 if half else 0)
-            for n, half in re.findall(r'\b(3[9]|4[0-8])(?:[.,](5))?\b', text)]
+            for n, half in re.findall(r'\b(3[9]|4[0-8])(?:[.,](5))?\b', _strip_shoe_noise(text))]
 
 
 def _shoe_size_match(text: str) -> bool:
     """True if a shoe size in the buyer's range is present, counting US (7.5/8)
-    and EU sizing. EU ≈ US + 33, so US 7.5–8 = EU 40.5–41; accept EU 40–41."""
+    and EU sizing. EU ≈ US + 33, so US 7.5–8 = EU 40.5–41; accept EU 40–41.
+    Boot-shaft-height patterns ("8-inch") are stripped first."""
+    text = _strip_shoe_noise(text)
     if _shoe_accept_re.search(text):
         return True
     return any(40 <= n <= 41 for n in _eu_shoe_sizes(text))
