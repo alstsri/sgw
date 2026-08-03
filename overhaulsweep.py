@@ -97,6 +97,22 @@ def _type_from_keywords(s: str) -> str | None:
 # Types we act on; everything else is skipped up front.
 WEARABLE = {"jacket", "knit", "polo", "tee", "shirt", "shorts", "trouser", "shoes", "blanket", "vest"}
 
+# Map our item type -> hunt.py category name so we can reuse hunt's mature
+# pre_fetch_reject / mens_status filters instead of thin reimplementations.
+HUNT_CAT = {
+    "jacket": "tailoring_outerwear", "vest": "knitwear",
+    "knit": "knitwear", "polo": "knitwear", "tee": "knitwear",
+    "shirt": "shirts", "trouser": "pants", "shorts": "pants",
+    "shoes": "shoes", "blanket": "blankets",
+}
+
+# Cheap title-level women's / youth reject — runs BEFORE any detail fetch so a
+# "Women's ..." item (common from unisex brands: Pendleton, Carhartt, Danner,
+# Red Wing) never costs a request. mens_status() does the deeper check on detail.
+_WOMENS_RE = re.compile(
+    r"\b(women'?s?|woman|ladies|lady|girls?|juniors?|misses|petite|"
+    r"pumps?|heels?|stiletto|wedge|blouse|skirt|gown|dress\b)\b", re.I)
+
 # ---------------------------------------------------------------------------
 # 3. Size — extract the SGW size-leaf (free), then verdict PER TYPE.
 #    Verdict: "in" | "out" | "unknown"  (only "unknown" earns a detail GET).
@@ -296,8 +312,9 @@ def main() -> None:
     seen: set[int] = set()
     kept: list[dict] = []
     stats = {"search_calls": 0, "detail_calls": 0, "rows": 0, "unique": 0,
-             "drop_type": 0, "drop_reject_brand": 0, "drop_no_interest": 0,
-             "drop_out_size": 0, "in_from_row": 0, "unknown_confirmed": 0,
+             "drop_type": 0, "drop_reject_brand": 0, "drop_womens": 0,
+             "drop_no_interest": 0, "drop_prefetch": 0, "drop_out_size": 0,
+             "drop_notmens": 0, "in_from_row": 0, "unknown_confirmed": 0,
              "unknown_still": 0}
 
     for scope, query, cat, level in terms:
@@ -323,6 +340,11 @@ def main() -> None:
                 stats["drop_reject_brand"] += 1
                 continue
 
+            # cheap title-level women's/youth reject (pre-detail, no request cost)
+            if _WOMENS_RE.search(title):
+                stats["drop_womens"] += 1
+                continue
+
             itype = classify(cfn, title)
             if itype not in WEARABLE:
                 stats["drop_type"] += 1
@@ -334,6 +356,15 @@ def main() -> None:
             if not brands and not fabrics:
                 stats["drop_no_interest"] += 1
                 continue
+
+            # Reuse hunt.py's mature title-level size reject (oversized pants,
+            # 8.5+ shoes, L/XL tops, big jackets, ...) via the mapped category.
+            hcat = HUNT_CAT.get(itype, "")
+            if hcat:
+                skip, _why = hunt.pre_fetch_reject(hcat, title)
+                if skip:
+                    stats["drop_prefetch"] += 1
+                    continue
 
             leaf = size_leaf(cfn)
             verdict, note = size_verdict(itype, leaf, title)
@@ -374,6 +405,13 @@ def main() -> None:
                 # a chest measurement into a jacket size is a separate, labeled
                 # step (TODO); until then an unlabeled item stays "unknown".
                 size, meas, material, _ = hunt.extract_fields(detail)
+                # Men's verification on detail — drop women's / uncertain items
+                # that the title-level reject didn't catch.
+                mv, _ev = hunt.mens_status(hcat, detail, size, meas)
+                if mv not in ("Men's", "Likely Men's"):
+                    stats["drop_notmens"] += 1
+                    continue
+                rec["mens"] = mv
                 conf = size.strip().lower()
                 v2, n2 = size_verdict(itype, leaf, conf) if conf else ("unknown", "no structured size")
                 # If size label was inconclusive, fall back to measurements.

@@ -325,6 +325,23 @@ field, then **jacket measurements**.
   a detail fetch** (no structured size, no labeled measurements) → those GETs were
   unproductive.
 
+**CRITICAL GAP found & FIXED in review (2026-08-03):**
+The first prototype reimplemented filtering thinly and bypassed hunt.py's mature
+gates. It leaked 17 women's-titled items (9 marked in-size) and wrong shoe sizes
+(women's 7.5/8; boot shaft height "8-inch" read as size 8; "Size 8.5" not
+rejected). Root cause + fix:
+- **No men's/women's gate** → added a cheap title-level women's/youth reject
+  (pre-detail) + `hunt.mens_status()` on detail (keep only Men's / Likely Men's).
+- **Thin size logic** → now routes every item through `hunt.pre_fetch_reject`
+  (mapped `item_type → hunt category`) for the reject decision; the per-type
+  `size_verdict` only labels the survivors in/unknown.
+- **Boot-height bug** in the shared `_shoe_size_match` (strip `N-inch`/`N"`) fixed
+  on `main` — hardens production too.
+Result: **0 women's leaks, correct shoe sizing, and FEWER requests** (~466 vs the
+first prototype's ~720 and the old ~730) — rejecting at the title level avoids
+detail fetches. **Takeaway: the overhaul's value is the search→classify pipeline;
+REUSE hunt.py's filters, don't reimplement them.**
+
 **Lessons that sharpen the plan:**
 - Classifying type from `catFullName` works well; **the size-leaf (`… > Size 34R`)
   gives many verdicts with zero detail calls** — lean on it hard.
