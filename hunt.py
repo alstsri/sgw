@@ -234,6 +234,8 @@ REJECT_BRANDS = {
     "wrangler", "brooklyn jeans", "topman",
     # department-store house brands
     "john henry", "croft & barrow", "st. john's bay",
+    # women's brand that leaks via "cashmere" fabric searches (blanket-hoodie sets)
+    "cupcakes and cashmere",
 }
 
 # ---------------------------------------------------------------------------
@@ -703,6 +705,41 @@ def _reject_shirt_neck(t: str, prefix: str = ""):
     return None
 
 
+# Bottoms vs jackets, for the category-agnostic waist reject below. "shorts"
+# plural only (so "short sleeve" isn't a bottom); jacket terms exempt a piece so
+# "34" stays a chest size for tailoring.
+_bottom_garment_re = re.compile(
+    r'\b(?:trousers?|pants?|chinos?|slacks?|jeans|shorts|joggers?|sweatpants?|cargos?)\b', re.I)
+_jacket_garment_re = re.compile(
+    r'\b(?:blazer|sport\s*coat|sportcoat|suit(?:\s+jacket)?|overcoat|topcoat|'
+    r'peacoat|chesterfield|trench(?:\s*coat)?|jacket)\b', re.I)
+
+
+def _reject_bottom_waist(t: str) -> tuple[bool, str] | None:
+    """Reject any trouser/short whose waist isn't the buyer's 28 — regardless of
+    which search group surfaced it (pants, loungewear_basics, tailoring, ...).
+    Ranges span 30-69 to cover EU/IT designer sizing. Jackets are exempt."""
+    if not _bottom_garment_re.search(t) or _jacket_garment_re.search(t):
+        return None
+    # Explicit waist formats first (so "34x28" is caught before the 28 keep-guard)
+    if re.search(r'\b(?:[3-6][0-9])x\d{2}\b', t):
+        return True, "trouser waist too large (30+)"
+    if re.search(r'\bw(?:[3-6][0-9])\b', t):
+        return True, "trouser waist too large (W30+)"
+    if re.search(r'\bsize\s+(?:[3-6][0-9])\s*[x×]', t):
+        return True, "trouser waist too large"
+    # Buyer's 28 present as a real waist -> keep (guards the bare-number rule)
+    if re.search(r'\b28\b|\bw28\b|\b28x\d{2}\b', t):
+        return None
+    if re.search(r'\b(?:size\s+|sz\.?\s+)(?:[3-6][0-9])\b', t):
+        return True, "trouser waist likely too large (30+)"
+    if re.search(r'\b(?:[3-6][0-9])[sr]\b', t):
+        return True, "trouser waist size code too large (30R+)"
+    if re.search(r'(?<!\d)(?:3[02-9]|[4-6][0-9])(?!\d)', t):
+        return True, "trouser waist too large (30+)"
+    return None
+
+
 def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
     """Return (should_skip, reason) based on title alone before fetching detail."""
     t = title.lower()
@@ -711,6 +748,11 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
     for brand in REJECT_BRANDS:
         if brand in t:
             return True, f"reject brand: {brand}"
+
+    # Bottoms waist reject — category-agnostic (any group can surface a trouser)
+    r = _reject_bottom_waist(t)
+    if r:
+        return r
 
     # ---- BLANKETS -------------------------------------------------------------
     if category == "blankets" and re.search(r"\bpillow\b", t):
