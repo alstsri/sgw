@@ -49,7 +49,7 @@
       "score": 6.71,
       "why": "maker match: oxxford | fabric match: made in usa, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 270133125,
@@ -161,7 +161,7 @@
       "score": 6.14,
       "why": "maker match: allen edmonds | fabric match: made in usa | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 272732534,
@@ -433,7 +433,7 @@
       "score": 6.0,
       "why": "maker match: hermes | fabric match: made in france, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272678986,
@@ -705,7 +705,7 @@
       "score": 5.71,
       "why": "fabric match: flannel, wool | exceptional maker at 15.5 neck \u2014 valid exception | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": false
+      "new": true
     },
     {
       "id": 272393241,
@@ -753,7 +753,7 @@
       "score": 5.57,
       "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 272772316,
@@ -1201,7 +1201,7 @@
       "score": 5.43,
       "why": "maker match: loro piana | fabric match: cashmere | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272735641,
@@ -1329,7 +1329,7 @@
       "score": 5.43,
       "why": "fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 272831343,
@@ -1377,7 +1377,7 @@
       "score": 5.43,
       "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272828563,
@@ -1393,7 +1393,7 @@
       "score": 5.43,
       "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272468304,
@@ -1441,7 +1441,7 @@
       "score": 5.29,
       "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": false
+      "new": true
     },
     {
       "id": 272398783,
@@ -1521,7 +1521,7 @@
       "score": 5.29,
       "why": "maker match: ferragamo | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": false
+      "new": true
     },
     {
       "id": 273035139,
@@ -1649,7 +1649,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272735633,
@@ -1777,7 +1777,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272929832,
@@ -1889,7 +1889,7 @@
       "score": 5.29,
       "why": "fabric match: cashmere, made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
     },
     {
       "id": 272353346,
@@ -1937,7 +1937,7 @@
       "score": 5.29,
       "why": "fabric match: cashmere, made in scotland | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 273043635,
@@ -1953,7 +1953,7 @@
       "score": 5.29,
       "why": "fabric match: alpaca | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 272842854,
@@ -2001,7 +2001,7 @@
       "score": 4.86,
       "why": "shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 271750583,
@@ -2129,7 +2129,7 @@
       "score": 4.86,
       "why": "maker match: bruno magli | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "target shoe size not confirmed",
-      "new": false
+      "new": true
     }
   ]
 }
