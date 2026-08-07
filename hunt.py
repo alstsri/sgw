@@ -234,8 +234,9 @@ REJECT_BRANDS = {
     "wrangler", "brooklyn jeans", "topman",
     # department-store house brands
     "john henry", "croft & barrow", "st. john's bay",
-    # women's brand that leaks via "cashmere" fabric searches (blanket-hoodie sets)
-    "cupcakes and cashmere",
+    # women's brand that leaks via "cashmere" fabric searches (blanket-hoodie sets).
+    # Bare "cupcakes" catches every separator variant: "and" / "&" / "at Home".
+    "cupcakes",
 }
 
 # ---------------------------------------------------------------------------
