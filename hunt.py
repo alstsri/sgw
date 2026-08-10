@@ -16,7 +16,18 @@ import requests
 
 API_ROOT = "https://buyerapi.shopgoodwill.com/api"
 ITEM_ROOT = "https://shopgoodwill.com/item"
-USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0"
+# SGW started returning 403 to bare-UA requests (2026-08-10). The API now
+# requires browser-like headers (modern UA + Origin/Referer). Send them on every
+# session.
+USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+              "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+API_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Origin": "https://shopgoodwill.com",
+    "Referer": "https://shopgoodwill.com/",
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json",
+}
 
 # ---------------------------------------------------------------------------
 # BUYER PROFILE — edit this block to configure for a different buyer.
@@ -1657,7 +1668,7 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     session = requests.Session()
-    session.headers.update({"User-Agent": USER_AGENT})
+    session.headers.update(API_HEADERS)
 
     seen: set[int] = set()
     candidates: list[Candidate] = []
