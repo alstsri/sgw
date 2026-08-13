@@ -896,12 +896,15 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
                     return True, f"IT/EU jacket {n} (buyer IT 44) — wrong size"
             elif eu_brand:
                 # Always EU/JP-numbered brand: read its number as IT/EU (44 ok).
-                sizes = [n for n in nums if 36 <= n <= 60]
+                # Upper bound 80 so oversized labels like "68R" aren't skipped.
+                sizes = [n for n in nums if 36 <= n <= 80]
                 if sizes and not any(43 <= n <= 45 for n in sizes):
                     return True, f"EU-sized brand jacket {sizes[0]} (buyer IT 44) — wrong size"
             else:
                 # Bare or R/S/L-suffixed numbers, read as US drop sizing.
-                jacket_nums = [n for n in nums if 30 <= n <= 60]
+                # Upper bound 80 so a "68R" (which exceeded the old 60 cap and
+                # slipped through as an in-range 'Buy') is caught.
+                jacket_nums = [n for n in nums if 30 <= n <= 80]
                 if jacket_nums and not any(33 <= n <= 35 for n in jacket_nums):
                     return True, "jacket size outside US 33-35 (no IT/EU marker) — wrong size"
         # Any non-jacket, non-trouser top here — dress shirt, polo, or a knit
@@ -1712,6 +1715,20 @@ def main() -> None:
                     continue
                 try:
                     detail = get_detail(session, item_id)
+                    # Post-detail reject: re-run the title-level size rules against
+                    # title + the STRUCTURED size field (not measurements, whose
+                    # numbers collide with sizes). Catches oversized items whose
+                    # size lives only in the detail, e.g. a suit "56"/"38R" with a
+                    # size-free title.
+                    d_size, _d_meas, _dm, _dc = extract_fields(detail)
+                    post_skip, post_reason = pre_fetch_reject(category, f"{title} {d_size}")
+                    if post_skip:
+                        search_log.append({
+                            "category": category, "query": query,
+                            "item_id": item_id, "post_fetch_skip": post_reason, "title": title,
+                        })
+                        time.sleep(0.15)
+                        continue
                     candidate = build_candidate(category, query, item, detail)
                     candidates.append(candidate)
                 except Exception as exc:
