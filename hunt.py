@@ -282,6 +282,8 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Magnanni",
             "Tod's",
             "Bally",
+            "James Perse 8",
+            "James Perse 7.5",
             "Ferragamo",
             "Stefano Bemer",
             "Silvano Lattanzi",
