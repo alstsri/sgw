@@ -1,14 +1,14 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 145,
+  "count": 148,
   "items": [
     {
       "id": 274357565,
       "title": "Lot of Vintage Men's Sweaters: Polo Ralph Lauren/Wool/Cashmere/Ireland/Etc",
       "url": "https://shopgoodwill.com/item/274357565",
       "image": "https://shopgoodwillimages.azureedge.net/production/4/Item/2026-08-18/f036dc64-1f06-4cdf-be71-517dda65b8cfmmon_08181.jpg",
-      "price": 9.99,
+      "price": 11.0,
       "bids": 0,
       "end_time": "2026-08-25T18:12:00",
       "category": "knitwear",
@@ -36,22 +36,6 @@
       "new": false
     },
     {
-      "id": 273947737,
-      "title": "Ermenegildo Zegna Brown Wool Blend Long Sleeve Single-breasted Mens Blazer 7-85l",
-      "url": "https://shopgoodwill.com/item/273947737",
-      "image": "https://shopgoodwillimages.azureedge.net/production/62/Items/2026-08-14/cd97ab91-ec0e-49ec-ba9e-6093bd680a02ecom_08141.jpg",
-      "price": 23.0,
-      "bids": 0,
-      "end_time": "2026-08-21T18:57:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Watch",
-      "score": 7.0,
-      "why": "maker match: ermenegildo, zegna | fabric match: cashmere, silk, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": false
-    },
-    {
       "id": 274017784,
       "title": "Men's Dark Brown Tailored Wool and Cashmere Blazer - Fit-Wel, Made in Hong Kong",
       "url": "https://shopgoodwill.com/item/274017784",
@@ -65,6 +49,22 @@
       "score": 7.0,
       "why": "maker match: loro piana | fabric match: cashmere, made in italy, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
+      "new": false
+    },
+    {
+      "id": 273947737,
+      "title": "Ermenegildo Zegna Brown Wool Blend Long Sleeve Single-breasted Mens Blazer 7-85l",
+      "url": "https://shopgoodwill.com/item/273947737",
+      "image": "https://shopgoodwillimages.azureedge.net/production/62/Items/2026-08-14/cd97ab91-ec0e-49ec-ba9e-6093bd680a02ecom_08141.jpg",
+      "price": 31.0,
+      "bids": 0,
+      "end_time": "2026-08-21T18:57:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.71,
+      "why": "maker match: ermenegildo, zegna | fabric match: cashmere, silk, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
       "new": false
     },
     {
@@ -356,6 +356,22 @@
       "new": false
     },
     {
+      "id": 274737023,
+      "title": "Men's Ermenegildo Zegna Lamb Wool Sweater Size 54",
+      "url": "https://shopgoodwill.com/item/274737023",
+      "image": "https://shopgoodwillimages.azureedge.net/production/80/Items/2026-08-21/807b7950-5a4c-48d0-9060-58c54087cbaester_08211.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-08-25T19:03:00",
+      "category": "tailoring_outerwear",
+      "size": "54 S; 54; 15",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: ballantyne, ermenegildo, zegna | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned",
+      "new": true
+    },
+    {
       "id": 274616655,
       "title": "Giorgio Armani Men's Silk Necktie Blue Brown Striped Made in Italy",
       "url": "https://shopgoodwill.com/item/274616655",
@@ -417,7 +433,7 @@
       "score": 6.0,
       "why": "maker match: hermes | fabric match: made in france, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 274323632,
@@ -756,6 +772,22 @@
       "new": false
     },
     {
+      "id": 274741374,
+      "title": "Indochino Men's Gray Wool Mohair Blend Blazer Notch Lapel Paisley Lining",
+      "url": "https://shopgoodwill.com/item/274741374",
+      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-08-21/e2def3e4-5cb2-4210-bcd0-a72f8281a8f2sens_08211.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-08-26T20:29:00",
+      "category": "tailoring_outerwear",
+      "size": "small",
+      "rec": "Need measurements",
+      "score": 5.71,
+      "why": "fabric match: mohair, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned",
+      "new": true
+    },
+    {
       "id": 274499273,
       "title": "Filson VNT Double Mackinaw Cruiser coat heavy-duty charcoal wool men size 44",
       "url": "https://shopgoodwill.com/item/274499273",
@@ -849,7 +881,7 @@
       "score": 5.57,
       "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 274380561,
@@ -946,6 +978,22 @@
       "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
+    },
+    {
+      "id": 274744217,
+      "title": "Allen Edmonds Spencer 5304s Men's Black Patent Leather Tuxedo Shoes Size 8 D",
+      "url": "https://shopgoodwill.com/item/274744217",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-08-21/0d04be1d-a569-4e43-b362-2950a270c3bbgwny_08211.jpg",
+      "price": 19.99,
+      "bids": 0,
+      "end_time": "2026-08-26T20:16:00",
+      "category": "shoes",
+      "size": "8 D",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 274714180,
@@ -1304,7 +1352,7 @@
       "title": "Vintage Men's Loro Piana 100% Cashmere Single Breasted Overcoat Size n/a",
       "url": "https://shopgoodwill.com/item/274672965",
       "image": "https://shopgoodwillimages.azureedge.net/production/376/Items/2026-08-06/1fad4879-535f-4773-9970-0b1eb5878c4bgewc_08061.jpg",
-      "price": 9.99,
+      "price": 14.0,
       "bids": 0,
       "end_time": "2026-08-24T20:12:00",
       "category": "tailoring_outerwear",
@@ -1313,22 +1361,6 @@
       "score": 5.43,
       "why": "maker match: loro piana | fabric match: cashmere | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
-    },
-    {
-      "id": 274612330,
-      "title": "Brunello Cucinelli Men's Leisure Fit Long Sleeve Button Down Shirt Off White",
-      "url": "https://shopgoodwill.com/item/274612330",
-      "image": "https://shopgoodwillimages.azureedge.net/production/57/Items/2026-08-20/df99c544-3e53-496c-94ef-f8d11e6f155admin_08201.jpg",
-      "price": 19.99,
-      "bids": 0,
-      "end_time": "2026-08-25T19:52:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.43,
-      "why": "maker match: brunello | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text | fabric/material not confirmed",
       "new": false
     },
     {
@@ -1940,20 +1972,36 @@
       "new": false
     },
     {
-      "id": 274673311,
-      "title": "Giorgio Armani Men's Black Silk Blend Tonal Striped Tie Made in Italy COA",
-      "url": "https://shopgoodwill.com/item/274673311",
-      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-07-17/48e1951f-1a1c-471d-8406-d8e58d30f411sens_07171.jpg",
-      "price": 9.99,
+      "id": 274743306,
+      "title": "Giorgio Armani Men's Pinstripe Wool Blazer Jacket Made in Italy Coa",
+      "url": "https://shopgoodwill.com/item/274743306",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-08-21/b0c8e2bd-06e0-40a1-bfc4-af69abdf11e0gwny_08211.jpg",
+      "price": 24.99,
       "bids": 0,
-      "end_time": "2027-02-16T18:24:00",
+      "end_time": "2026-08-28T19:22:00",
       "category": "tailoring_outerwear",
       "size": "not verified",
       "rec": "Need measurements",
       "score": 5.29,
-      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "why": "fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": false
+      "new": true
+    },
+    {
+      "id": 274746782,
+      "title": "Allen Edmonds Dark Brown Wingtip Derby Shoes Men's Size 8E",
+      "url": "https://shopgoodwill.com/item/274746782",
+      "image": "https://shopgoodwillimages.azureedge.net/production/362/Items/2026-08-13/3947d9da-ab0b-4c2c-a426-c3a4e9b74134ch53_08131.png",
+      "price": 8.99,
+      "bids": 0,
+      "end_time": "2026-08-28T19:14:00",
+      "category": "shoes",
+      "size": "8E",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned",
+      "new": true
     },
     {
       "id": 273984760,
@@ -2049,14 +2097,14 @@
       "score": 5.29,
       "why": "fabric match: alpaca | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 274261673,
       "title": "Narragansett Bay Alpaca Blanket Crafted from 100% USA Grown Alpaca Fiber by NEAF",
       "url": "https://shopgoodwill.com/item/274261673",
       "image": "https://shopgoodwillimages.azureedge.net/production/192/Items/2026-08-17/e77f99b2-b814-4854-8284-d871cbdee8aderV1_08171.png",
-      "price": 13.0,
+      "price": 14.0,
       "bids": 0,
       "end_time": "2026-08-22T18:37:00",
       "category": "blankets",
