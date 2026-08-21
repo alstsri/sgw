@@ -15,3 +15,7 @@ runs/
 
 # macOS
 .DS_Store
+
+# cron job logs
+cron.log
+cron_detail.log
