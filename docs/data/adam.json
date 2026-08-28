@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 127,
+  "count": 124,
   "items": [
     {
       "id": 274892925,
@@ -116,20 +116,20 @@
       "new": false
     },
     {
-      "id": 275252158,
-      "title": "Allen Edmonds Carlyle Dark Chili Plain-Toe Oxford Dress Shoes Size 8 D",
-      "url": "https://shopgoodwill.com/item/275252158",
-      "image": "https://shopgoodwillimages.azureedge.net/production/136/Items/2026-08-26/cf94b26a-318a-4236-aec5-755a167f8205njpa_08261.jpg",
-      "price": 12.99,
+      "id": 275537169,
+      "title": "Vintage Woolrich Wool Blend Herringbone Shacket Flannel Shirt Jacket Brown M",
+      "url": "https://shopgoodwill.com/item/275537169",
+      "image": "https://shopgoodwillimages.azureedge.net/production/103/Items/2026-08-28/c6e8f5a4-5c12-4c22-a52a-9146f00283aalist_08281.jpg",
+      "price": 15.99,
       "bids": 0,
-      "end_time": "2026-09-02T21:18:00",
-      "category": "shoes",
-      "size": "8 D",
+      "end_time": "2026-08-31T16:55:00",
+      "category": "tailoring_outerwear",
+      "size": "SMALL",
       "rec": "Watch",
-      "score": 6.14,
-      "why": "maker match: allen edmonds | fabric match: calfskin | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "low-upside brand: express",
-      "new": false
+      "score": 6.43,
+      "why": "maker match: woolrich | fabric match: flannel, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned | fabric/material not confirmed",
+      "new": true
     },
     {
       "id": 275498539,
@@ -145,7 +145,7 @@
       "score": 6.14,
       "why": "maker match: allen edmonds | fabric match: made in england | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 275088671,
@@ -241,7 +241,7 @@
       "score": 6.0,
       "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 274980259,
@@ -289,7 +289,7 @@
       "score": 6.0,
       "why": "fabric match: camel hair, made in usa | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 275252857,
@@ -449,7 +449,7 @@
       "score": 5.86,
       "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": true
+      "new": false
     },
     {
       "id": 275120493,
@@ -465,14 +465,14 @@
       "score": 5.86,
       "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": true
+      "new": false
     },
     {
       "id": 274723852,
       "title": "Andean Alpaca Wool Throw Blanket Gray 51x71 Inches Fringed Edges New",
       "url": "https://shopgoodwill.com/item/274723852",
       "image": "https://shopgoodwillimages.azureedge.net/production/365/Item/2026-08-21/e94d83c0-7a45-41b0-a3fb-c99ec4ed2e4abbs8_08211.jpg",
-      "price": 21.0,
+      "price": 27.0,
       "bids": 0,
       "end_time": "2026-08-29T19:06:00",
       "category": "blankets",
@@ -488,7 +488,7 @@
       "title": "Andean Alpaca Wool Throw Blanket 51x71 Dark Gray Soft Fringe Edges New",
       "url": "https://shopgoodwill.com/item/274724170",
       "image": "https://shopgoodwillimages.azureedge.net/production/365/Item/2026-08-21/7198f605-b28a-4cb4-af69-b4ae59acbb86bbs8_08211.jpg",
-      "price": 23.0,
+      "price": 24.23,
       "bids": 0,
       "end_time": "2026-08-29T19:48:00",
       "category": "blankets",
@@ -516,6 +516,22 @@
       "new": false
     },
     {
+      "id": 275537834,
+      "title": "Authentic CANALI Black Wool Mens Blazer with COA, Made in Italy",
+      "url": "https://shopgoodwill.com/item/275537834",
+      "image": "https://shopgoodwillimages.azureedge.net/production/120/Items/2026-08-28/91929061-c6f2-494c-af79-3b66a6c5dfd7nson_08281.png",
+      "price": 49.99,
+      "bids": 0,
+      "end_time": "2026-09-04T20:24:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.71,
+      "why": "maker match: canali | fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
       "id": 275496482,
       "title": "Giorgio Armani Men's Silk Tie Burgundy Green Striped Palm Leaf Made in Italy COA",
       "url": "https://shopgoodwill.com/item/275496482",
@@ -529,7 +545,7 @@
       "score": 5.71,
       "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 274728072,
@@ -676,38 +692,6 @@
       "new": false
     },
     {
-      "id": 274714180,
-      "title": "Men's Allen Edmonds Brown Leather Grayson Tassel Loafers Size 8 1/2",
-      "url": "https://shopgoodwill.com/item/274714180",
-      "image": "https://shopgoodwillimages.azureedge.net/production/29/Items/2026-08-21/975b4423-51f8-4657-af01-1528482e9980cz26_08211.jpg",
-      "price": 29.99,
-      "bids": 0,
-      "end_time": "2026-08-28T18:55:00",
-      "category": "shoes",
-      "size": "8; 11 C; 8 A; 8 P; 42 L; 11 B",
-      "rec": "Need measurements",
-      "score": 5.57,
-      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
-      "id": 275280864,
-      "title": "Allen Edmonds Mens Boots 321030d Black Leather Pull-on 8",
-      "url": "https://shopgoodwill.com/item/275280864",
-      "image": "https://shopgoodwillimages.azureedge.net/production/73/Items/2026-08-28/82866e35-af9b-49ee-94a2-e98fa4f33e33gwco_08281.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-08-31T19:38:00",
-      "category": "shoes",
-      "size": "7 C; 41 F; 7 U; 8 D",
-      "rec": "Need measurements",
-      "score": 5.57,
-      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
       "id": 275195244,
       "title": "Allen Edmonds Mens Nashua Brown Leather Tassel Slip-On Loafer Shoes Size 7.5D",
       "url": "https://shopgoodwill.com/item/275195244",
@@ -769,7 +753,7 @@
       "score": 5.57,
       "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 275425731,
@@ -785,7 +769,7 @@
       "score": 5.57,
       "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 275147434,
@@ -817,7 +801,7 @@
       "score": 5.57,
       "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 275368774,
@@ -1313,7 +1297,7 @@
       "score": 5.43,
       "why": "fabric match: cashmere, made in italy | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": true
+      "new": false
     },
     {
       "id": 275051543,
@@ -1681,7 +1665,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 275403958,
@@ -1697,38 +1681,6 @@
       "score": 5.29,
       "why": "fabric match: cashmere, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
-      "id": 273976993,
-      "title": "Gianfranco Ruffini Italy Cashmere Blend Blazer Jacket",
-      "url": "https://shopgoodwill.com/item/273976993",
-      "image": "https://shopgoodwillimages.azureedge.net/production/122/Items/2026-06-08/86c8a489-3608-4003-abe1-ae35fad1fd24lens_06081.jpg",
-      "price": 19.91,
-      "bids": 0,
-      "end_time": "2026-09-13T19:10:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: cashmere, made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
-      "id": 274746782,
-      "title": "Allen Edmonds Dark Brown Wingtip Derby Shoes Men's Size 8E",
-      "url": "https://shopgoodwill.com/item/274746782",
-      "image": "https://shopgoodwillimages.azureedge.net/production/362/Items/2026-08-13/3947d9da-ab0b-4c2c-a426-c3a4e9b74134ch53_08131.png",
-      "price": 8.99,
-      "bids": 0,
-      "end_time": "2026-08-28T19:14:00",
-      "category": "shoes",
-      "size": "8E",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
       "new": false
     },
     {
@@ -1985,7 +1937,7 @@
       "score": 4.86,
       "why": "maker match: ferragamo | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "target shoe size not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 274917701,
