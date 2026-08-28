@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 124,
+  "count": 128,
   "items": [
     {
       "id": 274892925,
@@ -129,6 +129,22 @@
       "score": 6.43,
       "why": "maker match: woolrich | fabric match: flannel, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned | fabric/material not confirmed",
+      "new": false
+    },
+    {
+      "id": 275252158,
+      "title": "Allen Edmonds Carlyle Dark Chili Plain-Toe Oxford Dress Shoes Size 8 D",
+      "url": "https://shopgoodwill.com/item/275252158",
+      "image": "https://shopgoodwillimages.azureedge.net/production/136/Items/2026-08-26/cf94b26a-318a-4236-aec5-755a167f8205njpa_08261.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-09-02T21:18:00",
+      "category": "shoes",
+      "size": "8 D",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: allen edmonds | fabric match: calfskin | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "low-upside brand: express",
       "new": true
     },
     {
@@ -420,22 +436,6 @@
       "new": false
     },
     {
-      "id": 274742917,
-      "title": "Vintage Pendleton Woolen Mills Blue Cream Plaid 100% Wool Shirt USA",
-      "url": "https://shopgoodwill.com/item/274742917",
-      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-08-21/eb791016-6244-4a93-9f4d-4a239f5496c9imth_08211.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-08-28T15:04:00",
-      "category": "workwear",
-      "size": "small; 36",
-      "rec": "Watch",
-      "score": 5.86,
-      "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
-      "new": false
-    },
-    {
       "id": 275140918,
       "title": "Vintage Pendleton Wool Shirt Jacket Mens Medium 100% Virgin Wool Plaid",
       "url": "https://shopgoodwill.com/item/275140918",
@@ -529,7 +529,7 @@
       "score": 5.71,
       "why": "maker match: canali | fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 275496482,
@@ -690,6 +690,38 @@
       "why": "maker match: sandro, zanella | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
       "new": false
+    },
+    {
+      "id": 274714180,
+      "title": "Men's Allen Edmonds Brown Leather Grayson Tassel Loafers Size 8 1/2",
+      "url": "https://shopgoodwill.com/item/274714180",
+      "image": "https://shopgoodwillimages.azureedge.net/production/29/Items/2026-08-21/975b4423-51f8-4657-af01-1528482e9980cz26_08211.jpg",
+      "price": 29.99,
+      "bids": 0,
+      "end_time": "2026-08-28T18:55:00",
+      "category": "shoes",
+      "size": "8; 11 C; 8 A; 8 P; 42 L; 11 B",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
+      "id": 275280864,
+      "title": "Allen Edmonds Mens Boots 321030d Black Leather Pull-on 8",
+      "url": "https://shopgoodwill.com/item/275280864",
+      "image": "https://shopgoodwillimages.azureedge.net/production/73/Items/2026-08-28/82866e35-af9b-49ee-94a2-e98fa4f33e33gwco_08281.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-08-31T19:38:00",
+      "category": "shoes",
+      "size": "7 C; 41 F; 7 U; 8 D",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 275195244,
@@ -868,22 +900,6 @@
       "new": false
     },
     {
-      "id": 274980649,
-      "title": "Canali Men's White Impeccabile Diamond Weave Cotton Shirt Italy Sz 40 15.75",
-      "url": "https://shopgoodwill.com/item/274980649",
-      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-08-25/2d868654-5d59-4180-b52f-2331bff1271csens_08251.jpg",
-      "price": 12.99,
-      "bids": 0,
-      "end_time": "2026-08-29T18:51:00",
-      "category": "tailoring_outerwear",
-      "size": "40; 15",
-      "rec": "Need measurements",
-      "score": 5.43,
-      "why": "maker match: canali | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
       "id": 274979779,
       "title": "Canali Men's Black 100% Wool Formal Tuxedo Vest Waistcoat Lined Italy Sz 50",
       "url": "https://shopgoodwill.com/item/274979779",
@@ -946,6 +962,22 @@
       "why": "fabric match: made in italy, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
       "new": false
+    },
+    {
+      "id": 275540092,
+      "title": "Brunello Cucinelli Cashmere Half-Zip Sweater Mock Neck Pullover Mauve",
+      "url": "https://shopgoodwill.com/item/275540092",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-08-28/31e063a7-c8cf-465b-a32b-de137bb128a6goza_08281.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-09-02T18:27:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: brunello | fabric match: cashmere | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
     },
     {
       "id": 274411036,
@@ -1172,22 +1204,6 @@
       "new": false
     },
     {
-      "id": 274640632,
-      "title": "Pendleton Mens Medium 100% Virgin Wool Plaid Button-Up Shirt Red Blue Off-White",
-      "url": "https://shopgoodwill.com/item/274640632",
-      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-08-20/2a1e966a-55b6-4bc9-aba4-e7b0ec0d5571lace_08201.jpg",
-      "price": 8.99,
-      "bids": 0,
-      "end_time": "2026-08-28T15:46:00",
-      "category": "workwear",
-      "size": "15",
-      "rec": "Need measurements",
-      "score": 5.43,
-      "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
       "id": 274922838,
       "title": "Pendleton Men's 100% Virgin Wool Plaid Button-Up Shirt Medium Blue Beige",
       "url": "https://shopgoodwill.com/item/274922838",
@@ -1352,7 +1368,7 @@
       "title": "Lot of 10 Men's Designer Neckties:Burberry/Versace/Armani/YSL/Givenchy/Zegna/Etc",
       "url": "https://shopgoodwill.com/item/274721490",
       "image": "https://shopgoodwillimages.azureedge.net/production/4/Item/2026-08-21/db96652b-1c59-4fc7-a601-9846b9ec34c8mmon_08211.jpg",
-      "price": 32.0,
+      "price": 38.0,
       "bids": 0,
       "end_time": "2026-08-28T18:02:00",
       "category": "tailoring_outerwear",
@@ -1684,6 +1700,38 @@
       "new": false
     },
     {
+      "id": 273976993,
+      "title": "Gianfranco Ruffini Italy Cashmere Blend Blazer Jacket",
+      "url": "https://shopgoodwill.com/item/273976993",
+      "image": "https://shopgoodwillimages.azureedge.net/production/122/Items/2026-06-08/86c8a489-3608-4003-abe1-ae35fad1fd24lens_06081.jpg",
+      "price": 19.91,
+      "bids": 0,
+      "end_time": "2026-09-13T19:10:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: cashmere, made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
+      "id": 274746782,
+      "title": "Allen Edmonds Dark Brown Wingtip Derby Shoes Men's Size 8E",
+      "url": "https://shopgoodwill.com/item/274746782",
+      "image": "https://shopgoodwillimages.azureedge.net/production/362/Items/2026-08-13/3947d9da-ab0b-4c2c-a426-c3a4e9b74134ch53_08131.png",
+      "price": 8.99,
+      "bids": 0,
+      "end_time": "2026-08-28T19:14:00",
+      "category": "shoes",
+      "size": "8E",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned",
+      "new": true
+    },
+    {
       "id": 275097088,
       "title": "Red Wing Shoes Men's Black Leather Lace-Up Shoes Size 8 US",
       "url": "https://shopgoodwill.com/item/275097088",
@@ -1842,6 +1890,22 @@
       "why": "shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
+    },
+    {
+      "id": 275541916,
+      "title": "Red Wing Shoes 10877 Men's Brown Full-Grain Leather Moc Toe Work Boots",
+      "url": "https://shopgoodwill.com/item/275541916",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-08-28/c923148c-91ae-41bc-8150-6a6de484f675whal_08281.jpg",
+      "price": 24.99,
+      "bids": 0,
+      "end_time": "2026-09-02T18:30:00",
+      "category": "shoes",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 4.86,
+      "why": "maker match: red wing | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "target shoe size not confirmed | size not confirmed in detail text",
+      "new": true
     },
     {
       "id": 275333987,
