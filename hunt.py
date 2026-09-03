@@ -170,6 +170,7 @@ QUALITY_BRANDS = {
     "loro piana", "brunello", "zegna", "ermenegildo", "canali", "corneliani",
     "brioni", "kiton", "isaia", "belvest", "sartorio", "boglioli", "caruso",
     "ring jacket", "attolini", "cesare attolini", "cantarelli",
+    "eleventy", "lubiam",
     # tailoring — English / Savile Row
     "anderson & sheppard", "anderson sheppard", "henry poole", "huntsman",
     "gieves", "norton & sons", "norton sons", "davies & son", "dege & skinner",
@@ -192,19 +193,22 @@ QUALITY_BRANDS = {
     "turnbull", "asser", "charvet", "eton", "barba", "finamore", "borrelli",
     "fray", "lorenzini", "gitman", "individualized", "mercer", "drake",
     "kamakura", "hilditch", "harvie", "new & lingwood", "emma willis",
-    "budd", "figaret", "courtot",
+    "budd", "figaret", "courtot", "stenstrom", "stenströms",
     # loungewear / underwear / base-layer / premium basics
     "hanro", "zimmerli", "derek rose", "calida", "schiesser", "mey",
     "falke", "majestic filatures", "cdlp", "hamilton and hare",
     "luca faloni", "tekla", "dagsmejan", "merz b. schwanen",
     "lady white co", "the white briefs", "lunya", "james perse",
+    "patrick assaraf",
     # knitwear
     "saint james", "armor lux", "sunspel", "drumohr", "inis meain",
     "william lockie", "johnstons of elgin", "johnstons", "n.peal",
     "john smedley", "smedley", "ballantyne", "pringle", "malo",
-    "inverallan", "howlin",
+    "inverallan", "howlin", "fedeli",
     # workwear / heritage outerwear
     "vetra", "le laboureur", "filson", "pointer brand",
+    # outerwear — leather / luxury
+    "georg roth",
     # Japanese
     "kapital", "engineered garments", "needles", "45rpm", "orSlow", "orslow",
     "monitaly", "blue blue japan", "visvim", "comoli", "camoshita",
