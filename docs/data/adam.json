@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 115,
+  "count": 118,
   "items": [
     {
       "id": 276490889,
@@ -132,6 +132,22 @@
       "new": false
     },
     {
+      "id": 276981398,
+      "title": "Pendleton Alpaca Wool Throw Blanket 100% American Wool Run 5 #28 USA Made",
+      "url": "https://shopgoodwill.com/item/276981398",
+      "image": "https://shopgoodwillimages.azureedge.net/production/19/Item/2026-09-11/10f0a7e0-30b9-4ac4-a41b-9ade46ca9706irez_09111.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-09-18T15:11:00",
+      "category": "blankets",
+      "size": "small",
+      "rec": "Watch",
+      "score": 6.29,
+      "why": "maker match: pendleton | fabric match: alpaca, wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": "condition issue mentioned",
+      "new": true
+    },
+    {
       "id": 276561358,
       "title": "Allen Edmonds Men Oxford Wilbert 2196 Brown Leather Lace-up 8",
       "url": "https://shopgoodwill.com/item/276561358",
@@ -145,7 +161,7 @@
       "score": 6.14,
       "why": "maker match: allen edmonds | fabric match: made in usa | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 276875085,
@@ -177,7 +193,7 @@
       "score": 6.14,
       "why": "maker match: magnanni | fabric match: calfskin | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 276501371,
@@ -209,7 +225,7 @@
       "score": 6.14,
       "why": "maker match: bruno magli | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 276300821,
@@ -257,7 +273,7 @@
       "score": 6.14,
       "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 276846530,
@@ -433,7 +449,7 @@
       "score": 5.86,
       "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": true
+      "new": false
     },
     {
       "id": 276575757,
@@ -552,7 +568,7 @@
       "title": "Polo Ralph Lauren Unisex Blue LA28 Olympic Denim Jacket Size S",
       "url": "https://shopgoodwill.com/item/276880779",
       "image": "https://shopgoodwillimages.azureedge.net/production/181/Item/2026-09-10/72f0888d-6bc8-4ab2-b73b-856ee0478eeflark_09101.jpg",
-      "price": 22.0,
+      "price": 25.0,
       "bids": 0,
       "end_time": "2026-09-13T18:37:00",
       "category": "pants",
@@ -865,7 +881,7 @@
       "score": 5.43,
       "why": "fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 276676764,
@@ -929,7 +945,7 @@
       "score": 5.43,
       "why": "fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 276801844,
@@ -993,7 +1009,7 @@
       "score": 5.43,
       "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 276739694,
@@ -1009,7 +1025,7 @@
       "score": 5.43,
       "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text | fabric/material not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 276225134,
@@ -1105,6 +1121,22 @@
       "score": 5.43,
       "why": "fabric match: cashmere | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "low-upside brand: banana republic",
+      "new": false
+    },
+    {
+      "id": 276996315,
+      "title": "New & Lingwood Men's Vest Waistcoat Navy Blue Made in England",
+      "url": "https://shopgoodwill.com/item/276996315",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-11/8581d457-1fa8-4895-ba2c-48c2a89ff1c1gwny_09111.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-09-16T18:09:00",
+      "category": "shirts",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: new & lingwood | fabric match: made in england | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text | fabric/material not confirmed",
       "new": true
     },
     {
@@ -1185,7 +1217,7 @@
       "score": 5.29,
       "why": "maker match: ermenegildo, zegna | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text | fabric/material not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 276266788,
@@ -1361,13 +1393,13 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 276969558,
       "title": "Giorgio Armani Men's Silk Necktie Black White Striped Hand Made Coa",
       "url": "https://shopgoodwill.com/item/276969558",
-      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-11/f4b284ee-4cf3-4a03-85ac-feb6de58a7cfgwny_09111.jpg",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-11/e2bf4d28-d455-4a4f-84dc-1c8ad18582cdgwny_09111.jpg",
       "price": 24.99,
       "bids": 0,
       "end_time": "2026-09-18T19:28:00",
@@ -1377,7 +1409,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 276745330,
@@ -1588,22 +1620,6 @@
       "new": false
     },
     {
-      "id": 276884663,
-      "title": "100% Camel Hair Long Coat Beige Size Unknown",
-      "url": "https://shopgoodwill.com/item/276884663",
-      "image": "https://shopgoodwillimages.azureedge.net/production/18/Items/2026-09-10/7c4c0fa3-041e-44ee-837f-08aa2ff8a8d9rirb_09101.jpg",
-      "price": 7.99,
-      "bids": 0,
-      "end_time": "2026-09-15T18:37:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: camel hair, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
       "id": 276564243,
       "title": "Allen Edmonds Men's Dark Brown Leather Penny Loafer Dress Shoes Size 8 D",
       "url": "https://shopgoodwill.com/item/276564243",
@@ -1649,6 +1665,38 @@
       "score": 5.29,
       "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
+      "new": false
+    },
+    {
+      "id": 276984365,
+      "title": "Red Wing Shoes Men's Black Leather Lace-Up Shoes Size 8 US",
+      "url": "https://shopgoodwill.com/item/276984365",
+      "image": "https://shopgoodwillimages.azureedge.net/production/122/Items/2026-08-14/996eed90-2785-40a8-b041-18868a8fca9alens_08141.jpg",
+      "price": 39.96,
+      "bids": 0,
+      "end_time": "2026-09-18T19:13:00",
+      "category": "shoes",
+      "size": "8 U",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
+      "id": 276977977,
+      "title": "Red Wing Shoes Work Boots Model 2347 Brown Leather Safety Toe Size 8 US",
+      "url": "https://shopgoodwill.com/item/276977977",
+      "image": "https://shopgoodwillimages.azureedge.net/production/122/Item/2026-09-11/21e089c5-4ca1-4ab3-aeb6-f146ee31740ellen_09111.jpg",
+      "price": 39.99,
+      "bids": 0,
+      "end_time": "2026-09-18T19:44:00",
+      "category": "shoes",
+      "size": "8 R; 8 U",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
       "new": true
     },
     {
