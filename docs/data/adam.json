@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 105,
+  "count": 107,
   "items": [
     {
       "id": 276490889,
@@ -84,6 +84,22 @@
       "new": false
     },
     {
+      "id": 277241564,
+      "title": "Ermenegildo Zegna Men's Silk Tie Orange Gray Striped Geometric Italy COA",
+      "url": "https://shopgoodwill.com/item/277241564",
+      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-09-02/b7df9823-dba5-4116-a624-3015ed5097a1sens_09021.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-09-21T19:20:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.43,
+      "why": "maker match: ermenegildo, zegna | fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
       "id": 276981398,
       "title": "Pendleton Alpaca Wool Throw Blanket 100% American Wool Run 5 #28 USA Made",
       "url": "https://shopgoodwill.com/item/276981398",
@@ -146,6 +162,22 @@
       "why": "maker match: magnanni | fabric match: calfskin | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
+    },
+    {
+      "id": 277241613,
+      "title": "Salvatore Ferragamo Brown Suede Wingtip Brogue Derby Shoes Size 8 EE COA",
+      "url": "https://shopgoodwill.com/item/277241613",
+      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-09-02/77cb04b0-9f2b-4243-878a-59424a3c9a96sens_09021.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-09-21T19:11:00",
+      "category": "shoes",
+      "size": "8 E",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: ferragamo | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 276501371,
@@ -225,7 +257,7 @@
       "score": 6.14,
       "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 277072331,
@@ -280,7 +312,7 @@
       "title": "Vintage Hermes Men's Red Monogram H Logo 100% Silk Tie 5075 PA COA",
       "url": "https://shopgoodwill.com/item/276844152",
       "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-09-10/d6edc629-f733-41e5-9dfc-7373be893ae2der7_09101.jpg",
-      "price": 13.0,
+      "price": 15.0,
       "bids": 0,
       "end_time": "2026-09-17T19:08:00",
       "category": "tailoring_outerwear",
@@ -385,7 +417,7 @@
       "score": 5.86,
       "why": "fabric match: merino, wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 277075091,
@@ -449,7 +481,7 @@
       "score": 5.71,
       "why": "maker match: hermes | fabric match: made in france, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned | size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 276752119,
@@ -660,11 +692,27 @@
       "new": false
     },
     {
+      "id": 277238272,
+      "title": "Loro Piana Summer Walk Beige Suede Loafers EU 43 Made in Italy Used",
+      "url": "https://shopgoodwill.com/item/277238272",
+      "image": "https://shopgoodwillimages.azureedge.net/production/12/Item/2026-09-14/a7ac75ff-2f43-4a3f-853a-53acb489d481iaz9_09141.jpg",
+      "price": 14.95,
+      "bids": 0,
+      "end_time": "2026-09-21T18:08:00",
+      "category": "tailoring_outerwear",
+      "size": "9",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: loro piana | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
       "id": 275390394,
       "title": "Authentic Brioni Men's Chevron Off White Silk Button Up",
       "url": "https://shopgoodwill.com/item/275390394",
       "image": "https://shopgoodwillimages.azureedge.net/production/106/Items/2026-09-02/c602cec0-a9aa-4bdc-97cf-a79ffd6cc587mber_09021.jpg",
-      "price": 16.0,
+      "price": 27.0,
       "bids": 0,
       "end_time": "2026-09-17T19:20:00",
       "category": "tailoring_outerwear",
@@ -728,7 +776,7 @@
       "title": "AUTHENTICATED Hermes Paris Red Silk Floral Swirl Neck Tie",
       "url": "https://shopgoodwill.com/item/277070648",
       "image": "https://shopgoodwillimages.azureedge.net/production/48/Items/2026-09-12/6fe955cd-17e8-4aad-92f1-c71f52e58f61jeta_09121.jpg",
-      "price": 21.0,
+      "price": 23.0,
       "bids": 0,
       "end_time": "2026-09-19T18:33:00",
       "category": "tailoring_outerwear",
@@ -753,7 +801,7 @@
       "score": 5.43,
       "why": "fabric match: cashmere | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 274165041,
@@ -865,7 +913,7 @@
       "score": 5.43,
       "why": "maker match: filson | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text | fabric/material not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 276809658,
@@ -1217,7 +1265,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 276745330,
@@ -1380,6 +1428,22 @@
       "new": false
     },
     {
+      "id": 277212052,
+      "title": "Gianfranco Ruffini Italy Cashmere Blend Blazer Jacket",
+      "url": "https://shopgoodwill.com/item/277212052",
+      "image": "https://shopgoodwillimages.azureedge.net/production/122/Items/2026-06-08/86c8a489-3608-4003-abe1-ae35fad1fd24lens_06081.jpg",
+      "price": 14.9,
+      "bids": 0,
+      "end_time": "2026-10-14T19:08:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: cashmere, made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
       "id": 276685209,
       "title": "Black Cashmere Wool Blend Classic Long Sleeve Pockets Button Front Mens Overcoat",
       "url": "https://shopgoodwill.com/item/276685209",
@@ -1424,38 +1488,6 @@
       "rec": "Need measurements",
       "score": 5.29,
       "why": "fabric match: cashmere, made in scotland | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
-      "id": 276989452,
-      "title": "Sandro Moscoloni Men's Echo Black Leather Side Zip Ankle Dress Boots Size 10.5",
-      "url": "https://shopgoodwill.com/item/276989452",
-      "image": "https://shopgoodwillimages.azureedge.net/production/103/Items/2026-09-11/c0f4023b-4ccf-4232-b568-cdb5836c196flist_09111.jpg",
-      "price": 15.99,
-      "bids": 0,
-      "end_time": "2026-09-14T19:56:00",
-      "category": "knitwear",
-      "size": "10.5; SMALL",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "maker match: sandro | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned | fabric/material not confirmed",
-      "new": false
-    },
-    {
-      "id": 277074615,
-      "title": "Vintage 90s New Era San Diego Padres Diamond Collection 5950 Hat Sz 7 3/8",
-      "url": "https://shopgoodwill.com/item/277074615",
-      "image": "https://shopgoodwillimages.azureedge.net/production/29/Items/2026-09-13/7d668fa8-3491-4590-a9eb-59f70aad0dcbport_09131.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-19T20:16:00",
-      "category": "loungewear_basics",
-      "size": "7",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: made in usa, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
     },
@@ -1521,7 +1553,7 @@
       "score": 5.29,
       "why": "maker match: red wing | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": true
+      "new": false
     },
     {
       "id": 276859240,
@@ -1633,7 +1665,7 @@
       "score": 4.86,
       "why": "maker match: ferragamo | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "target shoe size not confirmed | size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 277063902,
@@ -1652,20 +1684,20 @@
       "new": false
     },
     {
-      "id": 276751925,
+      "id": 277237770,
       "title": "Lugz Men's White Clipper Canvass Slip-On Sneakers Size 7.5",
-      "url": "https://shopgoodwill.com/item/276751925",
+      "url": "https://shopgoodwill.com/item/277237770",
       "image": "https://shopgoodwillimages.azureedge.net/production/50/Items/2026-08-25/3526c473-2e3e-43fc-883b-10a6f38f9b5fodge_08251.jpg",
       "price": 8.91,
       "bids": 0,
-      "end_time": "2026-09-14T14:10:33",
+      "end_time": "2026-09-19T14:21:03",
       "category": "shoes",
       "size": "7.5 C; 7.5; small",
       "rec": "Need measurements",
       "score": 4.86,
       "why": "shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 276789920,
