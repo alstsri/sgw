@@ -24,7 +24,7 @@ WOMENS_SHOES = (162, 3)
 # Marissa profile
 # ---------------------------------------------------------------------------
 BUYER_PROFILE = {
-    "shoe_accept": ["7.5", "38", "37.5", "38.5"],
+    "shoe_accept": ["7", "7.5", "37", "38", "37.5", "38.5"],
     "shoe_maybe": ["8", "39"],          # boots / narrow / if measures smaller
     "shoe_reject_eu": [40, 41, 42, 43], # ~US 9+ unless proven 7.5
     "shoe_reject_us": [9, 9.5, 10, 10.5, 11],
@@ -272,7 +272,8 @@ MINIMALIST_FABRIC = [
 
 SEARCH_GROUPS = {
     "shoes": {"cat": WOMENS_SHOES, "strings": (
-        [f"{b} 7.5" for b in SHOE_BRANDS] + [f"{b} 38" for b in SHOE_BRANDS] + SHOE_GENERIC
+        [f"{b} 7.5" for b in SHOE_BRANDS] + [f"{b} 38" for b in SHOE_BRANDS]
+        + [f"{b} 7" for b in SHOE_BRANDS] + [f"{b} 37" for b in SHOE_BRANDS] + SHOE_GENERIC
     )},
     "lost_jacket": {"cat": WOMENS_CLOTHING, "strings": LOST_JACKET},
     "japanese": {"cat": WOMENS_CLOTHING, "strings": JAPANESE},
@@ -292,11 +293,11 @@ def shoe_size_ok(text: str) -> tuple[str, str]:
     t = text.lower()
     # Reject obvious wrong EU/US first
     if re.search(r'\beu(?:r)?\s*(?:40|41|42|43)\b', t) or re.search(r'\b(?:size\s*)?(?:9\.5|10|10\.5|11)\b', t):
-        # unless an explicit 7.5/38 also present
-        if not re.search(r'\b(?:7\.5|38|37\.5|38\.5)\b', t):
+        # unless an explicit 7/7.5/37/38 also present
+        if not re.search(r'\b(?:7|7\.5|38|37|37\.5|38\.5)\b', t):
             return "reject", "EU40+/US9+ — too large"
-    if re.search(r'\b(?:7\.5|38(?!\.5)|37\.5|38\.5)\b', t) or re.search(r'\beu(?:r)?\s*38\b', t):
-        return "accept", "US 7.5 / EU 38 match"
+    if re.search(r'\b(?:7|7\.5|38(?!\.5)|37|37\.5|38\.5)\b', t) or re.search(r'\beu(?:r)?\s*(?:37|38)\b', t):
+        return "accept", "US 7/7.5 / EU 37/38 match"
     if re.search(r'\b(?:8(?!\.5)|39)\b', t):
         return "maybe", "US 8 / EU 39 — ok for boots/narrow"
     return "unknown", "size not found in title"
