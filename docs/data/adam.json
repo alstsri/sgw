@@ -1,7 +1,7 @@
 {
   "person": "adam",
   "source_run": "local_adam",
-  "count": 114,
+  "count": 128,
   "items": [
     {
       "id": 278200167,
@@ -17,38 +17,6 @@
       "score": 7.14,
       "why": "maker match: ermenegildo, zegna | fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
-    },
-    {
-      "id": 277379719,
-      "title": "Bally Havana Dark Brown Leather Apron Toe Loafers Dress Shoes Size 7.5 D COA",
-      "url": "https://shopgoodwill.com/item/277379719",
-      "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-09-24/6503774b-b985-474f-98bd-530434becefader7_09241.jpg",
-      "price": 7.99,
-      "bids": 0,
-      "end_time": "2026-09-29T20:02:00",
-      "category": "shoes",
-      "size": "7.5 D",
-      "rec": "Watch",
-      "score": 6.71,
-      "why": "maker match: bally | fabric match: calfskin, made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "",
-      "new": false
-    },
-    {
-      "id": 278094902,
-      "title": "Vintage Pendleton Woolen Mills 1964-1980s Wool Flannel Shirt Made in Usa Medium",
-      "url": "https://shopgoodwill.com/item/278094902",
-      "image": "https://shopgoodwillimages.azureedge.net/production/62/Items/2026-08-06/7e71dd10-469c-4892-98cd-aad82a960d3cards_08061.jpg",
-      "price": 11.99,
-      "bids": 0,
-      "end_time": "2026-09-29T18:09:00",
-      "category": "workwear",
-      "size": "not verified",
-      "rec": "Watch",
-      "score": 6.57,
-      "why": "maker match: pendleton | fabric match: flannel, made in usa, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
       "new": false
     },
     {
@@ -81,7 +49,7 @@
       "score": 6.43,
       "why": "maker match: ermenegildo, zegna | fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278679437,
@@ -113,39 +81,87 @@
       "score": 6.43,
       "why": "maker match: ermenegildo, zegna | fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
+      "new": false
+    },
+    {
+      "id": 278936273,
+      "title": "Schweitzer Linen Blanket Ivory 100 Percent Cashmere 90 X 103 Made in Italy",
+      "url": "https://shopgoodwill.com/item/278936273",
+      "image": "https://shopgoodwillimages.azureedge.net/production/89/Items/2026-09-30/f6ec7188-29a2-4a4d-a332-d0724191ccfbz049_09301.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-10-07T19:30:00",
+      "category": "blankets",
+      "size": "90x",
+      "rec": "Watch",
+      "score": 6.43,
+      "why": "fabric match: cashmere, linen, made in italy | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": "",
       "new": true
     },
     {
-      "id": 278057125,
-      "title": "Salvatore Ferragamo Men's Slip-On Casual Shoes Brown Leather Size 8 EEE Wide",
-      "url": "https://shopgoodwill.com/item/278057125",
-      "image": "https://shopgoodwillimages.azureedge.net/production/72/Item/2026-09-22/9f5e2ac9-6ceb-4776-afec-b8390406185bson2_09221.jpg",
+      "id": 278950476,
+      "title": "Kilronan Knitwear Merino Wool Blanket Aran Cable Knit 43x30 Inches Cream",
+      "url": "https://shopgoodwill.com/item/278950476",
+      "image": "https://shopgoodwillimages.azureedge.net/production/5/Item/2026-09-30/cacbe8c2-45f4-43b0-b960-c0cfb74660f4alez_09301.jpg",
       "price": 14.99,
       "bids": 0,
-      "end_time": "2026-09-29T19:13:00",
-      "category": "shoes",
-      "size": "8 E; 8 S",
+      "end_time": "2026-10-05T18:06:00",
+      "category": "blankets",
+      "size": "not verified",
       "rec": "Watch",
-      "score": 6.14,
-      "why": "maker match: ferragamo | fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "score": 6.43,
+      "why": "fabric match: made in ireland, merino, wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
-      "id": 278396162,
-      "title": "Men's Small Shirts Bundle JF J Ferrar, BEMCSHO, prAna, Pendleton Wool Plaid",
-      "url": "https://shopgoodwill.com/item/278396162",
-      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-25/61cd86ac-a738-4ff4-ac06-caa35398f176goza_09251.jpg",
-      "price": 24.99,
+      "id": 278867019,
+      "title": "Johnstons of Elgin Green Plaid 100% Cashmere Scarf - Size O/S",
+      "url": "https://shopgoodwill.com/item/278867019",
+      "image": "https://shopgoodwillimages.azureedge.net/production/63/Items/2026-09-29/6d0fee24-5773-409d-bf8e-b7cf3bc59af0ngel_09291.jpg",
+      "price": 9.99,
       "bids": 0,
-      "end_time": "2026-09-29T18:41:00",
-      "category": "workwear",
-      "size": "size Small; Small",
+      "end_time": "2026-10-06T18:31:00",
+      "category": "blankets",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.43,
+      "why": "maker match: johnstons, johnstons of elgin | fabric match: cashmere | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
+      "flags": "",
+      "new": true
+    },
+    {
+      "id": 278852672,
+      "title": "Red Wing 2408 Brown Leather 8\" Steel Toe Work Boots Size 8 D",
+      "url": "https://shopgoodwill.com/item/278852672",
+      "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-09-29/60e448ee-f856-4b3a-8498-0f098d98d2eader7_09291.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-10-06T20:51:00",
+      "category": "shoes",
+      "size": "8 D",
       "rec": "Watch",
       "score": 6.14,
-      "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "why": "maker match: red wing | fabric match: made in usa | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
+    },
+    {
+      "id": 278951111,
+      "title": "Ermenegildo Zegna Two Mens Silk Neckties Yellow Blue Floral Silver Diamond",
+      "url": "https://shopgoodwill.com/item/278951111",
+      "image": "https://shopgoodwillimages.azureedge.net/production/122/Item/2026-09-30/05646fb3-fbc3-4b08-97a5-b64ae8f0f658llen_09301.jpg",
+      "price": 39.99,
+      "bids": 0,
+      "end_time": "2026-10-06T19:38:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: ermenegildo, zegna | fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
     },
     {
       "id": 278520088,
@@ -164,11 +180,27 @@
       "new": false
     },
     {
+      "id": 278625419,
+      "title": "Pendleton Men's Short Sleeve Wool Button-Down Shirt Green Brown Plaid S",
+      "url": "https://shopgoodwill.com/item/278625419",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-28/12edbcc3-8323-422f-829f-eb47a7075c5awwsa_09281.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-10-02T18:16:00",
+      "category": "workwear",
+      "size": "Small",
+      "rec": "Watch",
+      "score": 6.14,
+      "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
       "id": 278318780,
       "title": "Salvatore Ferragamo Gancini Bit Leather Driving Loafers Tan Size 7 D COA",
       "url": "https://shopgoodwill.com/item/278318780",
       "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-09-24/5d2acc4e-85a7-436d-af2b-87aa19b990beder7_09241.jpg",
-      "price": 16.99,
+      "price": 18.99,
       "bids": 0,
       "end_time": "2026-10-01T19:50:00",
       "category": "shoes",
@@ -196,6 +228,22 @@
       "new": false
     },
     {
+      "id": 278950289,
+      "title": "Canali Saks Fifth Avenue Men's Plaid Wool Blazer Jacket Made in Italy",
+      "url": "https://shopgoodwill.com/item/278950289",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-30/21febeb2-349f-40b4-a0f0-031a65f80d9cgwny_09301.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-10-05T20:21:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: canali | fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
       "id": 278094283,
       "title": "Giorgio Armani Men's Silk Tie Brown Diamond Pattern COA",
       "url": "https://shopgoodwill.com/item/278094283",
@@ -209,7 +257,7 @@
       "score": 6.0,
       "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 278572931,
@@ -225,6 +273,54 @@
       "score": 6.0,
       "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
+      "new": false
+    },
+    {
+      "id": 278859137,
+      "title": "Giorgio Armani Men's Long Sleeve Button Down Shirt Lavender Size 39 15.5 COA",
+      "url": "https://shopgoodwill.com/item/278859137",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-29/e32ecd98-70d5-480b-827d-b50ef05db9d3gwny_09291.jpg",
+      "price": 24.99,
+      "bids": 0,
+      "end_time": "2026-10-06T20:22:00",
+      "category": "tailoring_outerwear",
+      "size": "39; 15.5",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
+      "id": 278949406,
+      "title": "Hermes Paris Men's Silk Tie Green Red Blue Plaid Pattern Made in France COA",
+      "url": "https://shopgoodwill.com/item/278949406",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-30/5c723877-7a9a-4e3c-8804-d19dbf5c0166gwny_09301.jpg",
+      "price": 24.99,
+      "bids": 0,
+      "end_time": "2026-10-07T19:17:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: hermes | fabric match: made in france, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
+      "id": 278964375,
+      "title": "Hermes Paris Men's Blue Silk Tie COA",
+      "url": "https://shopgoodwill.com/item/278964375",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-30/2e5aa572-9b03-4d74-a57e-e75550fff0acgwny_09301.jpg",
+      "price": 24.99,
+      "bids": 0,
+      "end_time": "2026-10-07T19:50:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: hermes | fabric match: made in france, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
       "new": true
     },
     {
@@ -244,18 +340,34 @@
       "new": false
     },
     {
-      "id": 278033684,
+      "id": 278896691,
       "title": "Phoenix Clothes Mens Black Blazer Wool Blend Tall Jacket USA Made34x21\u201d",
-      "url": "https://shopgoodwill.com/item/278033684",
-      "image": "https://shopgoodwillimages.azureedge.net/production/371/Item/2026-09-22/05717c52-5ca7-4844-baad-09c5269dcff6TimH_09221.jpg",
+      "url": "https://shopgoodwill.com/item/278896691",
+      "image": "https://shopgoodwillimages.azureedge.net/production/371/Item/2026-09-29/39b9fdaf-68f2-4565-aefb-d1ab28d395ccTimH_09291.jpg",
       "price": 9.99,
       "bids": 0,
-      "end_time": "2026-09-29T18:11:00",
+      "end_time": "2026-10-06T18:19:00",
       "category": "tailoring_outerwear",
       "size": "34x; small",
       "rec": "Watch",
       "score": 6.0,
       "why": "fabric match: made in usa, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
+      "id": 278644541,
+      "title": "Vintage Pendleton Men's 100% Virgin Wool Red Black Plaid Flannel Shirt Size 15.5",
+      "url": "https://shopgoodwill.com/item/278644541",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-28/2eb31a81-2a43-420f-b7eb-18562045ec87wpor_09281.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-10-02T18:20:00",
+      "category": "workwear",
+      "size": "15; 15.5",
+      "rec": "Watch",
+      "score": 6.0,
+      "why": "maker match: pendleton | fabric match: flannel, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
     },
@@ -308,6 +420,22 @@
       "new": false
     },
     {
+      "id": 278850810,
+      "title": "Men's Luxury Silk Tie Lot Of 2 Ermenegildo Zegna & Alexandre London",
+      "url": "https://shopgoodwill.com/item/278850810",
+      "image": "https://shopgoodwillimages.azureedge.net/production/376/Items/2026-09-29/a3df625d-6fae-4eb4-b315-154e3b233c5egewc_09291.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-10-03T19:04:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Watch",
+      "score": 5.86,
+      "why": "maker match: ermenegildo, zegna | fabric match: silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
       "id": 278366664,
       "title": "Ermenegildo Zegna Mens Multicolor Printed Adjustable Designer Tie",
       "url": "https://shopgoodwill.com/item/278366664",
@@ -337,7 +465,7 @@
       "score": 5.86,
       "why": "maker match: ermenegildo, zegna | fabric match: silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278346334,
@@ -369,7 +497,7 @@
       "score": 5.86,
       "why": "maker match: ermenegildo, zegna | fabric match: silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278292960,
@@ -424,7 +552,7 @@
       "title": "Wacko Maria Men's Jean-Michel Basquiat Texas Mohair Blend Sweater Sz S",
       "url": "https://shopgoodwill.com/item/278430875",
       "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-09-25/cb05f01e-523e-4ba7-a88d-7b9bddb72cd0sens_09251.jpg",
-      "price": 15.0,
+      "price": 23.0,
       "bids": 0,
       "end_time": "2026-09-30T19:18:00",
       "category": "knitwear",
@@ -436,27 +564,11 @@
       "new": false
     },
     {
-      "id": 278644541,
-      "title": "Vintage Pendleton Men's 100% Virgin Wool Red Black Plaid Flannel Shirt Size 15.5",
-      "url": "https://shopgoodwill.com/item/278644541",
-      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-28/2eb31a81-2a43-420f-b7eb-18562045ec87wpor_09281.jpg",
-      "price": 14.99,
-      "bids": 0,
-      "end_time": "2026-10-02T18:20:00",
-      "category": "shirts",
-      "size": "15; 15.5",
-      "rec": "Watch",
-      "score": 5.86,
-      "why": "maker match: pendleton | fabric match: flannel, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "15.5 neck \u2014 not an exceptional maker (size out of primary range)",
-      "new": false
-    },
-    {
       "id": 278835640,
       "title": "Restoration Hardware RH Luxe Mohair Angora Wool Throw Blanket Tan 60x52 Spain",
       "url": "https://shopgoodwill.com/item/278835640",
       "image": "https://shopgoodwillimages.azureedge.net/production/140/Items/2026-09-29/636d8175-1062-4512-a471-02e6d222847blabs_09291.jpg",
-      "price": 14.99,
+      "price": 26.0,
       "bids": 0,
       "end_time": "2026-10-06T20:31:00",
       "category": "blankets",
@@ -465,14 +577,14 @@
       "score": 5.86,
       "why": "fabric match: mohair, wool | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 278081227,
       "title": "100% Pure Mohair Blanket by Andrew Stewart - Made in Scotland",
       "url": "https://shopgoodwill.com/item/278081227",
       "image": "https://shopgoodwillimages.azureedge.net/production/19/Items/2026-09-22/4e6382d8-41fb-4adb-b0bf-bdd51e80a9bbakey_09221.jpg",
-      "price": 16.0,
+      "price": 22.0,
       "bids": 0,
       "end_time": "2026-09-30T17:00:00",
       "category": "blankets",
@@ -482,22 +594,6 @@
       "why": "fabric match: made in scotland, mohair | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
       "new": false
-    },
-    {
-      "id": 278115129,
-      "title": "Giorgio Armani Men's Navy Blue Silk Grid Pattern Tie Made in Italy COA",
-      "url": "https://shopgoodwill.com/item/278115129",
-      "image": "https://shopgoodwillimages.azureedge.net/production/185/Items/2026-09-16/7c517d2a-f1ac-4073-bde9-f94b97cf2e58der7_09161.jpg",
-      "price": 7.99,
-      "bids": 0,
-      "end_time": "2026-09-29T20:09:00",
-      "category": "tailoring_outerwear",
-      "size": "small",
-      "rec": "Need measurements",
-      "score": 5.71,
-      "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
-      "new": true
     },
     {
       "id": 278604950,
@@ -513,7 +609,7 @@
       "score": 5.71,
       "why": "fabric match: made in italy, silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned | fabric/material not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 278706778,
@@ -532,20 +628,20 @@
       "new": false
     },
     {
-      "id": 278636687,
+      "id": 278916834,
       "title": "Jacobsons Camel Hair Double Breasted Vintage Wool Blend Overcoat M L",
-      "url": "https://shopgoodwill.com/item/278636687",
-      "image": "https://shopgoodwillimages.azureedge.net/production/5/Item/2026-09-27/67c4efcd-a922-47e2-a4b8-3f874a28e47fnson_09271.jpg",
-      "price": 24.95,
+      "url": "https://shopgoodwill.com/item/278916834",
+      "image": "https://shopgoodwillimages.azureedge.net/production/5/Item/2026-09-29/eca6cef7-47d0-4e9f-87af-9ae922d869banson_09291.jpg",
+      "price": 19.95,
       "bids": 0,
-      "end_time": "2026-09-29T18:35:00",
+      "end_time": "2026-10-01T18:02:00",
       "category": "tailoring_outerwear",
       "size": "small",
       "rec": "Need measurements",
       "score": 5.71,
       "why": "fabric match: camel hair, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
-      "new": false
+      "new": true
     },
     {
       "id": 278475935,
@@ -560,22 +656,6 @@
       "rec": "Need measurements",
       "score": 5.71,
       "why": "fabric match: mohair, wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "condition issue mentioned",
-      "new": false
-    },
-    {
-      "id": 278183582,
-      "title": "Neiman Marcus 100% Cashmere Burgundy V-neck Sweater Size 44",
-      "url": "https://shopgoodwill.com/item/278183582",
-      "image": "https://shopgoodwillimages.azureedge.net/production/133/Items/2026-09-23/0ad85d44-3d55-4668-bb89-6adb0120da2fjoew_09231.jpg",
-      "price": 19.99,
-      "bids": 0,
-      "end_time": "2026-09-30T20:23:00",
-      "category": "knitwear",
-      "size": "44; small",
-      "rec": "Need measurements",
-      "score": 5.71,
-      "why": "fabric match: cashmere, made in scotland | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "condition issue mentioned",
       "new": false
     },
@@ -612,6 +692,22 @@
       "new": false
     },
     {
+      "id": 278878809,
+      "title": "Canali Men's Gray Micro-Check 3 Button Wool Sport Coat- Size See Measurements",
+      "url": "https://shopgoodwill.com/item/278878809",
+      "image": "https://shopgoodwillimages.azureedge.net/production/147/Items/2026-09-30/c001084e-af93-4b7f-9595-fec2d428c723ers2_09301.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-10-06T19:17:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: canali | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
       "id": 278201383,
       "title": "Ermenegildo Zegna Men's Lot of 3 Silk Ties Purple Blue Gold Striped Paisley",
       "url": "https://shopgoodwill.com/item/278201383",
@@ -632,7 +728,7 @@
       "title": "Brunello Cucinelli Mens 100% Cashmere Light Beige Quarter-Zip Sweater 52",
       "url": "https://shopgoodwill.com/item/278611038",
       "image": "https://shopgoodwillimages.azureedge.net/production/12/Item/2026-09-27/e82ba50e-2dbb-4d8f-8e96-d041e21ec844ury9_09271.jpg",
-      "price": 108.0,
+      "price": 111.0,
       "bids": 0,
       "end_time": "2026-10-04T20:55:00",
       "category": "tailoring_outerwear",
@@ -648,7 +744,7 @@
       "title": "Polo by Ralph Lauren Mens Harrington Jacket M Tan Full Zip Plaid Lined",
       "url": "https://shopgoodwill.com/item/278418898",
       "image": "https://shopgoodwillimages.azureedge.net/production/60/Item/2026-09-25/8cbe6894-1e7e-4d30-b65f-4c8735dcc2bdoll1_09251.jpg",
-      "price": 27.99,
+      "price": 29.99,
       "bids": 0,
       "end_time": "2026-10-02T20:01:00",
       "category": "tailoring_outerwear",
@@ -657,32 +753,16 @@
       "score": 5.57,
       "why": "maker match: ralph lauren | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 278420839,
       "title": "Hermes Men's Uniform Dress Pants Box of 10 NWT Gray Mixed Sizes",
       "url": "https://shopgoodwill.com/item/278420839",
       "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-25/8163f1be-b4c9-4b16-aca3-1d17a1c1a213gwny_09251.jpg",
-      "price": 102.01,
+      "price": 136.0,
       "bids": 0,
       "end_time": "2026-09-30T19:01:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.57,
-      "why": "maker match: hermes | fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": false
-    },
-    {
-      "id": 278457005,
-      "title": "Hermes Men's Uniform Dress Pants Box of 10 NWT Gray Mixed Sizes",
-      "url": "https://shopgoodwill.com/item/278457005",
-      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-25/76c1f40a-6d91-4a4e-bf8e-62f1da3f4211tsar_09251.jpg",
-      "price": 127.99,
-      "bids": 0,
-      "end_time": "2026-09-30T20:43:00",
       "category": "tailoring_outerwear",
       "size": "not verified",
       "rec": "Need measurements",
@@ -706,6 +786,22 @@
       "why": "maker match: pendleton | fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
       "new": false
+    },
+    {
+      "id": 278786328,
+      "title": "Pendleton Woolen Mills Small Plaid Button-Up Shirt Blue Grey Yellow Black",
+      "url": "https://shopgoodwill.com/item/278786328",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-29/16c9d57c-6f4d-4648-a658-e0c537f41d67woak_09291.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-10-03T18:39:00",
+      "category": "workwear",
+      "size": "size small; Small",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: pendleton | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 278346798,
@@ -760,7 +856,7 @@
       "title": "Magnanni Brown Leather Double Monk Strap Cap Toe Dress Shoes Size 8 M",
       "url": "https://shopgoodwill.com/item/278416287",
       "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-09-25/8c71826a-a775-4baa-9006-de1b2529f903sens_09251.jpg",
-      "price": 13.99,
+      "price": 15.0,
       "bids": 0,
       "end_time": "2026-09-30T20:31:00",
       "category": "shoes",
@@ -868,6 +964,22 @@
       "new": false
     },
     {
+      "id": 278934560,
+      "title": "Bally Mens Black Round Toe Slip-On Casual Loafer Shoes Size 7.5D",
+      "url": "https://shopgoodwill.com/item/278934560",
+      "image": "https://shopgoodwillimages.azureedge.net/production/16/Items/2026-09-30/a0399761-e489-4741-a0a3-586c68ae1264ter1_09301.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-10-03T19:42:00",
+      "category": "shoes",
+      "size": "7.5D",
+      "rec": "Need measurements",
+      "score": 5.57,
+      "why": "maker match: bally | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
       "id": 278617825,
       "title": "Authentic Salvatore Ferragamo Mens Black Lace-Up Oxford Dress Shoes Size 7.5D",
       "url": "https://shopgoodwill.com/item/278617825",
@@ -882,6 +994,22 @@
       "why": "maker match: ferragamo | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
+    },
+    {
+      "id": 278945964,
+      "title": "Canali Men's Blue Plaid Blazer Sport Coat Jacket Made in Italy",
+      "url": "https://shopgoodwill.com/item/278945964",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-30/a64a2253-5cc1-424f-b408-c62a70ebcd13gwny_09301.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-10-05T18:14:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: canali | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
     },
     {
       "id": 278302268,
@@ -900,6 +1028,38 @@
       "new": false
     },
     {
+      "id": 278931925,
+      "title": "Armani Collezioni Men's Tie Green Pattern Silk",
+      "url": "https://shopgoodwill.com/item/278931925",
+      "image": "https://shopgoodwillimages.azureedge.net/production/73/Items/2026-09-10/5f38243c-a717-4d7e-8248-53137adacafflls1_09101.jpg",
+      "price": 16.19,
+      "bids": 0,
+      "end_time": "2026-10-05T20:02:00",
+      "category": "tailoring_outerwear",
+      "size": "small",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "fabric match: silk | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
+      "id": 278846152,
+      "title": "Loro Piana 360 LP Flexy Walk Slip-On Sneakers Grey Knit Brown Leather 41 EU",
+      "url": "https://shopgoodwill.com/item/278846152",
+      "image": "https://shopgoodwillimages.azureedge.net/production/12/Item/2026-09-29/17bab07f-5ba8-49fb-a19a-a282aeb51722cia9_09291.jpg",
+      "price": 17.0,
+      "bids": 0,
+      "end_time": "2026-10-06T18:03:00",
+      "category": "tailoring_outerwear",
+      "size": "41 E",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: loro piana | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
+    },
+    {
       "id": 278200883,
       "title": "Banana Republic Men's Small Charcoal Gray Herringbone Wool Blend Jacket",
       "url": "https://shopgoodwill.com/item/278200883",
@@ -913,7 +1073,7 @@
       "score": 5.43,
       "why": "fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "low-upside brand: banana republic",
-      "new": true
+      "new": false
     },
     {
       "id": 278575865,
@@ -929,7 +1089,7 @@
       "score": 5.43,
       "why": "fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 278794638,
@@ -945,6 +1105,22 @@
       "score": 5.43,
       "why": "fabric match: alpaca | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
+      "new": false
+    },
+    {
+      "id": 278890227,
+      "title": "AUTHENTICATED Hermes Paris Red Silk Floral Swirl Neck Tie",
+      "url": "https://shopgoodwill.com/item/278890227",
+      "image": "https://shopgoodwillimages.azureedge.net/production/48/Items/2026-09-12/6fe955cd-17e8-4aad-92f1-c71f52e58f61jeta_09121.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-10-06T18:00:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "maker match: hermes | fabric match: silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
       "new": true
     },
     {
@@ -1000,7 +1176,7 @@
       "title": "Chaps by Ralph Lauren Oxbridge Camel Hair Grey Double-Breasted Blazer",
       "url": "https://shopgoodwill.com/item/278431033",
       "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-25/778027ad-d67c-479e-b25d-2254b638603fwbou_09251.jpg",
-      "price": 24.99,
+      "price": 26.0,
       "bids": 0,
       "end_time": "2026-09-30T18:32:00",
       "category": "tailoring_outerwear",
@@ -1028,36 +1204,20 @@
       "new": false
     },
     {
-      "id": 278394726,
-      "title": "Pendleton Men's Wool Long Sleeve Plaid Button-Up Shirt Medium Beige Black",
-      "url": "https://shopgoodwill.com/item/278394726",
-      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-25/19c14bdc-c1d9-4816-8dfd-f4627eda0cc3goza_09251.jpg",
-      "price": 14.99,
+      "id": 278900785,
+      "title": "Vintage US Air Force Dress Uniform Jacket XS & Trousers 34x21 Blue Wool Blend",
+      "url": "https://shopgoodwill.com/item/278900785",
+      "image": "https://shopgoodwillimages.azureedge.net/production/5/Item/2026-09-29/cfed8151-0863-46f7-b1bc-f5f93997c114cory_09291.jpg",
+      "price": 29.95,
       "bids": 0,
-      "end_time": "2026-09-29T18:02:00",
-      "category": "workwear",
-      "size": "not verified",
+      "end_time": "2026-10-29T18:18:00",
+      "category": "tailoring_outerwear",
+      "size": "small",
       "rec": "Need measurements",
       "score": 5.43,
-      "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": false
-    },
-    {
-      "id": 278078647,
-      "title": "Pendleton Red Plaid Pattern Wool Button-Up Shirt, Men's Size 16",
-      "url": "https://shopgoodwill.com/item/278078647",
-      "image": "https://shopgoodwillimages.azureedge.net/production/120/Items/2026-09-22/b99f1c97-939e-4748-87eb-425327e48fe6ight_09221.png",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-29T20:18:00",
-      "category": "workwear",
-      "size": "16",
-      "rec": "Need measurements",
-      "score": 5.43,
-      "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "why": "fabric match: wool | tailoring size in target range (34S/34R/34/32R/32 / IT42/44) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": false
+      "new": true
     },
     {
       "id": 278428362,
@@ -1089,7 +1249,7 @@
       "score": 5.43,
       "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
-      "new": true
+      "new": false
     },
     {
       "id": 278588634,
@@ -1105,23 +1265,23 @@
       "score": 5.43,
       "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
-      "id": 278095162,
-      "title": "Banana Republic Gray Cotton Cashmere 1/4 Zip Pullover Mens Sweater Size Small",
-      "url": "https://shopgoodwill.com/item/278095162",
-      "image": "https://shopgoodwillimages.azureedge.net/production/62/Items/2026-09-08/379483de-716e-45c3-b53b-b2100c4c1d6eecom_09081.jpg",
-      "price": 9.99,
+      "id": 278635716,
+      "title": "Pendleton Sir Pendleton Men's Tall Medium Wool Plaid Button-Up Shirt",
+      "url": "https://shopgoodwill.com/item/278635716",
+      "image": "https://shopgoodwillimages.azureedge.net/production/8/Item/2026-09-28/5dcb50e8-a1aa-46b8-a482-053c586086cbwpor_09281.jpg",
+      "price": 14.99,
       "bids": 0,
-      "end_time": "2026-09-29T18:02:00",
-      "category": "knitwear",
-      "size": "15; Size Small",
+      "end_time": "2026-10-02T18:40:00",
+      "category": "workwear",
+      "size": "not verified",
       "rec": "Need measurements",
       "score": 5.43,
-      "why": "fabric match: cashmere | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "low-upside brand: banana republic",
-      "new": false
+      "why": "maker match: pendleton | fabric match: wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
     },
     {
       "id": 278586311,
@@ -1143,7 +1303,7 @@
       "id": 278521276,
       "title": "Vince Gray Cashmere Heather Long Sleeve Mock Neck Henley Mens Sweater Size Small",
       "url": "https://shopgoodwill.com/item/278521276",
-      "image": "https://shopgoodwillimages.azureedge.net/production/62/Items/2026-09-25/2243f7df-a656-46de-bd12-2d5122878070ecom_09251.jpg",
+      "image": "https://shopgoodwillimages.azureedge.net/production/62/Items/2026-09-29/76adf579-e6ab-4ae3-b7ce-76ca914b0c64ecom_09291.jpg",
       "price": 12.99,
       "bids": 0,
       "end_time": "2026-10-03T18:54:00",
@@ -1153,23 +1313,39 @@
       "score": 5.43,
       "why": "fabric match: cashmere | shirt/knit size in target range (15 neck) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
+      "new": false
+    },
+    {
+      "id": 278865717,
+      "title": "Paul Fredrick Brown Leather Men's Wingtip/brogue Dress Made In Italy Size 8",
+      "url": "https://shopgoodwill.com/item/278865717",
+      "image": "https://shopgoodwillimages.azureedge.net/production/376/Items/2026-09-30/938627c6-88a0-45f3-8f39-f9c4f54d0b4cgewc_09301.jpg",
+      "price": 12.99,
+      "bids": 0,
+      "end_time": "2026-10-03T18:03:00",
+      "category": "shoes",
+      "size": "8 C; 8",
+      "rec": "Need measurements",
+      "score": 5.43,
+      "why": "fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
       "new": true
     },
     {
-      "id": 278558099,
-      "title": "Ermenegildo Zegna Mens Blue Geometric Print Keeper Loop Adjustable Pointed Tie",
-      "url": "https://shopgoodwill.com/item/278558099",
-      "image": "https://shopgoodwillimages.azureedge.net/production/16/Items/2026-09-23/f41a42e1-3a6b-4b6d-9c29-4670ad50f11fter1_09231.jpg",
+      "id": 278859463,
+      "title": "Paul Fredrick Black Leather Men's Wingtip/brogue Dress Made In Italy Size 8",
+      "url": "https://shopgoodwill.com/item/278859463",
+      "image": "https://shopgoodwillimages.azureedge.net/production/376/Items/2026-09-30/fadc18cb-d2ab-423b-9fd0-26a37e23eba9gewc_09301.jpg",
       "price": 12.99,
       "bids": 0,
-      "end_time": "2026-09-29T18:06:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
+      "end_time": "2026-10-03T20:12:00",
+      "category": "shoes",
+      "size": "8 C; 8",
       "rec": "Need measurements",
-      "score": 5.29,
-      "why": "maker match: ermenegildo, zegna | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text | fabric/material not confirmed",
-      "new": false
+      "score": 5.43,
+      "why": "fabric match: made in italy | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "",
+      "new": true
     },
     {
       "id": 278146868,
@@ -1185,7 +1361,7 @@
       "score": 5.29,
       "why": "maker match: ermenegildo, zegna | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text | fabric/material not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 278674379,
@@ -1201,7 +1377,7 @@
       "score": 5.29,
       "why": "maker match: ermenegildo, zegna | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "fabric/material not confirmed",
-      "new": true
+      "new": false
     },
     {
       "id": 278385794,
@@ -1217,55 +1393,7 @@
       "score": 5.29,
       "why": "maker match: ermenegildo, zegna | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text | fabric/material not confirmed",
-      "new": true
-    },
-    {
-      "id": 278383218,
-      "title": "Giorgio Armani Men's Silk Necktie Polka Dot Pattern Made in Italy Coa",
-      "url": "https://shopgoodwill.com/item/278383218",
-      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-08-31/c89db2b4-75a2-4a63-87e4-87ee98b6aa59gwny_08311.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-29T18:17:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
-      "id": 278386258,
-      "title": "Giorgio Armani Cravatte Men's Silk Tie Brown Orange Striped Made in Italy",
-      "url": "https://shopgoodwill.com/item/278386258",
-      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-08-31/5a4d0036-b979-4c82-af0e-c0bf7174bc64gwny_08311.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-29T19:00:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
-      "id": 278366724,
-      "title": "Giorgio Armani Men's Silk Tie Blue Striped Made in Italy Coa",
-      "url": "https://shopgoodwill.com/item/278366724",
-      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-22/791038f7-4dbb-414e-83e2-7ba3fa7ef547gwny_09221.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-29T20:26:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278230905,
@@ -1281,7 +1409,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278556348,
@@ -1291,6 +1419,38 @@
       "price": 12.99,
       "bids": 0,
       "end_time": "2026-10-01T18:27:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": false
+    },
+    {
+      "id": 278872673,
+      "title": "Giorgio Armani Collezioni Men's Silk Tie Blue Diamond Pattern Made in Italy",
+      "url": "https://shopgoodwill.com/item/278872673",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-16/90840fca-de00-4b0e-a6f5-5498806213d1gwny_09161.jpg",
+      "price": 8.99,
+      "bids": 0,
+      "end_time": "2026-10-04T19:28:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
+      "id": 278866108,
+      "title": "Giorgio Armani Men's Blue Plaid Silk Necktie Hand Made in Italy Coa",
+      "url": "https://shopgoodwill.com/item/278866108",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-16/77356202-4b10-42a7-a191-fd187fe496d3gwny_09161.jpg",
+      "price": 8.99,
+      "bids": 0,
+      "end_time": "2026-10-04T20:19:00",
       "category": "tailoring_outerwear",
       "size": "not verified",
       "rec": "Need measurements",
@@ -1313,6 +1473,38 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
+      "new": false
+    },
+    {
+      "id": 278885060,
+      "title": "Giorgio Armani Men's Silk Necktie Polka Dot Pattern Made in Italy Coa",
+      "url": "https://shopgoodwill.com/item/278885060",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-08-31/c89db2b4-75a2-4a63-87e4-87ee98b6aa59gwny_08311.jpg",
+      "price": 5.99,
+      "bids": 0,
+      "end_time": "2026-10-06T20:14:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": true
+    },
+    {
+      "id": 278917317,
+      "title": "Giorgio Armani Men's Silk Tie Blue Striped Made in Italy Coa",
+      "url": "https://shopgoodwill.com/item/278917317",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-22/791038f7-4dbb-414e-83e2-7ba3fa7ef547gwny_09221.jpg",
+      "price": 5.99,
+      "bids": 0,
+      "end_time": "2026-10-06T20:22:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
       "new": true
     },
     {
@@ -1329,23 +1521,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
-      "id": 278078971,
-      "title": "Armani Collezioni Men's 2 Silk Ties Blue Geometric & Striped Made in Italy COA",
-      "url": "https://shopgoodwill.com/item/278078971",
-      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-09-11/ed28e9ec-8b84-460d-b9a9-7dc6bad021b5sens_09111.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-29T20:09:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278790286,
@@ -1361,7 +1537,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278658473,
@@ -1377,7 +1553,7 @@
       "score": 5.29,
       "why": "fabric match: made in italy, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
-      "new": true
+      "new": false
     },
     {
       "id": 278796403,
@@ -1392,22 +1568,6 @@
       "rec": "Need measurements",
       "score": 5.29,
       "why": "fabric match: tweed, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": true
-    },
-    {
-      "id": 278078933,
-      "title": "Lanvin Men's Brown Silk Tie Blue Geometric Medallion Pattern",
-      "url": "https://shopgoodwill.com/item/278078933",
-      "image": "https://shopgoodwillimages.azureedge.net/production/343/Items/2026-09-09/729b018c-fba4-490c-b21a-9870d97fb384sens_09091.jpg",
-      "price": 9.99,
-      "bids": 0,
-      "end_time": "2026-09-29T18:02:00",
-      "category": "tailoring_outerwear",
-      "size": "not verified",
-      "rec": "Need measurements",
-      "score": 5.29,
-      "why": "fabric match: made in france, silk | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
       "new": false
     },
@@ -1448,7 +1608,7 @@
       "title": "Alpaca Fina Men's Brown Jacket Size",
       "url": "https://shopgoodwill.com/item/278314460",
       "image": "https://shopgoodwillimages.azureedge.net/production/29/Items/2026-09-24/c178c619-fa7d-402c-a0bc-9c5bf3fe9c00rson_09241.jpg",
-      "price": 19.99,
+      "price": 21.0,
       "bids": 0,
       "end_time": "2026-10-01T19:29:00",
       "category": "tailoring_outerwear",
@@ -1464,7 +1624,7 @@
       "title": "Tejidos Ruiz Wool Alpaca Hooded Zip-Up Jacket Southwestern Pattern L",
       "url": "https://shopgoodwill.com/item/278680854",
       "image": "https://shopgoodwillimages.azureedge.net/production/341/Item/2026-09-28/36c8b54a-6d4b-40df-acfa-49ed27b37ef7iyah_09281.jpg",
-      "price": 9.99,
+      "price": 11.0,
       "bids": 0,
       "end_time": "2026-10-05T18:35:00",
       "category": "tailoring_outerwear",
@@ -1488,6 +1648,22 @@
       "rec": "Need measurements",
       "score": 5.29,
       "why": "fabric match: alpaca, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "size not confirmed in detail text",
+      "new": false
+    },
+    {
+      "id": 278457005,
+      "title": "Hermes Men's Uniform Dress Pants Box of 10 NWT Gray Mixed Sizes",
+      "url": "https://shopgoodwill.com/item/278457005",
+      "image": "https://shopgoodwillimages.azureedge.net/production/33/Items/2026-09-25/76c1f40a-6d91-4a4e-bf8e-62f1da3f4211tsar_09251.jpg",
+      "price": 407.0,
+      "bids": 0,
+      "end_time": "2026-09-30T20:43:00",
+      "category": "tailoring_outerwear",
+      "size": "not verified",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: hermes | fabric match: made in italy, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "size not confirmed in detail text",
       "new": false
     },
@@ -1588,20 +1764,20 @@
       "new": false
     },
     {
-      "id": 278514149,
-      "title": "Vintage Munsingwear Sweater Vest Cable Knit V-Neck Shetland Wool Mohair Size S",
-      "url": "https://shopgoodwill.com/item/278514149",
-      "image": "https://shopgoodwillimages.azureedge.net/production/196/Items/2026-09-22/f0a21112-4225-426d-8a32-cb5234dcf491sher_09221.jpg",
-      "price": 12.99,
+      "id": 278871980,
+      "title": "Allen Edmonds Sanford Cap-Toe Derby/Oxford Style Size 8 1/2",
+      "url": "https://shopgoodwill.com/item/278871980",
+      "image": "https://shopgoodwillimages.azureedge.net/production/26/Items/2026-09-30/dc1a7a28-027e-4bcb-b0c0-0db0c6b212fbmarm_09301.jpg",
+      "price": 14.99,
       "bids": 0,
-      "end_time": "2026-10-02T19:17:00",
-      "category": "knitwear",
-      "size": "not verified",
+      "end_time": "2026-10-04T18:09:00",
+      "category": "shoes",
+      "size": "8.5 M; 8",
       "rec": "Need measurements",
       "score": 5.29,
-      "why": "fabric match: mohair, wool | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "size not confirmed in detail text",
-      "new": false
+      "why": "maker match: allen edmonds | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned",
+      "new": true
     },
     {
       "id": 278512565,
@@ -1636,6 +1812,38 @@
       "new": false
     },
     {
+      "id": 278962079,
+      "title": "Bally Men's Black Leather Styleflex Dress Loafers Size 11F",
+      "url": "https://shopgoodwill.com/item/278962079",
+      "image": "https://shopgoodwillimages.azureedge.net/production/2/Item/2026-09-30/2fa6f8d1-b3e4-42df-8206-722c55a57df0haml_09301.jpg",
+      "price": 9.99,
+      "bids": 0,
+      "end_time": "2026-10-09T18:41:00",
+      "category": "shoes",
+      "size": "11F",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: bally | fabric match: made in italy | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "target shoe size not confirmed | shoe size appears outside target",
+      "new": true
+    },
+    {
+      "id": 278849505,
+      "title": "Authentic Salvatore Ferragamo Brown Leather Gancini Bit Loafers Mens Size 7.5",
+      "url": "https://shopgoodwill.com/item/278849505",
+      "image": "https://shopgoodwillimages.azureedge.net/production/5/Item/2026-09-29/f023424b-6d19-463c-a583-734b10adf56ehill_09291.jpg",
+      "price": 19.99,
+      "bids": 0,
+      "end_time": "2026-10-04T18:31:00",
+      "category": "shoes",
+      "size": "7.5",
+      "rec": "Need measurements",
+      "score": 5.29,
+      "why": "maker match: ferragamo | shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "condition issue mentioned",
+      "new": true
+    },
+    {
       "id": 278225092,
       "title": "Regal Comfort The Answer Collection Faux Fur Cashmere Fleece Blanket 41x61\u201d",
       "url": "https://shopgoodwill.com/item/278225092",
@@ -1656,13 +1864,13 @@
       "title": "Time of the West Women's Alpaca Southwestern Long Blanket Sweater Coat Sz XL NWT",
       "url": "https://shopgoodwill.com/item/278303429",
       "image": "https://shopgoodwillimages.azureedge.net/production/117/Items/2026-09-25/89966ff0-02c8-4ad3-a1dc-710c544b4498dmin_09251.jpg",
-      "price": 19.01,
+      "price": 42.09,
       "bids": 0,
       "end_time": "2026-10-01T19:15:00",
       "category": "blankets",
       "size": "not verified",
       "rec": "Need measurements",
-      "score": 5.29,
+      "score": 5.0,
       "why": "fabric match: alpaca | blanket sizing is not body-fit dependent | men's check: blanket/throw is not gendered apparel",
       "flags": "",
       "new": false
@@ -1682,6 +1890,22 @@
       "why": "shoe size in target range (8/7.5) | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
       "flags": "",
       "new": false
+    },
+    {
+      "id": 278859846,
+      "title": "White's Boots Linescout LTT NFPA H7809-06-D Black Leather Work Boots 6D",
+      "url": "https://shopgoodwill.com/item/278859846",
+      "image": "https://shopgoodwillimages.azureedge.net/production/385/Item/2026-09-29/e787c4be-9c43-44b4-9f26-51634cb90426call_09291.jpg",
+      "price": 14.99,
+      "bids": 0,
+      "end_time": "2026-10-01T18:16:00",
+      "category": "shoes",
+      "size": "6 D",
+      "rec": "Need measurements",
+      "score": 4.86,
+      "why": "maker match: white's | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "target shoe size not confirmed",
+      "new": true
     },
     {
       "id": 278632254,
@@ -1716,22 +1940,6 @@
       "new": false
     },
     {
-      "id": 278074569,
-      "title": "Vintage Bally Barnes Parawet Black Leather Penny Loafers Size 7W COA",
-      "url": "https://shopgoodwill.com/item/278074569",
-      "image": "https://shopgoodwillimages.azureedge.net/production/115/Items/2026-09-22/e116955b-f300-4409-8b01-b3f158b74a0ewaii_09221.jpg",
-      "price": 25.0,
-      "bids": 0,
-      "end_time": "2026-09-29T14:18:02",
-      "category": "shoes",
-      "size": "7W",
-      "rec": "Need measurements",
-      "score": 4.86,
-      "why": "maker match: bally | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
-      "flags": "target shoe size not confirmed",
-      "new": false
-    },
-    {
       "id": 278835977,
       "title": "Bally Competition Sneakers Size 7 Black White Grey Yellow Leather Suede",
       "url": "https://shopgoodwill.com/item/278835977",
@@ -1741,6 +1949,22 @@
       "end_time": "2026-10-04T18:29:00",
       "category": "shoes",
       "size": "7; 7 B",
+      "rec": "Need measurements",
+      "score": 4.86,
+      "why": "maker match: bally | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
+      "flags": "target shoe size not confirmed",
+      "new": false
+    },
+    {
+      "id": 278871065,
+      "title": "Vintage Bally Barnes Parawet Black Leather Penny Loafers Size 7W COA",
+      "url": "https://shopgoodwill.com/item/278871065",
+      "image": "https://shopgoodwillimages.azureedge.net/production/115/Items/2026-09-22/e116955b-f300-4409-8b01-b3f158b74a0ewaii_09221.jpg",
+      "price": 10.99,
+      "bids": 0,
+      "end_time": "2026-10-06T14:20:24",
+      "category": "shoes",
+      "size": "7W",
       "rec": "Need measurements",
       "score": 4.86,
       "why": "maker match: bally | men's check: men's term in title/category/description | men's check: ShopGoodwill men's category confirmed",
