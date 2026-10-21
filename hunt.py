@@ -425,6 +425,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Agnès b. homme",
             "Lemaire",
             "Le Mont Saint Michel",
+            "The Kooples",
             "Old England Paris",
             "Hermes",
             "Oxxford 34",
