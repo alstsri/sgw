@@ -613,6 +613,8 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Turnbull Asser",
             "James Perse",
             "vintage padres",
+            "silk robe",
+            "men's silk robe",
         ],
     },
     "pants": {
