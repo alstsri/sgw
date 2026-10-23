@@ -4,7 +4,7 @@ const PEOPLE = [
   { key: "marissa", label: "Marissa" },
 ];
 
-const state = { person: PEOPLE[0].key, rec: "all", type: "all", data: null };
+const state = { person: PEOPLE[0].key, rec: "all", type: "all", sort: "score", data: null };
 const $ = (s) => document.querySelector(s);
 
 // Map a hunter category to a coarse type for the Shoes/Clothing/Home filter
@@ -74,6 +74,9 @@ function render() {
   if (state.rec === "new") items = items.filter((it) => it.new);
   else if (state.rec !== "all") items = items.filter((it) => it.rec === state.rec);
   if (state.type !== "all") items = items.filter((it) => typeOf(it.category) === state.type);
+  if (state.sort === "end") {
+    items.sort((a, b) => new Date(a.end_time.replace(" ", "T")) - new Date(b.end_time.replace(" ", "T")));
+  }
   $("#meta").textContent = `${items.length} live · swept from ${state.data.source_run}`;
   if (!items.length) { grid.innerHTML = '<div class="empty">No live items in this filter.</div>'; return; }
   for (const it of items) grid.appendChild(card(it));
@@ -141,6 +144,14 @@ $("#types").addEventListener("click", (e) => {
   $("#types").querySelectorAll("button").forEach((x) => x.classList.remove("active"));
   e.target.classList.add("active");
   state.type = e.target.dataset.type;
+  render();
+});
+
+$("#sort").addEventListener("click", (e) => {
+  if (e.target.tagName !== "BUTTON") return;
+  $("#sort").querySelectorAll("button").forEach((x) => x.classList.remove("active"));
+  e.target.classList.add("active");
+  state.sort = e.target.dataset.sort;
   render();
 });
 
