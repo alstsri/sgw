@@ -7,6 +7,22 @@ const PEOPLE = [
 const state = { person: PEOPLE[0].key, rec: "all", type: "all", sort: "score", data: null };
 const $ = (s) => document.querySelector(s);
 
+// Favorites ("come back to this") persist per-browser across sweeps/reloads,
+// keyed by the ShopGoodwill item id (stable; shared id space across people).
+const FAV_KEY = "sgw_favorites";
+function loadFavorites() {
+  try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]")); }
+  catch { return new Set(); }
+}
+const favorites = loadFavorites();
+function saveFavorites() {
+  try { localStorage.setItem(FAV_KEY, JSON.stringify([...favorites])); } catch {}
+}
+function toggleFavorite(id) {
+  if (favorites.has(id)) favorites.delete(id); else favorites.add(id);
+  saveFavorites();
+}
+
 // Map a hunter category to a coarse type for the Shoes/Clothing/Home filter
 function typeOf(category) {
   const c = (category || "").toLowerCase();
@@ -58,7 +74,13 @@ function card(item) {
     </div>
     <div class="body">
       <div class="title">${item.title}</div>
-      <div class="row"><span class="price">${price}</span><span class="bids">${item.bids || 0} bid${item.bids === 1 ? "" : "s"}</span></div>
+      <div class="row">
+        <span class="price">${price}</span>
+        <span class="row-right">
+          <span class="bids">${item.bids || 0} bid${item.bids === 1 ? "" : "s"}</span>
+          <button class="heart ${favorites.has(item.id) ? "active" : ""}" data-id="${item.id}" aria-label="Save for later">♥</button>
+        </span>
+      </div>
       ${size ? `<div class="size" data-fit="${item.size}">${size}</div>` : ""}
     </div>`;
   return a;
@@ -72,6 +94,7 @@ function render() {
   // Hide already-ended listings
   items = items.filter((it) => !fmtCountdown(it.end_time).ended);
   if (state.rec === "new") items = items.filter((it) => it.new);
+  else if (state.rec === "fav") items = items.filter((it) => favorites.has(it.id));
   else if (state.rec !== "all") items = items.filter((it) => it.rec === state.rec);
   if (state.type !== "all") items = items.filter((it) => typeOf(it.category) === state.type);
   if (state.sort === "end") {
@@ -130,6 +153,15 @@ function buildTabs() {
     tabs.appendChild(b);
   });
 }
+
+$("#grid").addEventListener("click", (e) => {
+  const btn = e.target.closest(".heart");
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  toggleFavorite(Number(btn.dataset.id));
+  render();
+});
 
 $("#filters").addEventListener("click", (e) => {
   if (e.target.tagName !== "BUTTON") return;
