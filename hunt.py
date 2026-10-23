@@ -219,6 +219,16 @@ QUALITY_BRANDS = {
     "faribault", "woolrich", "avoca", "begg & co", "begg",
     # shoes additions
     "vass", "sanders", "quoddy", "esquivel",
+    # avant-garde / archive designer
+    "yohji yamamoto", "comme des garcons", "comme des garçons",
+    "issey miyake", "maison margiela", "margiela", "raf simons",
+    "helmut lang", "dries van noten",
+    # leather goods
+    "il bisonte", "il bussetto", "frank clegg", "tanner goods",
+    "billykirk", "ghurka",
+    # denim
+    "evisu", "studio d'artisan", "the flat head", "iron heart",
+    "warehouse co",
 }
 
 FABRIC_TERMS = {
@@ -381,6 +391,8 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Cantarelli",
             "Ring Jacket",
             "Rubinacci", "Liverano",
+            "Eleventy", "Eleventy 34",
+            "Lubiam", "Lubiam 34",
             "Anderson Sheppard 34",
             "Henry Poole 34",
             "Huntsman 34",
@@ -426,6 +438,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Lemaire",
             "Le Mont Saint Michel",
             "The Kooples",
+            "Georg Roth",
             "Old England Paris",
             "Hermes",
             "Oxxford 34",
@@ -513,7 +526,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             # Additions
             "John Smedley small", "Ballantyne cashmere",
             "Pringle Scotland", "Malo cashmere", "Inverallan small",
-            "Coogi small",
+            "Coogi small", "Fedeli", "Fedeli cashmere",
             # Generic cashmere knits. Category 28 already scopes to Men's
             # Clothing and the title filter drops L/XL/Large, so no gender or
             # size token is needed (and a size token like "small" only shrinks
@@ -567,6 +580,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Jermyn Street shirt 15",
             "Drake's shirt 15",
             "Eton shirt 15",
+            "Stenströms shirt 15", "Stenstrom shirt 15",
             "Gitman",
             "Individualized Shirts",
             "Mercer Sons",
@@ -605,6 +619,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "CDLP",
             "Hamilton and Hare",
             "Luca Faloni",
+            "Patrick Assaraf",
             "Tekla",
             "Dagsmejan",
             "Merz b. Schwanen",
@@ -640,6 +655,42 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "made in Italy trousers 28", "made in USA trousers 28",
             "made in England trousers 28", "made in France trousers 28",
             "made in Japan trousers 28",
+        ],
+    },
+    "avant_garde": {
+        # Archive/avant-garde designer menswear. Thrift staff rarely recognize
+        # these labels, so pieces land in regular listings instead of the
+        # vetted/researched auction tier — the best sleeper bet in the brief.
+        "category_id": 28,
+        "category_level": 2,
+        "strings": [
+            "Yohji Yamamoto",
+            "Comme des Garcons Homme Plus",
+            "Comme des Garçons Homme Plus",
+            "Issey Miyake Homme",
+            "Issey Miyake Pleats Please",
+            "Maison Margiela",
+            "Margiela",
+            "Raf Simons",
+            "Helmut Lang",
+            "Dries Van Noten",
+        ],
+    },
+    "leather_goods": {
+        "category_id": 28,
+        "category_level": 2,
+        "strings": [
+            "Il Bisonte", "Il Bussetto", "Frank Clegg",
+            "Tanner Goods", "Billykirk", "Ghurka",
+        ],
+    },
+    "denim": {
+        "category_id": 28,
+        "category_level": 2,
+        "strings": [
+            "Evisu 28", "Studio D'Artisan 28", "The Flat Head 28",
+            "Iron Heart 28", "Warehouse Co 28",
+            "selvedge denim 28", "raw denim 28",
         ],
     },
     "blankets": {
