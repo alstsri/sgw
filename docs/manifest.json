@@ -1,6 +1,6 @@
 {
-  "name": "SGW Hunt",
-  "short_name": "SGW Hunt",
+  "name": "ShopG",
+  "short_name": "ShopG",
   "description": "Personal ShopGoodwill hunting results",
   "start_url": "./index.html",
   "display": "standalone",
