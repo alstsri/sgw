@@ -513,6 +513,7 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             # Additions
             "John Smedley small", "Ballantyne cashmere",
             "Pringle Scotland", "Malo cashmere", "Inverallan small",
+            "Coogi small",
             # Generic cashmere knits. Category 28 already scopes to Men's
             # Clothing and the title filter drops L/XL/Large, so no gender or
             # size token is needed (and a size token like "small" only shrinks
