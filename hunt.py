@@ -229,6 +229,8 @@ QUALITY_BRANDS = {
     # denim
     "evisu", "studio d'artisan", "the flat head", "iron heart",
     "warehouse co",
+    # eyewear
+    "moscot",
 }
 
 FABRIC_TERMS = {
@@ -691,6 +693,14 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Evisu 28", "Studio D'Artisan 28", "The Flat Head 28",
             "Iron Heart 28", "Warehouse Co 28",
             "selvedge denim 28", "raw denim 28",
+        ],
+    },
+    "eyewear": {
+        # General/unscoped search — eyewear doesn't live under Men's Clothing.
+        "category_id": 0,
+        "category_level": 1,
+        "strings": [
+            "Moscot",
         ],
     },
     "blankets": {
