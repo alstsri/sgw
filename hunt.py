@@ -122,6 +122,46 @@ def _shoe_size_too_big(text: str) -> bool:
     present. US oversizing is handled separately by the numeric reject list."""
     return any(n >= 41.5 for n in _eu_shoe_sizes(text))
 
+
+# Tod's doesn't label its size tag US/UK/EU — it just prints a bare number —
+# and runs large on top of that. Confirmed against a buyer-owned pair: tag
+# "7.5" fit like a US 9 (a ~1.5-size jump, matching UK sizing plus Tod's
+# known generous fit). So the tag numbers that actually correspond to the
+# buyer's US 7.5/8 feet are ~1.5 sizes lower than the bare number suggests.
+# Handled as its own brand-specific accept/reject range rather than the
+# generic US/EU one, which would otherwise misread Tod's tags in both
+# directions (accepting a too-big "7.5"/"8", rejecting a correct "6"/"6.5").
+_TODS_RE = re.compile(r"\btod'?s\b", re.I)
+_TODS_SIZES_ACCEPT = ["6", "6.5"]
+_TODS_SIZES_REJECT = [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11]
+_tods_accept_re = re.compile(
+    r'(?<![\d.])(?:'
+    + '|'.join(re.escape(s).replace(r'\.', r'[._\s]?') + r'(?:\s*[dmew]{0,2})?' for s in _TODS_SIZES_ACCEPT)
+    + r')(?![\d.])',
+    re.I,
+)
+_tods_reject_re = re.compile(
+    r'(?<![\d.])(?:'
+    + '|'.join(re.escape(str(n)).replace(r'\.', r'[._\s]?') + r'(?:\s*[dmew]{0,2})?' for n in _TODS_SIZES_REJECT)
+    + r')(?![\d.])',
+    re.I,
+)
+
+
+def _is_tods(text: str) -> bool:
+    return bool(_TODS_RE.search(text))
+
+
+def _tods_size_match(text: str) -> bool:
+    """True if a Tod's-tag size in the buyer's real-fit range (6/6.5) is present."""
+    return bool(_tods_accept_re.search(_strip_shoe_noise(text)))
+
+
+def _tods_size_too_big(text: str) -> bool:
+    """True if a bare Tod's-tag size at/above 7 is present (fits like US 8.5+)."""
+    t = _strip_shoe_noise(text)
+    return bool(_tods_reject_re.search(t)) and not _tods_accept_re.search(t)
+
 _jacket_accept_re = re.compile(
     r'\b(?:'
     + '|'.join(re.escape(s) for s in BUYER_PROFILE["jacket_sizes_us"] + BUYER_PROFILE["jacket_sizes_it"])
@@ -297,6 +337,8 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "Bontoni",
             "Magnanni",
             "Tod's",
+            "Tod's 6",
+            "Tod's 6.5",
             "Bally",
             "James Perse 8",
             "James Perse 7.5",
@@ -843,21 +885,26 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
 
     # ---- SHOES ---------------------------------------------------------------
     if category == "shoes":
-        right = _shoe_size_match(t)   # US 7.5/8 or EU 40–41
-        # Build a reject pattern: any US size >= shoe_reject_above that isn't accepted,
-        # plus EU sizes above range (EU 41.5+ ≈ US 8.5+).
-        _reject_above = _shoe_reject_above
-        wrong = bool(re.search(
-            r'\b(?:sz\.?\s*|size\s+)?(?:'
-            + '|'.join(
-                re.escape(str(n)).replace(r'\.', r'[._\s]?')
-                for n in [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13]
-                if n >= _reject_above
-            )
-            + r')\s*[dmew]{0,2}\b', t
-        )) or _shoe_size_too_big(t)
-        if wrong and not right:
-            return True, f"shoe size outside target ({'/'.join(BUYER_PROFILE['shoe_sizes'])})"
+        if _is_tods(t):
+            # Tod's tags run on their own numbering — see _tods_size_match.
+            if _tods_size_too_big(t) and not _tods_size_match(t):
+                return True, "Tod's tag size too large (tag number fits ~1.5 sizes bigger in US)"
+        else:
+            right = _shoe_size_match(t)   # US 7.5/8 or EU 40–41
+            # Build a reject pattern: any US size >= shoe_reject_above that isn't accepted,
+            # plus EU sizes above range (EU 41.5+ ≈ US 8.5+).
+            _reject_above = _shoe_reject_above
+            wrong = bool(re.search(
+                r'\b(?:sz\.?\s*|size\s+)?(?:'
+                + '|'.join(
+                    re.escape(str(n)).replace(r'\.', r'[._\s]?')
+                    for n in [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13]
+                    if n >= _reject_above
+                )
+                + r')\s*[dmew]{0,2}\b', t
+            )) or _shoe_size_too_big(t)
+            if wrong and not right:
+                return True, f"shoe size outside target ({'/'.join(BUYER_PROFILE['shoe_sizes'])})"
 
     # ---- SHIRTS & KNITWEAR ---------------------------------------------------
     if category in ("shirts", "knitwear"):
@@ -1333,13 +1380,16 @@ def assess(
     # --- fit ---
     fit = 3
     size_text = " ".join([title, size, measurements]).lower()
-    shoe_ok = _shoe_size_match(size_text)
+    shoe_ok = _tods_size_match(size_text) if _is_tods(size_text) else _shoe_size_match(size_text)
     # Strip waist×inseam pants dimensions (e.g. "34x28", "34x30") before checking
     # jacket sizes — otherwise pants dimensions masquerade as jacket size matches.
     jacket_text = re.sub(r'\b\d{2}x\d{2}\b', ' ', text)
     if category == "shoes" and shoe_ok:
         fit = 8
-        reasons.append(f"shoe size in target range ({'/'.join(BUYER_PROFILE['shoe_sizes'])})")
+        if _is_tods(size_text):
+            reasons.append("Tod's tag size in target range (6/6.5 ≈ your US 7.5/8)")
+        else:
+            reasons.append(f"shoe size in target range ({'/'.join(BUYER_PROFILE['shoe_sizes'])})")
     elif category in {"tailoring_outerwear", "workwear"} and _jacket_accept_re.search(jacket_text):
         fit = 8
         reasons.append(
