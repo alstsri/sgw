@@ -1200,12 +1200,10 @@ def search_items(
 ) -> list[dict[str, Any]]:
     items: list[dict[str, Any]] = []
     for page in range(1, pages + 1):
-        resp = session.post(
-            f"{API_ROOT}/Search/ItemListing",
+        resp = _request_with_backoff(
+            session, "POST", f"{API_ROOT}/Search/ItemListing",
             json=default_query(query, page, page_size, category_id, category_level),
-            timeout=30,
         )
-        resp.raise_for_status()
         data = resp.json()
         page_items = data.get("searchResults", {}).get("items", []) or []
         items.extend(page_items)
@@ -1216,12 +1214,34 @@ def search_items(
 
 
 def get_detail(session: requests.Session, item_id: int) -> dict[str, Any]:
-    resp = session.get(
-        f"{API_ROOT}/itemDetail/GetItemDetailModelByItemId/{item_id}",
-        timeout=30,
+    resp = _request_with_backoff(
+        session, "GET", f"{API_ROOT}/itemDetail/GetItemDetailModelByItemId/{item_id}",
     )
-    resp.raise_for_status()
     return resp.json()
+
+
+# SGW rate-limits bursts with 403s. Pressing on keeps the block alive, so pause
+# and retry once before giving up on the request. If the pause stops helping
+# (a hard block), stop pausing so the run fails fast instead of taking hours.
+FORBIDDEN_BACKOFF_SECONDS = 60
+MAX_FAILED_BACKOFFS = 5
+_failed_backoffs = 0
+
+
+def _request_with_backoff(session: requests.Session, method: str, url: str,
+                          **kwargs: Any) -> requests.Response:
+    global _failed_backoffs
+    resp = session.request(method, url, timeout=30, **kwargs)
+    if resp.status_code == 403 and _failed_backoffs < MAX_FAILED_BACKOFFS:
+        print(f"  403 from SGW; pausing {FORBIDDEN_BACKOFF_SECONDS}s before retry", flush=True)
+        time.sleep(FORBIDDEN_BACKOFF_SECONDS)
+        resp = session.request(method, url, timeout=30, **kwargs)
+        if resp.status_code == 403:
+            _failed_backoffs += 1
+        else:
+            _failed_backoffs = 0
+    resp.raise_for_status()
+    return resp
 
 
 def fetch_item_html(session: requests.Session, item_id: int) -> str:

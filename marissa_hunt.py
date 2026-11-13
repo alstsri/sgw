@@ -58,6 +58,7 @@ QUALITY_BRANDS = {
     "aigle", "le chameau", "dubarry", "penelope chilvers", "rancourt",
     "yuketen", "russell moccasin", "steger", "manitobah", "quoddy",
     "carmina", "meermin", "tricker", "cheaney", "grenson", "church",
+    "ferragamo", "valentino",
     "crockett", "paraboot", "weston",
     # japanese / avant-garde clothing
     "y's", "yohji yamamoto", "comme des garcons", "comme des garçons",
@@ -273,7 +274,9 @@ MINIMALIST_FABRIC = [
 SEARCH_GROUPS = {
     "shoes": {"cat": WOMENS_SHOES, "strings": (
         [f"{b} 7.5" for b in SHOE_BRANDS] + [f"{b} 38" for b in SHOE_BRANDS]
-        + [f"{b} 7" for b in SHOE_BRANDS] + [f"{b} 37" for b in SHOE_BRANDS] + SHOE_GENERIC
+        + [f"{b} 7" for b in SHOE_BRANDS] + [f"{b} 37" for b in SHOE_BRANDS]
+        # SHOE_GENERIC dropped: it mostly returned mass-market junk (Zara, UGG,
+        # Timberland, unbranded) and cost a detail fetch per result.
     )},
     "lost_jacket": {"cat": WOMENS_CLOTHING, "strings": LOST_JACKET},
     "japanese": {"cat": WOMENS_CLOTHING, "strings": JAPANESE},
@@ -409,7 +412,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
 
     session = requests.Session()
-    session.headers["User-Agent"] = hunt.USER_AGENT
+    session.headers.update(hunt.API_HEADERS)
 
     seen: set[int] = set()
     candidates: list[dict] = []
@@ -433,6 +436,11 @@ def main():
                 if not iid or iid in seen:
                     continue
                 seen.add(iid)
+                # Shoe searches match lots of off-brand listings ("Ara", "Wonders",
+                # "Lodi" are common words); require a quality brand in the title
+                # before spending a detail fetch.
+                if category == "shoes" and not hunt.has_any(item.get("title") or "", QUALITY_BRANDS):
+                    continue
                 try:
                     detail = hunt.get_detail(session, iid)
                 except Exception:
