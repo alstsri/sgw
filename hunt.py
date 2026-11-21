@@ -1220,28 +1220,45 @@ def get_detail(session: requests.Session, item_id: int) -> dict[str, Any]:
     return resp.json()
 
 
-# SGW rate-limits bursts with 403s. Pressing on keeps the block alive, so pause
-# and retry once before giving up on the request. If the pause stops helping
-# (a hard block), stop pausing so the run fails fast instead of taking hours.
-FORBIDDEN_BACKOFF_SECONDS = 60
+# SGW rate-limits bursts with 403s and has brief outages (5xx, dropped
+# connections). Pressing on keeps a block alive, so pause and retry once before
+# giving up on the request. If the pause stops helping (a hard block or long
+# outage), stop pausing so the run fails fast instead of taking hours.
+BACKOFF_SECONDS = 60
+RETRY_STATUSES = {403, 500, 502, 503, 504}
 MAX_FAILED_BACKOFFS = 5
 _failed_backoffs = 0
+
+
+def _send(session: requests.Session, method: str, url: str,
+          **kwargs: Any) -> requests.Response | Exception:
+    try:
+        return session.request(method, url, timeout=30, **kwargs)
+    except (requests.ConnectionError, requests.Timeout) as exc:
+        return exc
+
+
+def _retryable(result: requests.Response | Exception) -> bool:
+    return isinstance(result, Exception) or result.status_code in RETRY_STATUSES
 
 
 def _request_with_backoff(session: requests.Session, method: str, url: str,
                           **kwargs: Any) -> requests.Response:
     global _failed_backoffs
-    resp = session.request(method, url, timeout=30, **kwargs)
-    if resp.status_code == 403 and _failed_backoffs < MAX_FAILED_BACKOFFS:
-        print(f"  403 from SGW; pausing {FORBIDDEN_BACKOFF_SECONDS}s before retry", flush=True)
-        time.sleep(FORBIDDEN_BACKOFF_SECONDS)
-        resp = session.request(method, url, timeout=30, **kwargs)
-        if resp.status_code == 403:
+    result = _send(session, method, url, **kwargs)
+    if _retryable(result) and _failed_backoffs < MAX_FAILED_BACKOFFS:
+        why = type(result).__name__ if isinstance(result, Exception) else result.status_code
+        print(f"  {why} from SGW; pausing {BACKOFF_SECONDS}s before retry", flush=True)
+        time.sleep(BACKOFF_SECONDS)
+        result = _send(session, method, url, **kwargs)
+        if _retryable(result):
             _failed_backoffs += 1
         else:
             _failed_backoffs = 0
-    resp.raise_for_status()
-    return resp
+    if isinstance(result, Exception):
+        raise result
+    result.raise_for_status()
+    return result
 
 
 def fetch_item_html(session: requests.Session, item_id: int) -> str:
