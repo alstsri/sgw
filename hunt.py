@@ -36,13 +36,11 @@ API_HEADERS = {
 # ---------------------------------------------------------------------------
 BUYER_PROFILE = {
     # --- Shoes ---
-    # Primary US sizes accepted. Also accepts UK/EU equivalents within 0.5.
-    # For dress shoes (run slim): 7.5 and 8M/8D are both valid.
-    "shoe_sizes": ["8", "7.5"],
-    # Width codes that are acceptable on a size-8 shoe
-    "shoe_widths": ["", "D", "M", "E", "EE"],
-    # US sizes to hard-reject (anything at or above this)
-    "shoe_reject_above": 8.5,
+    # US sizes. Leather shoes/boots run a half size smaller than sneakers.
+    # UK/EU/Tod's numbers are converted to US before grading; a size half a
+    # step off is surfaced as "near" rather than a full fit.
+    "shoe_size_leather": 7.5,
+    "shoe_size_sneaker": 8,
 
     # --- Jackets / Tailoring / Outerwear ---
     # US suit/jacket sizes accepted (exact label matches)
@@ -73,94 +71,211 @@ BUYER_PROFILE = {
 # Patterns derived from BUYER_PROFILE — computed once, used in filters/scoring.
 # These update automatically when BUYER_PROFILE changes.
 # ---------------------------------------------------------------------------
-_shoe_accept_re = re.compile(
-    r'(?<![\d.])(?:'
-    + '|'.join(
-        re.escape(s).replace(r'\.', r'[._\s]?') + r'(?:\s*[dmew]{0,2})?'
-        for s in BUYER_PROFILE["shoe_sizes"]
-    )
-    + r')(?![\d.])',
-    re.I,
-)
-_shoe_reject_above = BUYER_PROFILE["shoe_reject_above"]
+# ---------------------------------------------------------------------------
+# Shoe sizing. Listings mix US, UK and EU numbers, often with no label, so
+# every size found is converted to a US equivalent and graded against the
+# buyer's target for that kind of shoe (leather vs sneaker).
+#   UK men's ≈ US − 1   (UK 6.5 = US 7.5)
+#   EU       ≈ US + 33  (EU 40.5 = US 7.5)
+# A bare number is read as US, except for brands that label in UK sizes
+# (read as UK when a UK width fitting E/F/G/H confirms it, otherwise flagged
+# as ambiguous) and Tod's (own tag numbering, see below).
+# ---------------------------------------------------------------------------
+_shoe_target_leather = float(BUYER_PROFILE["shoe_size_leather"])
+_shoe_target_sneaker = float(BUYER_PROFILE["shoe_size_sneaker"])
 
+_SNEAKER_RE = re.compile(
+    r"\b(?:sneakers?|trainers?|running shoes?|tennis shoes?|plimsolls?|low[- ]tops?|high[- ]tops?)\b", re.I)
 
-# Boot SHAFT HEIGHT, not a size: "8-inch", "8 inch", '8"', "6-in". These must be
-# stripped before any shoe-size read or a size-13 "8-Inch boot" matches as size 8.
+# British makers label tags in UK sizes.
+_UK_SIZED_RE = re.compile(
+    r"\b(?:church'?s|crockett|edward green|tricker'?s|cheaney|grenson|loake|alfred sargent"
+    r"|gaziano|cleverley|foster (?:&\s*)?son|sanders|john lobb|barker|joseph cheaney|herring)\b", re.I)
+
+# Tod's doesn't label its size tag US/UK/EU — it just prints a bare number —
+# and runs large on top of that. Confirmed against a buyer-owned pair: tag
+# "7.5" fit like a US 9, so a bare Tod's number ≈ US (number + 1.5).
+_TODS_RE = re.compile(r"\btod'?s\b", re.I)
+_TODS_OFFSET = 1.5
+
+# Boot SHAFT HEIGHT and eyelet counts, not sizes: "8-inch", '8"', "6-in",
+# "6-eye". Stripped before any size read or a size-13 "8-Inch boot" reads as 8.
 _SHOE_HEIGHT_RE = re.compile(
     r'\b\d{1,2}(?:\.\d)?\s*-?\s*inch(?:es)?\b'
     r'|\b\d{1,2}(?:\.\d)?\s*"'
-    r'|\b\d{1,2}(?:\.\d)?\s*-\s*in\b',
+    r'|\b\d{1,2}(?:\.\d)?\s*-\s*in\b'
+    r'|\b\d{1,2}\s*-?\s*eye(?:let)?s?\b',
     re.I,
 )
+
+_HALF = r'(?:[.,_]5|\s+1/2|\s*½)'
+_SYS = r'(us\s*/\s*uk|uk\s*/\s*us|us|uk|eu|eur)'
+# "UK 6.5", "US size 7 1/2", "EU 40,5", "UK Shoe Size: 6.5", and postfix
+# "6.5 UK". Postfix only when the label isn't itself followed by a number
+# ("size 7.5 EU Shoe Size: 40" — that EU labels the 40, not the 7.5).
+_LABELED_SIZE_RE = re.compile(
+    rf'\b{_SYS}\.?\s*(?:shoe\s*)?(?:size|sz)?\.?:?\s*(\d{{1,2}})({_HALF})?(?![\d.])'
+    rf'|(?<![\d.])(\d{{1,2}})({_HALF})?\s*{_SYS}\b(?!\.?\s*(?:shoe\s*)?(?:size|sz)?\.?:?\s*\d)',
+    re.I,
+)
+# Descriptions are full of prose ("contact us 7 days a week"), so there a
+# label only counts when the word size/sz sits between it and the number.
+_LABELED_SIZE_STRICT_RE = re.compile(
+    rf'\b{_SYS}\.?\s*(?:shoe\s*)?(?:size|sz)\.?:?\s*(\d{{1,2}})({_HALF})?(?![\d.])',
+    re.I,
+)
+# Bare size token with optional width/fitting letters ("7.5", "8 D", "6½ F").
+# The trailing [a-z]{0,3} is captured to read UK fittings.
+_BARE_SIZE_RE = re.compile(rf'(?<![\d.$/#])(\d{{1,2}})({_HALF})?\s*([a-z]{{1,3}})?(?![\d.a-z])', re.I)
+# Bare number counted as a size only when anchored: after "size"/"sz", or
+# with a width letter, or at the very end of a title. Unanchored stray numbers
+# ("Lot of 6") must not reject a listing.
+_SIZE_ANCHOR_RE = re.compile(r'(?:size|sz\.?)\s*$', re.I)
+_UK_FITTINGS = {"f", "g", "h"}   # E overlaps US widths, so it proves nothing
+_US_WIDTHS = {"b", "c", "d", "e", "ee", "eee", "m", "n", "w", "ww"}
+
+_GRADE_RANK = {"fit": 4, "near": 3, "check_tag": 2, "wrong": 1, "unknown": 0}
 
 
 def _strip_shoe_noise(text: str) -> str:
     return _SHOE_HEIGHT_RE.sub(" ", text)
 
 
-def _eu_shoe_sizes(text: str):
-    """EU shoe sizes found in a title. A men's shoe number in 39–48 can only be
-    EU (US/UK men's sizes stop ~14), so magnitude alone identifies the system.
-    Returns a list of floats, half sizes included ("40,5"/"40.5" -> 40.5)."""
-    return [int(n) + (0.5 if half else 0)
-            for n, half in re.findall(r'\b(3[9]|4[0-8])(?:[.,](5))?\b', _strip_shoe_noise(text))]
+def _shoe_target(text: str) -> float:
+    return _shoe_target_sneaker if _SNEAKER_RE.search(text) else _shoe_target_leather
 
 
-def _shoe_size_match(text: str) -> bool:
-    """True if a shoe size in the buyer's range is present, counting US (7.5/8)
-    and EU sizing. EU ≈ US + 33, so US 7.5–8 = EU 40.5–41; accept EU 40–41.
-    Boot-shaft-height patterns ("8-inch") are stripped first."""
-    text = _strip_shoe_noise(text)
-    if _shoe_accept_re.search(text):
-        return True
-    return any(40 <= n <= 41 for n in _eu_shoe_sizes(text))
+def _grade(us: float, target: float) -> str:
+    if us == target:
+        return "fit"
+    if abs(us - target) == 0.5:
+        return "near"
+    return "wrong"
 
 
-def _shoe_size_too_big(text: str) -> bool:
-    """True if an EU shoe size above the buyer's range (EU 41.5+ ≈ US 8.5+) is
-    present. US oversizing is handled separately by the numeric reject list."""
-    return any(n >= 41.5 for n in _eu_shoe_sizes(text))
+def _to_us(n: float, system: str) -> float:
+    system = system.lower()
+    if system == "uk":
+        return n + 1
+    if system in ("eu", "eur"):
+        return n - 33
+    return n
 
 
-# Tod's doesn't label its size tag US/UK/EU — it just prints a bare number —
-# and runs large on top of that. Confirmed against a buyer-owned pair: tag
-# "7.5" fit like a US 9 (a ~1.5-size jump, matching UK sizing plus Tod's
-# known generous fit). So the tag numbers that actually correspond to the
-# buyer's US 7.5/8 feet are ~1.5 sizes lower than the bare number suggests.
-# Handled as its own brand-specific accept/reject range rather than the
-# generic US/EU one, which would otherwise misread Tod's tags in both
-# directions (accepting a too-big "7.5"/"8", rejecting a correct "6"/"6.5").
-_TODS_RE = re.compile(r"\btod'?s\b", re.I)
-_TODS_SIZES_ACCEPT = ["6", "6.5"]
-_TODS_SIZES_REJECT = [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11]
-_tods_accept_re = re.compile(
-    r'(?<![\d.])(?:'
-    + '|'.join(re.escape(s).replace(r'\.', r'[._\s]?') + r'(?:\s*[dmew]{0,2})?' for s in _TODS_SIZES_ACCEPT)
-    + r')(?![\d.])',
-    re.I,
-)
-_tods_reject_re = re.compile(
-    r'(?<![\d.])(?:'
-    + '|'.join(re.escape(str(n)).replace(r'\.', r'[._\s]?') + r'(?:\s*[dmew]{0,2})?' for n in _TODS_SIZES_REJECT)
-    + r')(?![\d.])',
-    re.I,
-)
+def _labeled_sizes(text: str, strict: bool = False) -> dict[str, list[float]]:
+    """US-equivalent sizes from explicitly labeled numbers, grouped by system.
+    A combined "US/UK" field (a common seller template) is read as US."""
+    by_system: dict[str, list[float]] = {"us": [], "uk": [], "eu": []}
+    for m in (_LABELED_SIZE_STRICT_RE if strict else _LABELED_SIZE_RE).finditer(text):
+        if m.group(1):
+            system, n, half = m.group(1), m.group(2), m.group(3)
+        else:
+            n, half, system = m.group(4), m.group(5), m.group(6)
+        system = re.sub(r"\s", "", system.lower())
+        system = "us" if "/" in system else "eu" if system == "eur" else system
+        val = int(n) + (0.5 if half else 0)
+        if system == "eu" and not 35 <= val <= 50:
+            continue
+        if system in ("us", "uk") and not 4 <= val <= 15:
+            continue
+        by_system[system].append(_to_us(val, system))
+    return by_system
 
 
-def _is_tods(text: str) -> bool:
-    return bool(_TODS_RE.search(text))
+def _trusted_labeled(*groups: dict[str, list[float]]) -> list[float]:
+    """Sizes from the most trusted system present: US, else UK, else EU.
+    Makers' conversion charts disagree (Red Wing prints "8 D (UK 7, EUR
+    40.5)"), so mixing systems would let the loosest conversion win."""
+    for system in ("us", "uk", "eu"):
+        vals = [v for g in groups for v in g[system]]
+        if vals:
+            return vals
+    return []
 
 
-def _tods_size_match(text: str) -> bool:
-    """True if a Tod's-tag size in the buyer's real-fit range (6/6.5) is present."""
-    return bool(_tods_accept_re.search(_strip_shoe_noise(text)))
+def _bare_sizes(text: str) -> list[tuple[float, str, bool]]:
+    """(number, width letters, anchored) for unlabeled size-like numbers."""
+    stripped = _LABELED_SIZE_RE.sub(" ", text)
+    out = []
+    for m in _BARE_SIZE_RE.finditer(stripped):
+        val = int(m.group(1)) + (0.5 if m.group(2) else 0)
+        width = (m.group(3) or "").lower()
+        if width and width not in _UK_FITTINGS | _US_WIDTHS:
+            width = ""   # a following word, not a width
+            if not 4 <= val <= 50:
+                continue
+        anchored = bool(
+            _SIZE_ANCHOR_RE.search(stripped[:m.start()])
+            or (m.group(3) and (m.group(3).lower() in _UK_FITTINGS | _US_WIDTHS))
+            or not stripped[m.end():].strip()
+        )
+        out.append((val, width, anchored))
+    return out
 
 
-def _tods_size_too_big(text: str) -> bool:
-    """True if a bare Tod's-tag size at/above 7 is present (fits like US 8.5+)."""
-    t = _strip_shoe_noise(text)
-    return bool(_tods_reject_re.search(t)) and not _tods_accept_re.search(t)
+def shoe_size_grade(size_text: str, full_text: str = "") -> tuple[str, str]:
+    """Grade a listing's shoe size against the buyer's feet.
+
+    Returns (grade, reason): grade is "fit", "near" (half a size off),
+    "check_tag" (a UK-sized brand with an unlabeled number that is a fit under
+    one reading), "wrong", or "unknown" (no size found). Labeled sizes are read
+    from size_text plus full_text (descriptions often name the tag size); bare
+    numbers only from size_text, since descriptions are full of other numbers.
+    """
+    size_text = _strip_shoe_noise(size_text.lower())
+    full_text = _strip_shoe_noise(full_text.lower())
+    both = f"{size_text} {full_text}"
+    target = _shoe_target(both)
+    kind = "sneaker" if target == _shoe_target_sneaker else "leather"
+
+    def fmt(x: float) -> str:
+        return f"{x:g}"
+
+    labeled = _trusted_labeled(_labeled_sizes(size_text), _labeled_sizes(full_text, strict=True))
+    if labeled:
+        best = max(labeled, key=lambda us: _GRADE_RANK[_grade(us, target)])
+        g = _grade(best, target)
+        return g, f"labeled size ≈ US {fmt(best)} (your {kind} size {fmt(target)})"
+
+    grades: list[tuple[str, str]] = []
+    # EU numbers are unambiguous by magnitude (US/UK men's sizes stop ~15).
+    for val, width, anchored in _bare_sizes(size_text):
+        if 35 <= val <= 50:
+            us = val - 33
+            grades.append((_grade(us, target), f"EU {fmt(val)} ≈ US {fmt(us)}"))
+            continue
+        if not 4 <= val <= 15:
+            continue
+        if _TODS_RE.search(both):
+            us = val + _TODS_OFFSET
+            grades.append((_grade(us, target), f"Tod's tag {fmt(val)} ≈ US {fmt(us)}"))
+        elif _UK_SIZED_RE.search(both):
+            if width in _UK_FITTINGS:
+                us = val + 1
+                grades.append((_grade(us, target), f"UK {fmt(val)} {width.upper()} fitting ≈ US {fmt(us)}"))
+            else:
+                as_uk, as_us = _grade(val + 1, target), _grade(val, target)
+                if as_uk == "wrong" and as_us == "wrong":
+                    if anchored:
+                        grades.append(("wrong", f"{fmt(val)} is off target read as UK or US"))
+                elif as_uk == as_us:
+                    grades.append((as_uk, f"{fmt(val)} fits read as UK or US"))
+                else:
+                    grades.append(("check_tag", f"UK-sized brand, unlabeled {fmt(val)}: "
+                                   f"US {fmt(val + 1)} if UK, US {fmt(val)} if US — check tag photo"))
+        else:
+            g = _grade(val, target)
+            # Unanchored stray numbers only count when they look like a fit
+            # or are big enough that they can only be a too-large size.
+            if g == "wrong" and not anchored and val < target:
+                continue
+            grades.append((g, f"US {fmt(val)}"))
+
+    if not grades:
+        return "unknown", "no shoe size found"
+    g, why = max(grades, key=lambda x: _GRADE_RANK[x[0]])
+    return g, f"{why} (your {kind} size {fmt(target)})"
+
 
 _jacket_accept_re = re.compile(
     r'\b(?:'
@@ -885,26 +1000,9 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
 
     # ---- SHOES ---------------------------------------------------------------
     if category == "shoes":
-        if _is_tods(t):
-            # Tod's tags run on their own numbering — see _tods_size_match.
-            if _tods_size_too_big(t) and not _tods_size_match(t):
-                return True, "Tod's tag size too large (tag number fits ~1.5 sizes bigger in US)"
-        else:
-            right = _shoe_size_match(t)   # US 7.5/8 or EU 40–41
-            # Build a reject pattern: any US size >= shoe_reject_above that isn't accepted,
-            # plus EU sizes above range (EU 41.5+ ≈ US 8.5+).
-            _reject_above = _shoe_reject_above
-            wrong = bool(re.search(
-                r'\b(?:sz\.?\s*|size\s+)?(?:'
-                + '|'.join(
-                    re.escape(str(n)).replace(r'\.', r'[._\s]?')
-                    for n in [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13]
-                    if n >= _reject_above
-                )
-                + r')\s*[dmew]{0,2}\b', t
-            )) or _shoe_size_too_big(t)
-            if wrong and not right:
-                return True, f"shoe size outside target ({'/'.join(BUYER_PROFILE['shoe_sizes'])})"
+        grade, why = shoe_size_grade(t)
+        if grade == "wrong":
+            return True, f"shoe size outside target: {why}"
 
     # ---- SHIRTS & KNITWEAR ---------------------------------------------------
     if category in ("shirts", "knitwear"):
@@ -1417,16 +1515,15 @@ def assess(
     # --- fit ---
     fit = 3
     size_text = " ".join([title, size, measurements]).lower()
-    shoe_ok = _tods_size_match(size_text) if _is_tods(size_text) else _shoe_size_match(size_text)
+    shoe_grade, shoe_why = shoe_size_grade(size_text, text) if category == "shoes" else ("unknown", "")
     # Strip waist×inseam pants dimensions (e.g. "34x28", "34x30") before checking
     # jacket sizes — otherwise pants dimensions masquerade as jacket size matches.
     jacket_text = re.sub(r'\b\d{2}x\d{2}\b', ' ', text)
-    if category == "shoes" and shoe_ok:
+    if category == "shoes" and shoe_grade == "fit":
         fit = 8
-        if _is_tods(size_text):
-            reasons.append("Tod's tag size in target range (6/6.5 ≈ your US 7.5/8)")
-        else:
-            reasons.append(f"shoe size in target range ({'/'.join(BUYER_PROFILE['shoe_sizes'])})")
+        reasons.append(f"shoe size in target: {shoe_why}")
+    elif category == "shoes" and shoe_grade in ("near", "check_tag"):
+        fit = 7
     elif category in {"tailoring_outerwear", "workwear"} and _jacket_accept_re.search(jacket_text):
         fit = 8
         reasons.append(
@@ -1493,12 +1590,16 @@ def assess(
         if not re.search(r"\b(shoe|shoes|loafer|oxford|derby|boot|brogue|monk|moc|sneaker|dress)\b", text):
             red_flags.append("shoe type not confirmed in detail")
             fit = min(fit, 2)
-        if not shoe_ok:
+        if shoe_grade == "near":
+            red_flags.append(f"half size off: {shoe_why}")
+        elif shoe_grade == "check_tag":
+            red_flags.append(f"check tag: {shoe_why}")
+        elif shoe_grade == "wrong":
+            red_flags.append(f"shoe size appears outside target: {shoe_why}")
+            fit = min(fit, 2)
+        elif shoe_grade == "unknown":
             red_flags.append("target shoe size not confirmed")
             fit = min(fit, 3)
-        if re.search(r"(?<![\d.])(?:8\.5|9|10|11|12)(?:\s?[a-z]{0,2})?(?![\d.])", size_text) and not shoe_ok:
-            red_flags.append("shoe size appears outside target")
-            fit = min(fit, 2)
     if detail.get("pickupOnly") or detail.get("storePickupOnly"):
         red_flags.append("pickup-only")
         risk -= 3
@@ -1539,6 +1640,12 @@ def assess(
         recommendation = "Need measurements"
     else:
         recommendation = "Skip"
+    # A half-size-off or check-the-tag shoe is ranked below a sure fit but
+    # never hidden: if it would have listed as a full fit, keep it visible.
+    if (recommendation == "Skip" and not severe and category == "shoes"
+            and shoe_grade in ("near", "check_tag")
+            and avg + (8 - scores["fit_likelihood"]) / len(scores) >= 4.8):
+        recommendation = "Need measurements"
 
     if not reasons:
         reasons.append("keyword match only; detail page has limited supporting evidence")
