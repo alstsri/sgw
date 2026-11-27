@@ -634,10 +634,13 @@ SEARCH_GROUPS: dict[str, dict[str, Any]] = {
             "car coat 34",
             "polo coat 34",
             "trench coat 34",
-            "shearling jacket 34",
-            "sheepskin jacket 34",
-            "B-3 jacket 34",
-            "B3 jacket 34",
+            # Shearling is scarce and rarely listed with a jacket size, so search
+            # unsized and let the size filter pick fits. "B-3 jacket 34" was
+            # tokenized by SGW into junk matches.
+            "shearling coat",
+            "sheepskin coat",
+            "shearling jacket",
+            "shearling aviator",
             "aviator jacket 34",
             "houndstooth 34",
             "tweed sport coat 34",
@@ -988,6 +991,10 @@ def pre_fetch_reject(category: str, title: str) -> tuple[bool, str]:
     for brand in REJECT_BRANDS:
         if brand in t:
             return True, f"reject brand: {brand}"
+
+    # Fake shearling (mall-brand "faux shearling/sheepskin" jackets)
+    if re.search(r"\bfaux\b", t) and re.search(r"shearling|sheepskin", t):
+        return True, "faux shearling"
 
     # Bottoms waist reject — category-agnostic (any group can surface a trouser)
     r = _reject_bottom_waist(t)
